@@ -6,6 +6,7 @@ import 'component/injector.dart';
 void runMainApp() async {
   runZonedGuarded<Future<void>>(
     () async {
+      WidgetsFlutterBinding.ensureInitialized();
       await Injector.create();
       runApp(App());
     },

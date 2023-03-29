@@ -12,7 +12,6 @@ class BaseService {
   BaseService(this._dio);
 
   factory BaseService.create() {
-    debugPrint('clog tes');
     final dio = Dio(
       BaseOptions(
         baseUrl: Environment.env.baseUrl,
