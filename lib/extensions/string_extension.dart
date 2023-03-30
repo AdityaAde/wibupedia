@@ -36,4 +36,21 @@ extension StringExtension on String {
     final parse = DateTime.parse(this);
     return DateFormat('dd MMM yyyy').format(parse);
   }
+
+  String normalizeIndonesiaPhoneNumber(String phoneNumber) {
+    if (phoneNumber.isEmpty) {
+      return phoneNumber;
+    }
+    if (phoneNumber.substring(0, 1) == '0') {
+      return '+62${phoneNumber.substring(1).trim()}';
+    } else if (phoneNumber.substring(0, 1) != '+') {
+      return '+62${phoneNumber.trim()}';
+    }
+
+    return phoneNumber.trim();
+  }
+
+  bool isEmpty(String? value) => (value == null || value.isEmpty);
+
+  bool isNotEmpty(String? value) => (value != null && value.isNotEmpty);
 }
