@@ -1,7 +1,7 @@
 abstract class Endpoint {
   String endpointBaseUrlWithVersion({
     required String path,
-    String version = 'v3',
+    String version = 'v1',
   }) {
     return '/$version/$path';
   }

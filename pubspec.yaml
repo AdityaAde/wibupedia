@@ -51,6 +51,8 @@ dependencies:
   pretty_dio_logger: ^1.1.1
   shimmer: ^2.0.0
   timeago: ^3.2.2
+  rename: ^2.1.1
+  provider: ^6.0.3
 
 dev_dependencies:
   auto_route_generator: ^4.0.0

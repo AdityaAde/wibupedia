@@ -28,10 +28,15 @@ class Injector {
   void onStartRegister() {
     _onRegisterService();
     _onRegisterCache();
+    _onRegisterRepository();
   }
 
   void _onRegisterService() {
     getIt.registerLazySingleton<BaseService>(() => BaseService.create());
+  }
+
+  void _onRegisterRepository() {
+    // Register repository here
   }
 
   void _onRegisterCache() {
