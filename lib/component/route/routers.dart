@@ -1,11 +1,30 @@
 import 'package:auto_route/auto_route.dart';
 
-import '../../pages/pages.dart';
+import 'routers.gr.dart';
 
-@MaterialAutoRouter(
-  replaceInRouteName: 'Page,Route',
-  routes: <AutoRoute>[
-    HomePage.route,
-  ],
-)
-class $AppRouter {}
+@AutoRouterConfig(replaceInRouteName: 'Page,Route')
+class AppRouter extends $AppRouter {
+  @override
+  List<AutoRoute> get routes => [
+        AutoRoute(
+          page: WelcomeRoute.page,
+          path: '/',
+          initial: true,
+        ),
+        AutoRoute(
+          page: HomeWrapper.page,
+          path: '/',
+          children: [
+            AutoRoute(
+              page: HomeRoute.page,
+              initial: true,
+              path: 'home',
+            ),
+            AutoRoute(
+              page: AccountRoute.page,
+              path: 'account',
+            ),
+          ],
+        ),
+      ];
+}

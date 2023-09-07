@@ -15,8 +15,8 @@ class BaseService {
     final dio = Dio(
       BaseOptions(
         baseUrl: Environment.env.baseUrl,
-        connectTimeout: Environment.env.connectionTimeout,
-        receiveTimeout: Environment.env.receiveTimeout,
+        connectTimeout: Duration(seconds: Environment.env.connectionTimeout),
+        receiveTimeout: Duration(seconds: Environment.env.receiveTimeout),
         responseType: ResponseType.plain,
       ),
     );

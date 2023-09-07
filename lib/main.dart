@@ -1,6 +1,8 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
+
 import 'app.dart';
 import 'component/injector.dart';
 

@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'component/component.dart';
-import 'component/route/routers.gr.dart';
 
 class App extends StatelessWidget {
   App({Key? key}) : super(key: key);
@@ -21,8 +20,7 @@ class App extends StatelessWidget {
       designSize: const Size(360, 800),
       minTextAdapt: true,
       builder: (context, child) => MaterialApp.router(
-        routerDelegate: _appRouter.delegate(),
-        routeInformationParser: _appRouter.defaultRouteParser(),
+        routerConfig: _appRouter.config(),
         theme: theme(context),
       ),
     );
