@@ -37,9 +37,32 @@ class $GoogleFontsGen {
       ];
 }
 
+class $AssetsIconsGen {
+  const $AssetsIconsGen();
+
+  /// File path: assets/icons/.gitignore
+  String get gitignore => 'assets/icons/.gitignore';
+
+  /// List of all assets
+  List<String> get values => [gitignore];
+}
+
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/onboarding.png
+  AssetGenImage get onboarding =>
+      const AssetGenImage('assets/images/onboarding.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [onboarding];
+}
+
 class Assets {
   Assets._();
 
+  static const $AssetsIconsGen icons = $AssetsIconsGen();
+  static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $GoogleFontsGen googleFonts = $GoogleFontsGen();
 }
 

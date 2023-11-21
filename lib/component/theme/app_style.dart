@@ -33,7 +33,7 @@ class AppStyle {
     headlineMedium: TextStyle(
       debugLabel: 'Material style headlineMedium',
       fontSize: 28.0,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.bold,
       textBaseline: TextBaseline.alphabetic,
       letterSpacing: 0.25,
     ),
