@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-//import 'gen/fonts.gen.dart';
+import '../../gen/fonts.gen.dart';
 
 ThemeData theme(BuildContext context) {
   final theme = ThemeData(
-    //fontFamily: FontFamily.dMSans,
-    brightness: Brightness.light,
+    fontFamily: FontFamily.urbanist,
+    brightness: Brightness.dark,
   ).copyWith(
     textTheme: Theme.of(context).textTheme.apply(
-          //fontFamily: FontFamily.dMSans,
+          fontFamily: FontFamily.urbanist,
           bodyColor: const Color(0xff516474),
         ),
     scaffoldBackgroundColor: Colors.white,
@@ -24,7 +24,7 @@ ThemeData theme(BuildContext context) {
       elevation: 0.0,
       iconTheme: const IconThemeData(color: Color(0xff757D8A)),
       titleTextStyle: TextStyle(
-        // fontFamily: FontFamily.dMSans,
+        fontFamily: FontFamily.urbanist,
         color: const Color(0xff404D61),
         fontWeight: FontWeight.bold,
         fontSize: 24.sp,

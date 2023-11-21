@@ -80,24 +80,25 @@ class _$TestStateCopyWithImpl<$Res, $Val extends TestState>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$TestStateCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$TestStateCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$InitialImpl implements _Initial {
+  const _$InitialImpl();
 
   @override
   String toString() {
@@ -107,7 +108,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -183,29 +184,29 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements TestState {
-  const factory _Initial() = _$_Initial;
+  const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
-abstract class _$$_IncrementCopyWith<$Res> {
-  factory _$$_IncrementCopyWith(
-          _$_Increment value, $Res Function(_$_Increment) then) =
-      __$$_IncrementCopyWithImpl<$Res>;
+abstract class _$$IncrementImplCopyWith<$Res> {
+  factory _$$IncrementImplCopyWith(
+          _$IncrementImpl value, $Res Function(_$IncrementImpl) then) =
+      __$$IncrementImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_IncrementCopyWithImpl<$Res>
-    extends _$TestStateCopyWithImpl<$Res, _$_Increment>
-    implements _$$_IncrementCopyWith<$Res> {
-  __$$_IncrementCopyWithImpl(
-      _$_Increment _value, $Res Function(_$_Increment) _then)
+class __$$IncrementImplCopyWithImpl<$Res>
+    extends _$TestStateCopyWithImpl<$Res, _$IncrementImpl>
+    implements _$$IncrementImplCopyWith<$Res> {
+  __$$IncrementImplCopyWithImpl(
+      _$IncrementImpl _value, $Res Function(_$IncrementImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Increment implements _Increment {
-  const _$_Increment();
+class _$IncrementImpl implements _Increment {
+  const _$IncrementImpl();
 
   @override
   String toString() {
@@ -215,7 +216,7 @@ class _$_Increment implements _Increment {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Increment);
+        (other.runtimeType == runtimeType && other is _$IncrementImpl);
   }
 
   @override
@@ -291,29 +292,29 @@ class _$_Increment implements _Increment {
 }
 
 abstract class _Increment implements TestState {
-  const factory _Increment() = _$_Increment;
+  const factory _Increment() = _$IncrementImpl;
 }
 
 /// @nodoc
-abstract class _$$_DecrementCopyWith<$Res> {
-  factory _$$_DecrementCopyWith(
-          _$_Decrement value, $Res Function(_$_Decrement) then) =
-      __$$_DecrementCopyWithImpl<$Res>;
+abstract class _$$DecrementImplCopyWith<$Res> {
+  factory _$$DecrementImplCopyWith(
+          _$DecrementImpl value, $Res Function(_$DecrementImpl) then) =
+      __$$DecrementImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_DecrementCopyWithImpl<$Res>
-    extends _$TestStateCopyWithImpl<$Res, _$_Decrement>
-    implements _$$_DecrementCopyWith<$Res> {
-  __$$_DecrementCopyWithImpl(
-      _$_Decrement _value, $Res Function(_$_Decrement) _then)
+class __$$DecrementImplCopyWithImpl<$Res>
+    extends _$TestStateCopyWithImpl<$Res, _$DecrementImpl>
+    implements _$$DecrementImplCopyWith<$Res> {
+  __$$DecrementImplCopyWithImpl(
+      _$DecrementImpl _value, $Res Function(_$DecrementImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Decrement implements _Decrement {
-  const _$_Decrement();
+class _$DecrementImpl implements _Decrement {
+  const _$DecrementImpl();
 
   @override
   String toString() {
@@ -323,7 +324,7 @@ class _$_Decrement implements _Decrement {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Decrement);
+        (other.runtimeType == runtimeType && other is _$DecrementImpl);
   }
 
   @override
@@ -399,5 +400,5 @@ class _$_Decrement implements _Decrement {
 }
 
 abstract class _Decrement implements TestState {
-  const factory _Decrement() = _$_Decrement;
+  const factory _Decrement() = _$DecrementImpl;
 }

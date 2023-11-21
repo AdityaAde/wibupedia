@@ -40,7 +40,7 @@ dependencies:
   flutter_bloc: ^8.1.2
   flutter_native_splash: ^2.2.6
   flutter_screenutil: ^5.7.0
-  fluttertoast: ^8.2.1
+  fluttertoast: ^8.2.4
   freezed: ^2.0.3+1
   freezed_annotation: ^2.0.3
   get_it: ^7.2.0
@@ -77,19 +77,24 @@ flutter_gen:
 flutter:
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
-  # assets:
+  assets:
   #   - assets/images/
   #   - assets/icons/
-  #   - google_fonts/
+    - google_fonts/
 
-  # fonts:
-  #   - family: PlusJakartaSans
-  #     fonts:
-  #       - asset: google_fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf
-  #         weight: 400
-  #       - asset: google_fonts/PlusJakartaSans-VariableFont_wght.ttf
-  #         style: italic
-  #         weight: 400
+  fonts:
+    - family: Urbanist
+      fonts:
+        - asset: google_fonts/Urbanist-Regular.ttf
+        - asset: google_fonts/Urbanist-Medium.ttf
+          weight: 500
+        - asset: google_fonts/Urbanist-Bold.ttf
+          weight: 700
+        - asset: google_fonts/Urbanist-Light.ttf
+          weight: 300
+        - asset: google_fonts/Urbanist-Thin.ttf
+          weight: 200
+
 # Enable if want to used
 # flutter_icons:
 #   android: "launcher_icon"
