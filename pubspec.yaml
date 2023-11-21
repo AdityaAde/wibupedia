@@ -1,8 +1,8 @@
-name: boilerplate_flutter
-description: A new Flutter project.
+name: wibupedia
+description: Streaming anime
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.17.0 <3.0.0'
+  sdk: ">=2.17.0 <3.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -51,7 +51,7 @@ dependencies:
   pretty_dio_logger: ^1.1.1
   shimmer: ^3.0.0
   timeago: ^3.2.2
-  rename: ^2.1.1
+  rename: ^3.0.1
   provider: ^6.0.3
   injectable: ^2.1.2
 
@@ -90,8 +90,6 @@ flutter:
   #       - asset: google_fonts/PlusJakartaSans-VariableFont_wght.ttf
   #         style: italic
   #         weight: 400
-
-
 # Enable if want to used
 # flutter_icons:
 #   android: "launcher_icon"
