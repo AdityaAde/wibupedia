@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../component/route/routers.gr.dart';
 import '../../../../component/theme/theme.dart';
 import '../../../../gen/assets.gen.dart';
 import '../../../../widgets/widgets.dart';
@@ -32,17 +34,19 @@ class SigninWidget extends StatelessWidget {
           width: double.infinity,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Expanded(
+            children: [
+              const Expanded(
                 child: Divider(
                   color: AppColor.dark3,
                   thickness: 1.3,
                 ),
               ),
-              SizedBox(width: 16),
-              Text('or'),
-              SizedBox(width: 16),
-              Expanded(
+              const SizedBox(width: 16),
+              Text('or',
+                  style: AppStyle.materialTextStyle.bodyLarge
+                      ?.copyWith(fontSize: 18, fontWeight: FontWeight.bold)),
+              const SizedBox(width: 16),
+              const Expanded(
                 child: Divider(
                   color: AppColor.dark3,
                   thickness: 1.3,
@@ -53,8 +57,8 @@ class SigninWidget extends StatelessWidget {
         ),
         const SizedBox(height: 18),
         ElevatedButton(
-          onPressed: () {},
           child: const Text('Sign in with email'),
+          onPressed: () => context.pushRoute(const LoginEmailRoute()),
         ),
         const SizedBox(height: 18),
       ],

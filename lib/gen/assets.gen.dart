@@ -40,6 +40,10 @@ class $GoogleFontsGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/email-icon.png
+  AssetGenImage get emailIcon =>
+      const AssetGenImage('assets/icons/email-icon.png');
+
   /// File path: assets/icons/facebook-icon.png
   AssetGenImage get facebookIcon =>
       const AssetGenImage('assets/icons/facebook-icon.png');
@@ -48,12 +52,17 @@ class $AssetsIconsGen {
   AssetGenImage get googleIcon =>
       const AssetGenImage('assets/icons/google-icon.png');
 
+  /// File path: assets/icons/lock-icon.png
+  AssetGenImage get lockIcon =>
+      const AssetGenImage('assets/icons/lock-icon.png');
+
   /// File path: assets/icons/twitter-icon.png
   AssetGenImage get twitterIcon =>
       const AssetGenImage('assets/icons/twitter-icon.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [facebookIcon, googleIcon, twitterIcon];
+  List<AssetGenImage> get values =>
+      [emailIcon, facebookIcon, googleIcon, lockIcon, twitterIcon];
 }
 
 class $AssetsImagesGen {
@@ -62,12 +71,26 @@ class $AssetsImagesGen {
   /// File path: assets/images/lets-in.png
   AssetGenImage get letsIn => const AssetGenImage('assets/images/lets-in.png');
 
+  /// File path: assets/images/logo.png
+  AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
+
   /// File path: assets/images/onboarding.png
   AssetGenImage get onboarding =>
       const AssetGenImage('assets/images/onboarding.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [letsIn, onboarding];
+  List<AssetGenImage> get values => [letsIn, logo, onboarding];
+}
+
+class $AssetsLottieGen {
+  const $AssetsLottieGen();
+
+  /// File path: assets/lottie/Animation - 1700631509715.json
+  String get animation1700631509715 =>
+      'assets/lottie/Animation - 1700631509715.json';
+
+  /// List of all assets
+  List<String> get values => [animation1700631509715];
 }
 
 class Assets {
@@ -75,6 +98,7 @@ class Assets {
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsLottieGen lottie = $AssetsLottieGen();
   static const $GoogleFontsGen googleFonts = $GoogleFontsGen();
 }
 
