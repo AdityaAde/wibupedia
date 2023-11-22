@@ -15,16 +15,16 @@ ThemeData theme(BuildContext context) {
           fontSizeFactor: 1,
           fontSizeDelta: 2,
         ),
-    scaffoldBackgroundColor: AppColor.dark2,
+    scaffoldBackgroundColor: AppColor.dark1,
     dividerColor: Colors.transparent,
     appBarTheme: AppBarTheme(
       systemOverlayStyle: const SystemUiOverlayStyle(
         statusBarIconBrightness: Brightness.light,
         statusBarColor: Colors.transparent,
       ),
-      color: AppColor.dark2,
+      color: AppColor.dark1,
       elevation: 0.0,
-      iconTheme: const IconThemeData(color: Color(0xff757D8A)),
+      iconTheme: const IconThemeData(color: AppColor.ink06),
       titleTextStyle: AppStyle.materialTextStyle.headlineSmall
           ?.copyWith(fontWeight: FontWeight.bold),
       titleSpacing: 24.0,
@@ -34,15 +34,15 @@ ThemeData theme(BuildContext context) {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-          backgroundColor: AppColor.primary500,
-          elevation: 5.0,
-          textStyle: AppStyle.materialTextStyle.bodyLarge
-              ?.copyWith(fontWeight: FontWeight.bold),
-          padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(100),
-          ),
-          minimumSize: const Size(double.infinity, 50)),
+        backgroundColor: AppColor.primary500,
+        textStyle: AppStyle.materialTextStyle.bodyLarge
+            ?.copyWith(fontWeight: FontWeight.bold),
+        padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(100),
+        ),
+        minimumSize: const Size(double.infinity, 50),
+      ),
     ),
   );
   return theme;

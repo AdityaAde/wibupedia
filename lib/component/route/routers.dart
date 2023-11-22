@@ -11,5 +11,16 @@ class AppRouter extends $AppRouter {
           path: '/',
           initial: true,
         ),
+        AutoRoute(
+          page: AuthenticationWrapper.page,
+          path: '/',
+          children: [
+            AutoRoute(
+              initial: true,
+              page: LoginRoute.page,
+              path: 'login',
+            ),
+          ],
+        ),
       ];
 }

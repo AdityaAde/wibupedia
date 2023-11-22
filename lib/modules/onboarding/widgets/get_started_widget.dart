@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../../component/route/routers.gr.dart';
 import '../../../component/theme/theme.dart';
 
 class GetstartedWidget extends StatelessWidget {
@@ -28,7 +30,7 @@ class GetstartedWidget extends StatelessWidget {
             ),
             const SizedBox(height: 32),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () => context.pushRoute(const LoginRoute()),
               child: const Text('Get Started'),
             ),
             const SizedBox(height: 48),

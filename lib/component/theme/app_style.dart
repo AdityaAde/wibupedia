@@ -26,7 +26,7 @@ class AppStyle {
     headlineLarge: TextStyle(
       debugLabel: 'Material style headlineLarge',
       fontSize: 32.0,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.bold,
       textBaseline: TextBaseline.alphabetic,
       letterSpacing: 0.25,
     ),

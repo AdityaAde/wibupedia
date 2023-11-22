@@ -40,22 +40,34 @@ class $GoogleFontsGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
-  /// File path: assets/icons/.gitignore
-  String get gitignore => 'assets/icons/.gitignore';
+  /// File path: assets/icons/facebook-icon.png
+  AssetGenImage get facebookIcon =>
+      const AssetGenImage('assets/icons/facebook-icon.png');
+
+  /// File path: assets/icons/google-icon.png
+  AssetGenImage get googleIcon =>
+      const AssetGenImage('assets/icons/google-icon.png');
+
+  /// File path: assets/icons/twitter-icon.png
+  AssetGenImage get twitterIcon =>
+      const AssetGenImage('assets/icons/twitter-icon.png');
 
   /// List of all assets
-  List<String> get values => [gitignore];
+  List<AssetGenImage> get values => [facebookIcon, googleIcon, twitterIcon];
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
+
+  /// File path: assets/images/lets-in.png
+  AssetGenImage get letsIn => const AssetGenImage('assets/images/lets-in.png');
 
   /// File path: assets/images/onboarding.png
   AssetGenImage get onboarding =>
       const AssetGenImage('assets/images/onboarding.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [onboarding];
+  List<AssetGenImage> get values => [letsIn, onboarding];
 }
 
 class Assets {
