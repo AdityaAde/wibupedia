@@ -80,6 +80,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/lottie/
     - google_fonts/
 
   fonts:
@@ -94,7 +95,6 @@ flutter:
           weight: 300
         - asset: google_fonts/Urbanist-Thin.ttf
           weight: 200
-
 # Enable if want to used
 # flutter_icons:
 #   android: "launcher_icon"
