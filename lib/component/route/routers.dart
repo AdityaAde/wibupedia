@@ -16,8 +16,8 @@ class AppRouter extends $AppRouter {
           path: '/',
           children: [
             AutoRoute(
-              page: RegisterRoute.page,
-              path: 'register',
+              page: SignupRoute.page,
+              path: 'signup',
             ),
             AutoRoute(
               page: LoginRoute.page,

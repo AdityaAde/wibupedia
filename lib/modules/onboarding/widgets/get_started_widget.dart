@@ -30,7 +30,7 @@ class GetstartedWidget extends StatelessWidget {
             ),
             const SizedBox(height: 32),
             ElevatedButton(
-              onPressed: () => context.pushRoute(const LoginRoute()),
+              onPressed: () => context.replaceRoute(const LoginRoute()),
               child: const Text('Get Started'),
             ),
             const SizedBox(height: 48),

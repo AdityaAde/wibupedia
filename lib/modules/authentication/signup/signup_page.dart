@@ -1,14 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:wibupedia/component/route/routers.gr.dart';
-import 'package:wibupedia/gen/assets.gen.dart';
 
 import '../../../component/theme/theme.dart';
+import '../../../gen/assets.gen.dart';
 import '../../../widgets/widgets.dart';
 
 @RoutePage()
-class LoginEmailPage extends StatelessWidget {
-  const LoginEmailPage({super.key});
+class SignupPage extends StatelessWidget {
+  const SignupPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class LoginEmailPage extends StatelessWidget {
               child: Assets.images.logo.image(),
             ),
             Text(
-              'Login to Your Account',
+              'Create to Your Account',
               style: AppStyle.materialTextStyle.headlineLarge,
             ),
             const SizedBox(height: 32),
@@ -44,13 +44,7 @@ class LoginEmailPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 32),
-            ElevatedButton(onPressed: () {}, child: const Text('Sign in')),
-            const SizedBox(height: 24),
-            Text(
-              'Forgot Password?',
-              style: AppStyle.materialTextStyle.bodyLarge?.copyWith(
-                  fontWeight: FontWeight.w500, color: AppColor.primary500),
-            ),
+            ElevatedButton(onPressed: () {}, child: const Text('Sign up')),
             const SizedBox(height: 32),
             SizedBox(
               height: 40,
@@ -100,9 +94,9 @@ class LoginEmailPage extends StatelessWidget {
             ),
             const SizedBox(height: 32),
             RichtextWidget(
-              textOne: 'Don\'t have an account? ',
-              textTwo: 'Sign up',
-              onTap: () => context.pushRoute(const SignupRoute()),
+              textOne: 'Already have an account? ',
+              textTwo: 'Sign in',
+              onTap: () => context.pushRoute(const LoginEmailRoute()),
             ),
           ],
         ),

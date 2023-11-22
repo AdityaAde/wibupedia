@@ -15,9 +15,9 @@ import 'package:wibupedia/component/route/wrapper/home_wrapper.dart' as _i1;
 import 'package:wibupedia/modules/account/account_page.dart' as _i3;
 import 'package:wibupedia/modules/authentication/login/login_page.dart' as _i4;
 import 'package:wibupedia/modules/authentication/login_email/login_email_page.dart'
-    as _i8;
-import 'package:wibupedia/modules/authentication/register/register_page.dart'
     as _i7;
+import 'package:wibupedia/modules/authentication/signup/signup_page.dart'
+    as _i8;
 import 'package:wibupedia/modules/home/home_page.dart' as _i2;
 import 'package:wibupedia/modules/onboarding/onboarding_page.dart' as _i5;
 
@@ -62,16 +62,16 @@ abstract class $AppRouter extends _i9.RootStackRouter {
         child: _i9.WrappedRoute(child: const _i6.AuthenticationWrapper()),
       );
     },
-    RegisterRoute.name: (routeData) {
-      return _i9.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i7.RegisterPage(),
-      );
-    },
     LoginEmailRoute.name: (routeData) {
       return _i9.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i8.LoginEmailPage(),
+        child: const _i7.LoginEmailPage(),
+      );
+    },
+    SignupRoute.name: (routeData) {
+      return _i9.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i8.SignupPage(),
       );
     },
   };
@@ -162,21 +162,7 @@ class AuthenticationWrapper extends _i9.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i7.RegisterPage]
-class RegisterRoute extends _i9.PageRouteInfo<void> {
-  const RegisterRoute({List<_i9.PageRouteInfo>? children})
-      : super(
-          RegisterRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'RegisterRoute';
-
-  static const _i9.PageInfo<void> page = _i9.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i8.LoginEmailPage]
+/// [_i7.LoginEmailPage]
 class LoginEmailRoute extends _i9.PageRouteInfo<void> {
   const LoginEmailRoute({List<_i9.PageRouteInfo>? children})
       : super(
@@ -185,6 +171,20 @@ class LoginEmailRoute extends _i9.PageRouteInfo<void> {
         );
 
   static const String name = 'LoginEmailRoute';
+
+  static const _i9.PageInfo<void> page = _i9.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i8.SignupPage]
+class SignupRoute extends _i9.PageRouteInfo<void> {
+  const SignupRoute({List<_i9.PageRouteInfo>? children})
+      : super(
+          SignupRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SignupRoute';
 
   static const _i9.PageInfo<void> page = _i9.PageInfo<void>(name);
 }
