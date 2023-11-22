@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../component/route/routers.gr.dart';
 import '../../../../component/theme/theme.dart';
 import '../../../../gen/assets.gen.dart';
 import '../../../../widgets/widgets.dart';
@@ -35,7 +37,9 @@ class FormFieldLoginWidget extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 32),
-        ElevatedButton(onPressed: () {}, child: const Text('Sign in')),
+        ElevatedButton(
+            onPressed: () => context.pushRoute(const BaseRoute()),
+            child: const Text('Sign in')),
         const SizedBox(height: 24),
         Text(
           'Forgot Password?',

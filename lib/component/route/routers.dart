@@ -29,5 +29,9 @@ class AppRouter extends $AppRouter {
             ),
           ],
         ),
+        AutoRoute(
+          page: BaseRoute.page,
+          path: '/base',
+        ),
       ];
 }
