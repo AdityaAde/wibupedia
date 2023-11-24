@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "72318015266",
+    "project_id": "wibupedia-id",
+    "storage_bucket": "wibupedia-id.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:72318015266:android:d63c5730c2850b24eab77b",
+        "android_client_info": {
+          "package_name": "id.wibupedia.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "72318015266-9500gh0uuckdv0k9s4ddpho8g43okb6m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-T-OSkgL2aaHKphy0IoOnTkzZbG7by1k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "72318015266-9500gh0uuckdv0k9s4ddpho8g43okb6m.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "72318015266-hg2vit7h8hhdj5ivomc5u83qvaf875o9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "id.wibupedia.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
