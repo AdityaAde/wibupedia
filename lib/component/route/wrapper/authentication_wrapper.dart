@@ -18,8 +18,7 @@ class AuthenticationWrapper extends StatelessWidget
   @override
   Widget wrappedRoute(BuildContext context) {
     return BlocProvider(
-      /// TODO: Change this cubit Authentication
-      create: (context) => getIt<TestCubit>(),
+      create: (context) => getIt<AuthenticationCubit>(),
       child: this,
     );
   }
