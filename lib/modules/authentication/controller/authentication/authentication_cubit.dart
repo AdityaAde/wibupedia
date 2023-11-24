@@ -22,4 +22,13 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
       (r) => emit(AuthenticationState.google(r)),
     );
   }
+
+  void logout() async {
+    emit(const AuthenticationState.logout());
+    final result = await _authenticationRepository.logout();
+    result.fold(
+      (l) => emit(AuthenticationState.error(l.toString())),
+      (r) => emit(const AuthenticationState.logout()),
+    );
+  }
 }

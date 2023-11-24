@@ -30,4 +30,27 @@ class AuthenticationRepository {
       return Left(Exception());
     }
   }
+
+  Future<Either<Exception, void>> logout() async {
+    try {
+      final result = await _authenticationService.logout();
+      return Right(result);
+    } on DioException catch (dioError) {
+      if (dioError.response?.statusCode == 401) {
+        return Left(Exception('Unauthenticated'));
+      }
+      switch (dioError.type) {
+        case DioExceptionType.connectionTimeout:
+        case DioExceptionType.receiveTimeout:
+        case DioExceptionType.sendTimeout:
+          return Left(Exception('No Connection'));
+        case DioExceptionType.badResponse:
+          return Left(Exception('Error Data Parsing'));
+        default:
+          return Left(Exception());
+      }
+    } catch (e) {
+      return Left(Exception());
+    }
+  }
 }

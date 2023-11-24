@@ -1,10 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../component/route/routers.gr.dart';
 import '../../../../component/theme/theme.dart';
 import '../../../../gen/assets.gen.dart';
 import '../../../../widgets/widgets.dart';
+import '../../authentication.dart';
 
 class OptionalSignupWidget extends StatelessWidget {
   const OptionalSignupWidget({
@@ -13,6 +15,7 @@ class OptionalSignupWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final authCubit = context.read<AuthenticationCubit>();
     return Column(
       children: [
         SizedBox(
@@ -53,6 +56,7 @@ class OptionalSignupWidget extends StatelessWidget {
               const SizedBox(width: 18),
               SosmedButtonWidget(
                 sosmedIcon: Assets.icons.googleIcon.image(),
+                onTap: () => authCubit.googleAuth(),
               ),
               const SizedBox(width: 18),
               SosmedButtonWidget(

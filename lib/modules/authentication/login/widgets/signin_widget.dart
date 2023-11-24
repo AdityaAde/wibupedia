@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wibupedia/modules/modules.dart';
 
 import '../../../../component/route/routers.gr.dart';
 import '../../../../component/theme/theme.dart';
@@ -11,6 +13,7 @@ class SigninWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final authCubit = context.read<AuthenticationCubit>();
     return Column(
       children: [
         const SizedBox(height: 30),
@@ -22,6 +25,7 @@ class SigninWidget extends StatelessWidget {
         ButtonWidget.outline(
           'Continue with Google',
           icon: Assets.icons.googleIcon.image(),
+          onTap: () => authCubit.googleAuth(),
         ),
         const SizedBox(height: 16),
         ButtonWidget.outline(

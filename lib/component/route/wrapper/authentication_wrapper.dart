@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../modules/modules.dart';
 import '../../injector.dart';
+import '../routers.gr.dart';
 
 @RoutePage()
 class AuthenticationWrapper extends StatelessWidget
@@ -19,7 +20,16 @@ class AuthenticationWrapper extends StatelessWidget
   Widget wrappedRoute(BuildContext context) {
     return BlocProvider(
       create: (context) => getIt<AuthenticationCubit>(),
-      child: this,
+      child: BlocListener<AuthenticationCubit, AuthenticationState>(
+        listener: (context, state) {
+          state.maybeWhen(
+            orElse: () {},
+            google: (user) => context.replaceRoute(const BaseRoute()),
+            logout: () => context.replaceRoute(const LoginRoute()),
+          );
+        },
+        child: this,
+      ),
     );
   }
 }

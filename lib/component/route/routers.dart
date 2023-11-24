@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 
+import 'guards/guards.dart';
 import 'routers.gr.dart';
 
 @AutoRouterConfig(replaceInRouteName: 'Page,Route')
@@ -8,8 +9,7 @@ class AppRouter extends $AppRouter {
   List<AutoRoute> get routes => [
         AutoRoute(
           page: OnboardingRoute.page,
-          path: '/',
-          initial: true,
+          path: '/onboarding',
         ),
         AutoRoute(
           page: AuthenticationWrapper.page,
@@ -27,11 +27,13 @@ class AppRouter extends $AppRouter {
               page: LoginEmailRoute.page,
               path: 'login-email',
             ),
+            AutoRoute(
+              initial: true,
+              page: BaseRoute.page,
+              path: 'base',
+              guards: [AuthGuard()],
+            ),
           ],
-        ),
-        AutoRoute(
-          page: BaseRoute.page,
-          path: '/base',
         ),
       ];
 }

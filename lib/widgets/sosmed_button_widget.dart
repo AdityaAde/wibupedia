@@ -15,14 +15,17 @@ class SosmedButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Container(
-        decoration: BoxDecoration(
-          color: AppColor.dark2,
-          border: Border.all(color: AppColor.dark3),
-          borderRadius: BorderRadius.circular(16),
+      child: InkWell(
+        onTap: onTap,
+        child: Container(
+          decoration: BoxDecoration(
+            color: AppColor.dark2,
+            border: Border.all(color: AppColor.dark3),
+            borderRadius: BorderRadius.circular(16),
+          ),
+          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 18),
+          child: Center(child: sosmedIcon),
         ),
-        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 18),
-        child: Center(child: sosmedIcon),
       ),
     );
   }

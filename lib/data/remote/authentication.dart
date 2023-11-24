@@ -8,9 +8,7 @@ class AuthenticationService {
     User? user;
 
     final GoogleSignIn googleSignIn = GoogleSignIn(
-      scopes: [
-        'https://www.googleapis.com/auth/drive',
-      ],
+      scopes: ['https://www.googleapis.com/auth/drive'],
     );
 
     final GoogleSignInAccount? googleSignInAccount =
@@ -41,7 +39,7 @@ class AuthenticationService {
     return user;
   }
 
-  static Future<void> signOut() async {
+  Future<void> logout() async {
     await FirebaseAuth.instance.signOut();
   }
 }

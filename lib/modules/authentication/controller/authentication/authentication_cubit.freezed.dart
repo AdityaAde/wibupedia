@@ -21,6 +21,7 @@ mixin _$AuthenticationState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(User? user) google,
+    required TResult Function() logout,
     required TResult Function(String err) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -29,6 +30,7 @@ mixin _$AuthenticationState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(User? user)? google,
+    TResult? Function()? logout,
     TResult? Function(String err)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -37,6 +39,7 @@ mixin _$AuthenticationState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(User? user)? google,
+    TResult Function()? logout,
     TResult Function(String err)? error,
     required TResult orElse(),
   }) =>
@@ -46,6 +49,7 @@ mixin _$AuthenticationState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_GoogleAuth value) google,
+    required TResult Function(_Logout value) logout,
     required TResult Function(_Error value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -54,6 +58,7 @@ mixin _$AuthenticationState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_GoogleAuth value)? google,
+    TResult? Function(_Logout value)? logout,
     TResult? Function(_Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -62,6 +67,7 @@ mixin _$AuthenticationState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_GoogleAuth value)? google,
+    TResult Function(_Logout value)? logout,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) =>
@@ -126,6 +132,7 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(User? user) google,
+    required TResult Function() logout,
     required TResult Function(String err) error,
   }) {
     return initial();
@@ -137,6 +144,7 @@ class _$_Initial implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(User? user)? google,
+    TResult? Function()? logout,
     TResult? Function(String err)? error,
   }) {
     return initial?.call();
@@ -148,6 +156,7 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(User? user)? google,
+    TResult Function()? logout,
     TResult Function(String err)? error,
     required TResult orElse(),
   }) {
@@ -163,6 +172,7 @@ class _$_Initial implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_GoogleAuth value) google,
+    required TResult Function(_Logout value) logout,
     required TResult Function(_Error value) error,
   }) {
     return initial(this);
@@ -174,6 +184,7 @@ class _$_Initial implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_GoogleAuth value)? google,
+    TResult? Function(_Logout value)? logout,
     TResult? Function(_Error value)? error,
   }) {
     return initial?.call(this);
@@ -185,6 +196,7 @@ class _$_Initial implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_GoogleAuth value)? google,
+    TResult Function(_Logout value)? logout,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -239,6 +251,7 @@ class _$_Loading implements _Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(User? user) google,
+    required TResult Function() logout,
     required TResult Function(String err) error,
   }) {
     return loading();
@@ -250,6 +263,7 @@ class _$_Loading implements _Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(User? user)? google,
+    TResult? Function()? logout,
     TResult? Function(String err)? error,
   }) {
     return loading?.call();
@@ -261,6 +275,7 @@ class _$_Loading implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(User? user)? google,
+    TResult Function()? logout,
     TResult Function(String err)? error,
     required TResult orElse(),
   }) {
@@ -276,6 +291,7 @@ class _$_Loading implements _Loading {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_GoogleAuth value) google,
+    required TResult Function(_Logout value) logout,
     required TResult Function(_Error value) error,
   }) {
     return loading(this);
@@ -287,6 +303,7 @@ class _$_Loading implements _Loading {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_GoogleAuth value)? google,
+    TResult? Function(_Logout value)? logout,
     TResult? Function(_Error value)? error,
   }) {
     return loading?.call(this);
@@ -298,6 +315,7 @@ class _$_Loading implements _Loading {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_GoogleAuth value)? google,
+    TResult Function(_Logout value)? logout,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -379,6 +397,7 @@ class _$_GoogleAuth implements _GoogleAuth {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(User? user) google,
+    required TResult Function() logout,
     required TResult Function(String err) error,
   }) {
     return google(user);
@@ -390,6 +409,7 @@ class _$_GoogleAuth implements _GoogleAuth {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(User? user)? google,
+    TResult? Function()? logout,
     TResult? Function(String err)? error,
   }) {
     return google?.call(user);
@@ -401,6 +421,7 @@ class _$_GoogleAuth implements _GoogleAuth {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(User? user)? google,
+    TResult Function()? logout,
     TResult Function(String err)? error,
     required TResult orElse(),
   }) {
@@ -416,6 +437,7 @@ class _$_GoogleAuth implements _GoogleAuth {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_GoogleAuth value) google,
+    required TResult Function(_Logout value) logout,
     required TResult Function(_Error value) error,
   }) {
     return google(this);
@@ -427,6 +449,7 @@ class _$_GoogleAuth implements _GoogleAuth {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_GoogleAuth value)? google,
+    TResult? Function(_Logout value)? logout,
     TResult? Function(_Error value)? error,
   }) {
     return google?.call(this);
@@ -438,6 +461,7 @@ class _$_GoogleAuth implements _GoogleAuth {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_GoogleAuth value)? google,
+    TResult Function(_Logout value)? logout,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -455,6 +479,124 @@ abstract class _GoogleAuth implements AuthenticationState {
   @JsonKey(ignore: true)
   _$$_GoogleAuthCopyWith<_$_GoogleAuth> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_LogoutCopyWith<$Res> {
+  factory _$$_LogoutCopyWith(_$_Logout value, $Res Function(_$_Logout) then) =
+      __$$_LogoutCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_LogoutCopyWithImpl<$Res>
+    extends _$AuthenticationStateCopyWithImpl<$Res, _$_Logout>
+    implements _$$_LogoutCopyWith<$Res> {
+  __$$_LogoutCopyWithImpl(_$_Logout _value, $Res Function(_$_Logout) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_Logout implements _Logout {
+  const _$_Logout();
+
+  @override
+  String toString() {
+    return 'AuthenticationState.logout()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Logout);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(User? user) google,
+    required TResult Function() logout,
+    required TResult Function(String err) error,
+  }) {
+    return logout();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(User? user)? google,
+    TResult? Function()? logout,
+    TResult? Function(String err)? error,
+  }) {
+    return logout?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(User? user)? google,
+    TResult Function()? logout,
+    TResult Function(String err)? error,
+    required TResult orElse(),
+  }) {
+    if (logout != null) {
+      return logout();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_GoogleAuth value) google,
+    required TResult Function(_Logout value) logout,
+    required TResult Function(_Error value) error,
+  }) {
+    return logout(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_GoogleAuth value)? google,
+    TResult? Function(_Logout value)? logout,
+    TResult? Function(_Error value)? error,
+  }) {
+    return logout?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_GoogleAuth value)? google,
+    TResult Function(_Logout value)? logout,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (logout != null) {
+      return logout(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Logout implements AuthenticationState {
+  const factory _Logout() = _$_Logout;
 }
 
 /// @nodoc
@@ -522,6 +664,7 @@ class _$_Error implements _Error {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(User? user) google,
+    required TResult Function() logout,
     required TResult Function(String err) error,
   }) {
     return error(err);
@@ -533,6 +676,7 @@ class _$_Error implements _Error {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(User? user)? google,
+    TResult? Function()? logout,
     TResult? Function(String err)? error,
   }) {
     return error?.call(err);
@@ -544,6 +688,7 @@ class _$_Error implements _Error {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(User? user)? google,
+    TResult Function()? logout,
     TResult Function(String err)? error,
     required TResult orElse(),
   }) {
@@ -559,6 +704,7 @@ class _$_Error implements _Error {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_GoogleAuth value) google,
+    required TResult Function(_Logout value) logout,
     required TResult Function(_Error value) error,
   }) {
     return error(this);
@@ -570,6 +716,7 @@ class _$_Error implements _Error {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_GoogleAuth value)? google,
+    TResult? Function(_Logout value)? logout,
     TResult? Function(_Error value)? error,
   }) {
     return error?.call(this);
@@ -581,6 +728,7 @@ class _$_Error implements _Error {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_GoogleAuth value)? google,
+    TResult Function(_Logout value)? logout,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
