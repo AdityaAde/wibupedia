@@ -40,12 +40,7 @@ class AuthenticationService {
     return user;
   }
 
-  Future<void> logout() async {
-    await FirebaseAuth.instance.signOut();
-  }
-
   Future<UserCredential> signInWithTwitter() async {
-    // Create a TwitterLogin instance
     final twitterLogin = TwitterLogin(
       apiKey: 'd7730rTBbHWk2L4rls10wL9Wi',
       apiSecretKey: 'IcV8ulnA4SEUzo4TfCMbBSwSeSjzD9OPK4feAwJixogO4mKMmC',
@@ -61,5 +56,23 @@ class AuthenticationService {
 
     return await FirebaseAuth.instance
         .signInWithCredential(twitterAuthCredential);
+  }
+
+  Future<UserCredential> signUpWithEmail(String email, String password) async {
+    final credential = await FirebaseAuth.instance
+        .createUserWithEmailAndPassword(email: email, password: password);
+
+    return credential;
+  }
+
+  Future<UserCredential> signInWithEmail(String email, String password) async {
+    final credential = await FirebaseAuth.instance
+        .signInWithEmailAndPassword(email: email, password: password);
+
+    return credential;
+  }
+
+  Future<void> logout() async {
+    await FirebaseAuth.instance.signOut();
   }
 }
