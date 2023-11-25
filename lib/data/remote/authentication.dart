@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:twitter_login/twitter_login.dart';
 
 class AuthenticationService {
   Future<User?> signInWithGoogle() async {
@@ -41,5 +42,24 @@ class AuthenticationService {
 
   Future<void> logout() async {
     await FirebaseAuth.instance.signOut();
+  }
+
+  Future<UserCredential> signInWithTwitter() async {
+    // Create a TwitterLogin instance
+    final twitterLogin = TwitterLogin(
+      apiKey: 'd7730rTBbHWk2L4rls10wL9Wi',
+      apiSecretKey: 'IcV8ulnA4SEUzo4TfCMbBSwSeSjzD9OPK4feAwJixogO4mKMmC',
+      redirectURI: 'wibupedia://',
+    );
+
+    final authResult = await twitterLogin.login();
+
+    final twitterAuthCredential = TwitterAuthProvider.credential(
+      accessToken: authResult.authToken!,
+      secret: authResult.authTokenSecret!,
+    );
+
+    return await FirebaseAuth.instance
+        .signInWithCredential(twitterAuthCredential);
   }
 }

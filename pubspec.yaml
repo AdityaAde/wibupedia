@@ -57,6 +57,7 @@ dependencies:
   firebase_core: ^2.23.0
   firebase_auth: ^4.14.1
   google_sign_in: ^6.1.6
+  twitter_login: ^4.0.1
 
 dev_dependencies:
   auto_route_generator: ^6.2.0
