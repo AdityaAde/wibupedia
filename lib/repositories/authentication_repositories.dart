@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:wibupedia/component/injector.dart';
 
+import '../component/injector.dart';
 import '../data/remote/remote.dart';
 
 class AuthenticationRepository {
@@ -27,7 +27,7 @@ class AuthenticationRepository {
           return Left(Exception());
       }
     } catch (e) {
-      return Left(Exception());
+      return Left(Exception(e));
     }
   }
 
@@ -50,7 +50,7 @@ class AuthenticationRepository {
           return Left(Exception());
       }
     } catch (e) {
-      return Left(Exception());
+      return Left(Exception(e));
     }
   }
 
@@ -77,7 +77,7 @@ class AuthenticationRepository {
           return Left(Exception());
       }
     } catch (e) {
-      return Left(Exception());
+      return Left(Exception(e));
     }
   }
 
@@ -104,7 +104,7 @@ class AuthenticationRepository {
           return Left(Exception());
       }
     } catch (e) {
-      return Left(Exception());
+      return Left(Exception(e));
     }
   }
 
@@ -127,7 +127,7 @@ class AuthenticationRepository {
           return Left(Exception());
       }
     } catch (e) {
-      return Left(Exception());
+      return Left(Exception(e));
     }
   }
 }

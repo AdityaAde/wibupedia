@@ -11,18 +11,21 @@ class SignupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 32),
-              child: Assets.images.logo.image(),
-            ),
-            const FormFieldSignupWidget(),
-            const OptionalSignupWidget(),
-          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 32),
+                child: Assets.images.logo.image(),
+              ),
+              const FormFieldSignupWidget(),
+              const OptionalSignupWidget(),
+            ],
+          ),
         ),
       ),
     );

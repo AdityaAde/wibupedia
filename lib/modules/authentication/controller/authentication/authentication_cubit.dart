@@ -40,7 +40,7 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
     );
     result.fold(
       (l) => emit(AuthenticationState.error(l.toString())),
-      (r) => emit(AuthenticationState.auth(r)),
+      (r) => emit(AuthenticationState.signup(r)),
     );
   }
 

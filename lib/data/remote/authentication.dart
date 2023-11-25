@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:twitter_login/twitter_login.dart';
@@ -24,17 +23,10 @@ class AuthenticationService {
         idToken: googleSignInAuthentication.idToken,
       );
 
-      try {
-        final UserCredential userCredential =
-            await auth.signInWithCredential(credential);
+      final UserCredential userCredential =
+          await auth.signInWithCredential(credential);
 
-        user = userCredential.user;
-      } on FirebaseAuthException catch (e) {
-        if (e.code == 'account-exists-with-different-credential') {
-        } else if (e.code == 'invalid-credential') {}
-      } catch (e) {
-        debugPrint('Error Authentication $e');
-      }
+      user = userCredential.user;
     }
 
     return user;
@@ -55,50 +47,27 @@ class AuthenticationService {
       secret: authResult.authTokenSecret!,
     );
 
-    try {
-      final UserCredential userCredential =
-          await auth.signInWithCredential(twitterAuthCredential);
+    final UserCredential userCredential =
+        await auth.signInWithCredential(twitterAuthCredential);
 
-      user = userCredential.user;
-    } on FirebaseAuthException catch (e) {
-      if (e.code == 'account-exists-with-different-credential') {
-      } else if (e.code == 'invalid-credential') {}
-    } catch (e) {
-      debugPrint('Error Authentication $e');
-    }
+    user = userCredential.user;
 
     return user;
   }
 
   Future<User?> signUpWithEmail(String email, String password) async {
-    try {
-      final UserCredential userCredential = await auth
-          .createUserWithEmailAndPassword(email: email, password: password);
-
-      user = userCredential.user;
-    } on FirebaseAuthException catch (e) {
-      if (e.code == 'account-exists-with-different-credential') {
-      } else if (e.code == 'invalid-credential') {}
-    } catch (e) {
-      debugPrint('Error Authentication $e');
-    }
+    final UserCredential userCredential = await auth
+        .createUserWithEmailAndPassword(email: email, password: password);
+    user = userCredential.user;
 
     return user;
   }
 
   Future<User?> signInWithEmail(String email, String password) async {
-    try {
-      final UserCredential userCredential = await auth
-          .signInWithEmailAndPassword(email: email, password: password);
+    final UserCredential userCredential =
+        await auth.signInWithEmailAndPassword(email: email, password: password);
 
-      user = userCredential.user;
-    } on FirebaseAuthException catch (e) {
-      if (e.code == 'account-exists-with-different-credential') {
-      } else if (e.code == 'invalid-credential') {}
-    } catch (e) {
-      debugPrint('Error Authentication $e');
-    }
-
+    user = userCredential.user;
     return user;
   }
 

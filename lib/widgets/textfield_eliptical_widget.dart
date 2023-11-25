@@ -9,17 +9,22 @@ class TextfieldElipticalWidget extends StatelessWidget {
     this.prefixIcon,
     this.suffixIcon,
     this.controller,
+    this.obsecureText = false,
+    this.validator,
   });
 
   final String hint;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final TextEditingController? controller;
+  final bool obsecureText;
+  final FormFieldValidator<String>? validator;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      obscureText: obsecureText,
       decoration: InputDecoration(
         filled: true,
         fillColor: AppColor.dark2,
@@ -39,6 +44,7 @@ class TextfieldElipticalWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(16.0),
         ),
       ),
+      validator: validator,
     );
   }
 }
