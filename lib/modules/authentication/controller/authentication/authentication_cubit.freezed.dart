@@ -20,7 +20,8 @@ mixin _$AuthenticationState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(User? user) google,
+    required TResult Function(User? user) signup,
+    required TResult Function(User? user) auth,
     required TResult Function() logout,
     required TResult Function(String err) error,
   }) =>
@@ -29,7 +30,8 @@ mixin _$AuthenticationState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(User? user)? google,
+    TResult? Function(User? user)? signup,
+    TResult? Function(User? user)? auth,
     TResult? Function()? logout,
     TResult? Function(String err)? error,
   }) =>
@@ -38,7 +40,8 @@ mixin _$AuthenticationState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(User? user)? google,
+    TResult Function(User? user)? signup,
+    TResult Function(User? user)? auth,
     TResult Function()? logout,
     TResult Function(String err)? error,
     required TResult orElse(),
@@ -48,7 +51,8 @@ mixin _$AuthenticationState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_GoogleAuth value) google,
+    required TResult Function(_Signup value) signup,
+    required TResult Function(_Auth value) auth,
     required TResult Function(_Logout value) logout,
     required TResult Function(_Error value) error,
   }) =>
@@ -57,7 +61,8 @@ mixin _$AuthenticationState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_GoogleAuth value)? google,
+    TResult? Function(_Signup value)? signup,
+    TResult? Function(_Auth value)? auth,
     TResult? Function(_Logout value)? logout,
     TResult? Function(_Error value)? error,
   }) =>
@@ -66,7 +71,8 @@ mixin _$AuthenticationState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_GoogleAuth value)? google,
+    TResult Function(_Signup value)? signup,
+    TResult Function(_Auth value)? auth,
     TResult Function(_Logout value)? logout,
     TResult Function(_Error value)? error,
     required TResult orElse(),
@@ -131,7 +137,8 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(User? user) google,
+    required TResult Function(User? user) signup,
+    required TResult Function(User? user) auth,
     required TResult Function() logout,
     required TResult Function(String err) error,
   }) {
@@ -143,7 +150,8 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(User? user)? google,
+    TResult? Function(User? user)? signup,
+    TResult? Function(User? user)? auth,
     TResult? Function()? logout,
     TResult? Function(String err)? error,
   }) {
@@ -155,7 +163,8 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(User? user)? google,
+    TResult Function(User? user)? signup,
+    TResult Function(User? user)? auth,
     TResult Function()? logout,
     TResult Function(String err)? error,
     required TResult orElse(),
@@ -171,7 +180,8 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_GoogleAuth value) google,
+    required TResult Function(_Signup value) signup,
+    required TResult Function(_Auth value) auth,
     required TResult Function(_Logout value) logout,
     required TResult Function(_Error value) error,
   }) {
@@ -183,7 +193,8 @@ class _$_Initial implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_GoogleAuth value)? google,
+    TResult? Function(_Signup value)? signup,
+    TResult? Function(_Auth value)? auth,
     TResult? Function(_Logout value)? logout,
     TResult? Function(_Error value)? error,
   }) {
@@ -195,7 +206,8 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_GoogleAuth value)? google,
+    TResult Function(_Signup value)? signup,
+    TResult Function(_Auth value)? auth,
     TResult Function(_Logout value)? logout,
     TResult Function(_Error value)? error,
     required TResult orElse(),
@@ -250,7 +262,8 @@ class _$_Loading implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(User? user) google,
+    required TResult Function(User? user) signup,
+    required TResult Function(User? user) auth,
     required TResult Function() logout,
     required TResult Function(String err) error,
   }) {
@@ -262,7 +275,8 @@ class _$_Loading implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(User? user)? google,
+    TResult? Function(User? user)? signup,
+    TResult? Function(User? user)? auth,
     TResult? Function()? logout,
     TResult? Function(String err)? error,
   }) {
@@ -274,7 +288,8 @@ class _$_Loading implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(User? user)? google,
+    TResult Function(User? user)? signup,
+    TResult Function(User? user)? auth,
     TResult Function()? logout,
     TResult Function(String err)? error,
     required TResult orElse(),
@@ -290,7 +305,8 @@ class _$_Loading implements _Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_GoogleAuth value) google,
+    required TResult Function(_Signup value) signup,
+    required TResult Function(_Auth value) auth,
     required TResult Function(_Logout value) logout,
     required TResult Function(_Error value) error,
   }) {
@@ -302,7 +318,8 @@ class _$_Loading implements _Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_GoogleAuth value)? google,
+    TResult? Function(_Signup value)? signup,
+    TResult? Function(_Auth value)? auth,
     TResult? Function(_Logout value)? logout,
     TResult? Function(_Error value)? error,
   }) {
@@ -314,7 +331,8 @@ class _$_Loading implements _Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_GoogleAuth value)? google,
+    TResult Function(_Signup value)? signup,
+    TResult Function(_Auth value)? auth,
     TResult Function(_Logout value)? logout,
     TResult Function(_Error value)? error,
     required TResult orElse(),
@@ -331,20 +349,18 @@ abstract class _Loading implements AuthenticationState {
 }
 
 /// @nodoc
-abstract class _$$_GoogleAuthCopyWith<$Res> {
-  factory _$$_GoogleAuthCopyWith(
-          _$_GoogleAuth value, $Res Function(_$_GoogleAuth) then) =
-      __$$_GoogleAuthCopyWithImpl<$Res>;
+abstract class _$$_SignupCopyWith<$Res> {
+  factory _$$_SignupCopyWith(_$_Signup value, $Res Function(_$_Signup) then) =
+      __$$_SignupCopyWithImpl<$Res>;
   @useResult
   $Res call({User? user});
 }
 
 /// @nodoc
-class __$$_GoogleAuthCopyWithImpl<$Res>
-    extends _$AuthenticationStateCopyWithImpl<$Res, _$_GoogleAuth>
-    implements _$$_GoogleAuthCopyWith<$Res> {
-  __$$_GoogleAuthCopyWithImpl(
-      _$_GoogleAuth _value, $Res Function(_$_GoogleAuth) _then)
+class __$$_SignupCopyWithImpl<$Res>
+    extends _$AuthenticationStateCopyWithImpl<$Res, _$_Signup>
+    implements _$$_SignupCopyWith<$Res> {
+  __$$_SignupCopyWithImpl(_$_Signup _value, $Res Function(_$_Signup) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -352,7 +368,7 @@ class __$$_GoogleAuthCopyWithImpl<$Res>
   $Res call({
     Object? user = freezed,
   }) {
-    return _then(_$_GoogleAuth(
+    return _then(_$_Signup(
       freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -363,22 +379,22 @@ class __$$_GoogleAuthCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_GoogleAuth implements _GoogleAuth {
-  const _$_GoogleAuth(this.user);
+class _$_Signup implements _Signup {
+  const _$_Signup(this.user);
 
   @override
   final User? user;
 
   @override
   String toString() {
-    return 'AuthenticationState.google(user: $user)';
+    return 'AuthenticationState.signup(user: $user)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GoogleAuth &&
+            other is _$_Signup &&
             (identical(other.user, user) || other.user == user));
   }
 
@@ -388,19 +404,20 @@ class _$_GoogleAuth implements _GoogleAuth {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GoogleAuthCopyWith<_$_GoogleAuth> get copyWith =>
-      __$$_GoogleAuthCopyWithImpl<_$_GoogleAuth>(this, _$identity);
+  _$$_SignupCopyWith<_$_Signup> get copyWith =>
+      __$$_SignupCopyWithImpl<_$_Signup>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(User? user) google,
+    required TResult Function(User? user) signup,
+    required TResult Function(User? user) auth,
     required TResult Function() logout,
     required TResult Function(String err) error,
   }) {
-    return google(user);
+    return signup(user);
   }
 
   @override
@@ -408,11 +425,12 @@ class _$_GoogleAuth implements _GoogleAuth {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(User? user)? google,
+    TResult? Function(User? user)? signup,
+    TResult? Function(User? user)? auth,
     TResult? Function()? logout,
     TResult? Function(String err)? error,
   }) {
-    return google?.call(user);
+    return signup?.call(user);
   }
 
   @override
@@ -420,13 +438,14 @@ class _$_GoogleAuth implements _GoogleAuth {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(User? user)? google,
+    TResult Function(User? user)? signup,
+    TResult Function(User? user)? auth,
     TResult Function()? logout,
     TResult Function(String err)? error,
     required TResult orElse(),
   }) {
-    if (google != null) {
-      return google(user);
+    if (signup != null) {
+      return signup(user);
     }
     return orElse();
   }
@@ -436,11 +455,12 @@ class _$_GoogleAuth implements _GoogleAuth {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_GoogleAuth value) google,
+    required TResult Function(_Signup value) signup,
+    required TResult Function(_Auth value) auth,
     required TResult Function(_Logout value) logout,
     required TResult Function(_Error value) error,
   }) {
-    return google(this);
+    return signup(this);
   }
 
   @override
@@ -448,11 +468,12 @@ class _$_GoogleAuth implements _GoogleAuth {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_GoogleAuth value)? google,
+    TResult? Function(_Signup value)? signup,
+    TResult? Function(_Auth value)? auth,
     TResult? Function(_Logout value)? logout,
     TResult? Function(_Error value)? error,
   }) {
-    return google?.call(this);
+    return signup?.call(this);
   }
 
   @override
@@ -460,25 +481,180 @@ class _$_GoogleAuth implements _GoogleAuth {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_GoogleAuth value)? google,
+    TResult Function(_Signup value)? signup,
+    TResult Function(_Auth value)? auth,
     TResult Function(_Logout value)? logout,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
-    if (google != null) {
-      return google(this);
+    if (signup != null) {
+      return signup(this);
     }
     return orElse();
   }
 }
 
-abstract class _GoogleAuth implements AuthenticationState {
-  const factory _GoogleAuth(final User? user) = _$_GoogleAuth;
+abstract class _Signup implements AuthenticationState {
+  const factory _Signup(final User? user) = _$_Signup;
 
   User? get user;
   @JsonKey(ignore: true)
-  _$$_GoogleAuthCopyWith<_$_GoogleAuth> get copyWith =>
+  _$$_SignupCopyWith<_$_Signup> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_AuthCopyWith<$Res> {
+  factory _$$_AuthCopyWith(_$_Auth value, $Res Function(_$_Auth) then) =
+      __$$_AuthCopyWithImpl<$Res>;
+  @useResult
+  $Res call({User? user});
+}
+
+/// @nodoc
+class __$$_AuthCopyWithImpl<$Res>
+    extends _$AuthenticationStateCopyWithImpl<$Res, _$_Auth>
+    implements _$$_AuthCopyWith<$Res> {
+  __$$_AuthCopyWithImpl(_$_Auth _value, $Res Function(_$_Auth) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = freezed,
+  }) {
+    return _then(_$_Auth(
+      freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_Auth implements _Auth {
+  const _$_Auth(this.user);
+
+  @override
+  final User? user;
+
+  @override
+  String toString() {
+    return 'AuthenticationState.auth(user: $user)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Auth &&
+            (identical(other.user, user) || other.user == user));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, user);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_AuthCopyWith<_$_Auth> get copyWith =>
+      __$$_AuthCopyWithImpl<_$_Auth>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(User? user) signup,
+    required TResult Function(User? user) auth,
+    required TResult Function() logout,
+    required TResult Function(String err) error,
+  }) {
+    return auth(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(User? user)? signup,
+    TResult? Function(User? user)? auth,
+    TResult? Function()? logout,
+    TResult? Function(String err)? error,
+  }) {
+    return auth?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(User? user)? signup,
+    TResult Function(User? user)? auth,
+    TResult Function()? logout,
+    TResult Function(String err)? error,
+    required TResult orElse(),
+  }) {
+    if (auth != null) {
+      return auth(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Signup value) signup,
+    required TResult Function(_Auth value) auth,
+    required TResult Function(_Logout value) logout,
+    required TResult Function(_Error value) error,
+  }) {
+    return auth(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Signup value)? signup,
+    TResult? Function(_Auth value)? auth,
+    TResult? Function(_Logout value)? logout,
+    TResult? Function(_Error value)? error,
+  }) {
+    return auth?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Signup value)? signup,
+    TResult Function(_Auth value)? auth,
+    TResult Function(_Logout value)? logout,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (auth != null) {
+      return auth(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Auth implements AuthenticationState {
+  const factory _Auth(final User? user) = _$_Auth;
+
+  User? get user;
+  @JsonKey(ignore: true)
+  _$$_AuthCopyWith<_$_Auth> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -519,7 +695,8 @@ class _$_Logout implements _Logout {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(User? user) google,
+    required TResult Function(User? user) signup,
+    required TResult Function(User? user) auth,
     required TResult Function() logout,
     required TResult Function(String err) error,
   }) {
@@ -531,7 +708,8 @@ class _$_Logout implements _Logout {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(User? user)? google,
+    TResult? Function(User? user)? signup,
+    TResult? Function(User? user)? auth,
     TResult? Function()? logout,
     TResult? Function(String err)? error,
   }) {
@@ -543,7 +721,8 @@ class _$_Logout implements _Logout {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(User? user)? google,
+    TResult Function(User? user)? signup,
+    TResult Function(User? user)? auth,
     TResult Function()? logout,
     TResult Function(String err)? error,
     required TResult orElse(),
@@ -559,7 +738,8 @@ class _$_Logout implements _Logout {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_GoogleAuth value) google,
+    required TResult Function(_Signup value) signup,
+    required TResult Function(_Auth value) auth,
     required TResult Function(_Logout value) logout,
     required TResult Function(_Error value) error,
   }) {
@@ -571,7 +751,8 @@ class _$_Logout implements _Logout {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_GoogleAuth value)? google,
+    TResult? Function(_Signup value)? signup,
+    TResult? Function(_Auth value)? auth,
     TResult? Function(_Logout value)? logout,
     TResult? Function(_Error value)? error,
   }) {
@@ -583,7 +764,8 @@ class _$_Logout implements _Logout {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_GoogleAuth value)? google,
+    TResult Function(_Signup value)? signup,
+    TResult Function(_Auth value)? auth,
     TResult Function(_Logout value)? logout,
     TResult Function(_Error value)? error,
     required TResult orElse(),
@@ -663,7 +845,8 @@ class _$_Error implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(User? user) google,
+    required TResult Function(User? user) signup,
+    required TResult Function(User? user) auth,
     required TResult Function() logout,
     required TResult Function(String err) error,
   }) {
@@ -675,7 +858,8 @@ class _$_Error implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(User? user)? google,
+    TResult? Function(User? user)? signup,
+    TResult? Function(User? user)? auth,
     TResult? Function()? logout,
     TResult? Function(String err)? error,
   }) {
@@ -687,7 +871,8 @@ class _$_Error implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(User? user)? google,
+    TResult Function(User? user)? signup,
+    TResult Function(User? user)? auth,
     TResult Function()? logout,
     TResult Function(String err)? error,
     required TResult orElse(),
@@ -703,7 +888,8 @@ class _$_Error implements _Error {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_GoogleAuth value) google,
+    required TResult Function(_Signup value) signup,
+    required TResult Function(_Auth value) auth,
     required TResult Function(_Logout value) logout,
     required TResult Function(_Error value) error,
   }) {
@@ -715,7 +901,8 @@ class _$_Error implements _Error {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_GoogleAuth value)? google,
+    TResult? Function(_Signup value)? signup,
+    TResult? Function(_Auth value)? auth,
     TResult? Function(_Logout value)? logout,
     TResult? Function(_Error value)? error,
   }) {
@@ -727,7 +914,8 @@ class _$_Error implements _Error {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_GoogleAuth value)? google,
+    TResult Function(_Signup value)? signup,
+    TResult Function(_Auth value)? auth,
     TResult Function(_Logout value)? logout,
     TResult Function(_Error value)? error,
     required TResult orElse(),

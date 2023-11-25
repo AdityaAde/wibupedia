@@ -31,6 +31,7 @@ class SigninWidget extends StatelessWidget {
         ButtonWidget.outline(
           'Continue with Twitter',
           icon: Assets.icons.twitterIcon.image(height: 30),
+          onTap: () => authCubit.twitterAuth(),
         ),
         const SizedBox(height: 18),
         SizedBox(

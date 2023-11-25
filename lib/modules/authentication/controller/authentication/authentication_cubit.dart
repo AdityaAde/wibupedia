@@ -19,7 +19,40 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
     final result = await _authenticationRepository.googleAuth();
     result.fold(
       (l) => emit(AuthenticationState.error(l.toString())),
-      (r) => emit(AuthenticationState.google(r)),
+      (r) => emit(AuthenticationState.auth(r)),
+    );
+  }
+
+  void twitterAuth() async {
+    emit(const AuthenticationState.loading());
+    final result = await _authenticationRepository.twitterAuth();
+    result.fold(
+      (l) => emit(AuthenticationState.error(l.toString())),
+      (r) => emit(AuthenticationState.auth(r)),
+    );
+  }
+
+  void signUpWithEmail(String email, String password) async {
+    emit(const AuthenticationState.loading());
+    final result = await _authenticationRepository.signUpWithEmail(
+      email,
+      password,
+    );
+    result.fold(
+      (l) => emit(AuthenticationState.error(l.toString())),
+      (r) => emit(AuthenticationState.auth(r)),
+    );
+  }
+
+  void signInWithEmail(String email, String password) async {
+    emit(const AuthenticationState.loading());
+    final result = await _authenticationRepository.signInWithEmail(
+      email,
+      password,
+    );
+    result.fold(
+      (l) => emit(AuthenticationState.error(l.toString())),
+      (r) => emit(AuthenticationState.auth(r)),
     );
   }
 

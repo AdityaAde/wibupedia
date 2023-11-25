@@ -24,7 +24,7 @@ class AuthenticationWrapper extends StatelessWidget
         listener: (context, state) {
           state.maybeWhen(
             orElse: () {},
-            google: (user) => context.replaceRoute(const BaseRoute()),
+            auth: (user) => context.replaceRoute(const BaseRoute()),
             logout: () => context.replaceRoute(const LoginRoute()),
           );
         },

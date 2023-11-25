@@ -57,7 +57,10 @@ class OptionalLoginWidget extends StatelessWidget {
                 onTap: () => authCubit.googleAuth(),
               ),
               const SizedBox(width: 18),
-              SosmedButtonWidget(sosmedIcon: Assets.icons.twitterIcon.image()),
+              SosmedButtonWidget(
+                sosmedIcon: Assets.icons.twitterIcon.image(),
+                onTap: () => authCubit.googleAuth(),
+              ),
             ],
           ),
         ),
