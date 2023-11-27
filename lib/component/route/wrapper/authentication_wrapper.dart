@@ -25,11 +25,16 @@ class AuthenticationWrapper extends StatelessWidget
         listener: (context, state) {
           state.maybeWhen(
             orElse: () {},
+            loading: () => LoadingWidget.show(context),
             signup: (user) {
               context.replaceRoute(const LoginEmailRoute());
               ToastWidget.showToast('Success Create Account');
             },
-            auth: (user) => context.replaceRoute(const BaseRoute()),
+            auth: (user) {
+              context.popRoute();
+              context.replaceRoute(const BaseRoute());
+              ToastWidget.showToast('Welcome and Enjoy streaming Wibu!');
+            },
             logout: () => context.replaceRoute(const LoginRoute()),
             error: (err) => ToastWidget.showToast(err),
           );

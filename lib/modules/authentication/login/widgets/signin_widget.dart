@@ -20,6 +20,7 @@ class SigninWidget extends StatelessWidget {
         ButtonWidget.outline(
           'Continue with Facebook',
           icon: Assets.icons.facebookIcon.image(),
+          onTap: () => ToastWidget.showToast('Coming Soon!'),
         ),
         const SizedBox(height: 16),
         ButtonWidget.outline(

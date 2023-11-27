@@ -53,6 +53,7 @@ dependencies:
   injectable: ^2.1.2
   intl: ^0.18.0
   json_annotation: ^4.5.0
+  lottie: ^2.3.2
   pretty_dio_logger: ^1.1.1
   provider: ^6.0.3
   rename: ^3.0.1
