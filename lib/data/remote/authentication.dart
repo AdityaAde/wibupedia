@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:twitter_login/twitter_login.dart';
@@ -33,24 +34,32 @@ class AuthenticationService {
   }
 
   Future<User?> signInWithTwitter() async {
-    /// TODO: Migrate apikey twitter to firestore database
-    final twitterLogin = TwitterLogin(
-      apiKey: 'd7730rTBbHWk2L4rls10wL9Wi',
-      apiSecretKey: 'IcV8ulnA4SEUzo4TfCMbBSwSeSjzD9OPK4feAwJixogO4mKMmC',
-      redirectURI: 'wibupedia://',
-    );
+    final authSecret = await FirebaseFirestore.instance
+        .collection('authkey-sosmed')
+        .doc('s1s0sHel8cFWErnSsDuQ')
+        .get();
 
-    final authResult = await twitterLogin.login();
+    final result = authSecret;
+    if (result.exists) {
+      final data = result.data() as Map<String, dynamic>;
+      final twitterLogin = TwitterLogin(
+        apiKey: data['apikey'],
+        apiSecretKey: data['api_secret_key'],
+        redirectURI: 'wibupedia://',
+      );
 
-    final twitterAuthCredential = TwitterAuthProvider.credential(
-      accessToken: authResult.authToken!,
-      secret: authResult.authTokenSecret!,
-    );
+      final authResult = await twitterLogin.login();
 
-    final UserCredential userCredential =
-        await auth.signInWithCredential(twitterAuthCredential);
+      final twitterAuthCredential = TwitterAuthProvider.credential(
+        accessToken: authResult.authToken!,
+        secret: authResult.authTokenSecret!,
+      );
 
-    user = userCredential.user;
+      final UserCredential userCredential =
+          await auth.signInWithCredential(twitterAuthCredential);
+
+      user = userCredential.user;
+    }
 
     return user;
   }
