@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../component/theme/theme.dart';
+import '../../../../extensions/extension.dart';
 import '../../../../gen/assets.gen.dart';
 import '../../../../widgets/widgets.dart';
-import '../../../../extensions/extension.dart';
-
 import '../../authentication.dart';
 
 class FormFieldSignupWidget extends StatefulWidget {
@@ -102,6 +101,7 @@ class _FormFieldSignupWidgetState extends State<FormFieldSignupWidget> {
   void dispose() {
     _emailController.dispose();
     _passwordController.dispose();
+    _obsecurePasswordText.dispose();
     super.dispose();
   }
 }
