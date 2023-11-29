@@ -40,6 +40,10 @@ class $GoogleFontsGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/bookmarks-icon.png
+  AssetGenImage get bookmarksIcon =>
+      const AssetGenImage('assets/icons/bookmarks-icon.png');
+
   /// File path: assets/icons/email-icon.png
   AssetGenImage get emailIcon =>
       const AssetGenImage('assets/icons/email-icon.png');
@@ -52,17 +56,38 @@ class $AssetsIconsGen {
   AssetGenImage get googleIcon =>
       const AssetGenImage('assets/icons/google-icon.png');
 
+  /// File path: assets/icons/home-icon.png
+  AssetGenImage get homeIcon =>
+      const AssetGenImage('assets/icons/home-icon.png');
+
   /// File path: assets/icons/lock-icon.png
   AssetGenImage get lockIcon =>
       const AssetGenImage('assets/icons/lock-icon.png');
+
+  /// File path: assets/icons/person-icon.png
+  AssetGenImage get personIcon =>
+      const AssetGenImage('assets/icons/person-icon.png');
+
+  /// File path: assets/icons/search-icon.png
+  AssetGenImage get searchIcon =>
+      const AssetGenImage('assets/icons/search-icon.png');
 
   /// File path: assets/icons/twitter-icon.png
   AssetGenImage get twitterIcon =>
       const AssetGenImage('assets/icons/twitter-icon.png');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [emailIcon, facebookIcon, googleIcon, lockIcon, twitterIcon];
+  List<AssetGenImage> get values => [
+        bookmarksIcon,
+        emailIcon,
+        facebookIcon,
+        googleIcon,
+        homeIcon,
+        lockIcon,
+        personIcon,
+        searchIcon,
+        twitterIcon
+      ];
 }
 
 class $AssetsImagesGen {
@@ -85,12 +110,11 @@ class $AssetsImagesGen {
 class $AssetsLottieGen {
   const $AssetsLottieGen();
 
-  /// File path: assets/lottie/Animation - 1700631509715.json
-  String get animation1700631509715 =>
-      'assets/lottie/Animation - 1700631509715.json';
+  /// File path: assets/lottie/loading.json
+  String get loading => 'assets/lottie/loading.json';
 
   /// List of all assets
-  List<String> get values => [animation1700631509715];
+  List<String> get values => [loading];
 }
 
 class Assets {
