@@ -3,16 +3,20 @@ import 'package:flutter/material.dart';
 import '../component/theme/theme.dart';
 
 class ButtonWidget {
-  static outline(String title, {Widget? icon, VoidCallback? onTap}) {
+  static outline(String title,
+      {Widget? icon,
+      VoidCallback? onTap,
+      double radius = 16,
+      double height = 57}) {
     return InkWell(
       onTap: onTap,
       child: Container(
-        height: 57,
+        height: height,
         width: double.infinity,
         decoration: BoxDecoration(
           color: AppColor.dark2,
           border: Border.all(color: AppColor.dark3),
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(radius),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

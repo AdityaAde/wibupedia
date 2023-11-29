@@ -37,11 +37,8 @@ ThemeData theme(BuildContext context) {
         backgroundColor: AppColor.primary500,
         textStyle: AppStyle.materialTextStyle.bodyLarge
             ?.copyWith(fontWeight: FontWeight.bold),
-        padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(100),
-        ),
-        minimumSize: const Size(double.infinity, 50),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
+        minimumSize: const Size(double.infinity, 43),
       ),
     ),
   );

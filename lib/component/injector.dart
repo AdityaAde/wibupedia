@@ -50,7 +50,6 @@ class Injector {
   }
 
   void _onBusinnessLogic() {
-    getIt.registerLazySingleton(() => TestCubit.create());
     getIt.registerLazySingleton(() => AuthenticationCubit.create());
   }
 }

@@ -1,3 +1,3 @@
-# Wibupedia_Flutter
+# Wibupedia Flutter
 
 Streaming Anime

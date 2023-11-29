@@ -1,9 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../../modules/modules.dart';
-import '../../injector.dart';
 
 @RoutePage()
 class HomeWrapper extends StatelessWidget implements AutoRouteWrapper {
@@ -16,9 +12,6 @@ class HomeWrapper extends StatelessWidget implements AutoRouteWrapper {
 
   @override
   Widget wrappedRoute(BuildContext context) {
-    return BlocProvider(
-      create: (context) => getIt<TestCubit>(),
-      child: this,
-    );
+    return this;
   }
 }
