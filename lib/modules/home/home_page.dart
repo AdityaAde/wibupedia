@@ -10,10 +10,17 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: const [
-          HeadlineHomeWidget(),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: const [
+            HeadlineHomeWidget(),
+            SizedBox(height: 24),
+            ListAnimeTileWidget(title: 'On Going'),
+            SizedBox(height: 18),
+            ListAnimeTileWidget(title: 'Anime Completed'),
+            SizedBox(height: 24),
+          ],
+        ),
       ),
     );
   }

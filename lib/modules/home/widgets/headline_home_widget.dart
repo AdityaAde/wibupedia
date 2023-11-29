@@ -67,8 +67,8 @@ class HeadlineHomeWidget extends StatelessWidget {
                       const SizedBox(width: 16),
                       Flexible(
                         child: ButtonWidget.outline(
-                          '+  My List  ',
-                          height: 50,
+                          '+  My List   ',
+                          height: 48,
                           radius: 100,
                           onTap: () {},
                         ),
