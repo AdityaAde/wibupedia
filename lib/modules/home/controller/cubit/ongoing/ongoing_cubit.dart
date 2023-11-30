@@ -11,7 +11,8 @@ part 'ongoing_state.dart';
 class OngoingCubit extends Cubit<OngoingState> {
   AnimeRepository _animeRepository;
 
-  factory OngoingCubit.create() => OngoingCubit(getIt.get());
+  factory OngoingCubit.create() =>
+      OngoingCubit(getIt.get())..getOngoingAnime(page: '1');
 
   OngoingCubit(this._animeRepository) : super(const OngoingState.initial());
 

@@ -13,11 +13,11 @@ _$_OngoingModels _$$_OngoingModelsFromJson(Map<String, dynamic> json) =>
       ongoing: (json['ongoing'] as List<dynamic>?)
           ?.map((e) => AnimeModels.fromJson(e as Map<String, dynamic>))
           .toList(),
-      currentpage: json['currentpage'] as String?,
+      currentpage: json['currentPage'] as String?,
     );
 
 Map<String, dynamic> _$$_OngoingModelsToJson(_$_OngoingModels instance) =>
     <String, dynamic>{
       'ongoing': instance.ongoing,
-      'currentpage': instance.currentpage,
+      'currentPage': instance.currentpage,
     };

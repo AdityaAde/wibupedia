@@ -1,12 +1,22 @@
 import 'package:flutter/material.dart';
 
 import '../../../component/theme/theme.dart';
+import '../../../models/models.dart';
 import '../../../widgets/widgets.dart';
 
 class ListAnimeTileWidget extends StatelessWidget {
-  const ListAnimeTileWidget({super.key, required this.title});
+  const ListAnimeTileWidget({
+    super.key,
+    required this.title,
+    this.isLoading = false,
+    this.ongoingAnime,
+    this.completedAnime,
+  });
 
   final String title;
+  final bool isLoading;
+  final OngoingModels? ongoingAnime;
+  final CompletedModels? completedAnime;
 
   @override
   Widget build(BuildContext context) {
@@ -30,22 +40,37 @@ class ListAnimeTileWidget extends StatelessWidget {
           SizedBox(
             height: 200,
             width: double.infinity,
-            child: ListView.separated(
-              separatorBuilder: (_, __) => const SizedBox(width: 8),
-              scrollDirection: Axis.horizontal,
-              itemCount: 5,
-              itemBuilder: (context, index) => Container(
-                width: 150,
-                decoration: const BoxDecoration(
-                  color: AppColor.dark2,
-                  borderRadius: BorderRadius.all(Radius.circular(12)),
-                ),
-                child: const ImageCachedWidget(
-                  url:
-                      'https://image.api.playstation.com/vulcan/ap/rnd/202106/1704/2ZfAUG5CTXdM34S1OhmMW1zF.jpg',
-                ),
-              ),
-            ),
+            child: isLoading
+                ? ListView.separated(
+                    separatorBuilder: (_, __) => const SizedBox(width: 8),
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 5,
+                    itemBuilder: (context, index) => const SizedBox(
+                      width: 150,
+                      child: ShimmerWidget(
+                        child: ColoredBox(color: AppColor.dark2),
+                      ),
+                    ),
+                  )
+                : ListView.separated(
+                    separatorBuilder: (_, __) => const SizedBox(width: 12),
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 5,
+                    itemBuilder: (context, index) {
+                      final ongoing = ongoingAnime?.ongoing?[index];
+                      final completed = completedAnime?.completed?[index];
+
+                      return Container(
+                        width: 150,
+                        decoration: const BoxDecoration(
+                          color: AppColor.dark2,
+                          borderRadius: BorderRadius.all(Radius.circular(12)),
+                        ),
+                        child: ImageCachedWidget(
+                            url: ongoing?.thumb ?? completed?.thumb),
+                      );
+                    },
+                  ),
           )
         ],
       ),
