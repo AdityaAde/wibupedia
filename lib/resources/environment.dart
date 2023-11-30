@@ -29,7 +29,7 @@ class Environment {
   factory Environment.prod() {
     env = Environment(
       name: 'production',
-      baseUrl: '',
+      baseUrl: 'https://otakudesu-anime-api.vercel.app/api/',
       authBaseUrl: '',
       connectionTimeout: 60000,
       receiveTimeout: 60000,

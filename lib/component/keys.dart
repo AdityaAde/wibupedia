@@ -1,1 +1,3 @@
-class Keys {}
+class ServiceUrl {
+  static String ongoingUrl = 'ongoing';
+}

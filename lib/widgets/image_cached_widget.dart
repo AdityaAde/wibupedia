@@ -19,13 +19,14 @@ class ImageCachedWidget extends StatelessWidget {
       imageBuilder: (context, imageProvider) => DecoratedBox(
         decoration: BoxDecoration(
           image: DecorationImage(image: imageProvider, fit: BoxFit.cover),
+          borderRadius: BorderRadius.circular(8),
         ),
       ),
       placeholder: (context, url) => const ShimmerWidget(
-        child: ColoredBox(color: AppColor.white),
+        child: ColoredBox(color: AppColor.dark2),
       ),
       errorWidget: (context, url, error) => const ColoredBox(
-        color: AppColor.white,
+        color: AppColor.dark2,
         child: Placeholder(),
       ),
       memCacheHeight: 202,

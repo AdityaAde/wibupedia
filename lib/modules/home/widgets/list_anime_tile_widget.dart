@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../component/theme/theme.dart';
+import '../../../widgets/widgets.dart';
 
 class ListAnimeTileWidget extends StatelessWidget {
   const ListAnimeTileWidget({super.key, required this.title});
@@ -38,6 +39,10 @@ class ListAnimeTileWidget extends StatelessWidget {
                 decoration: const BoxDecoration(
                   color: AppColor.dark2,
                   borderRadius: BorderRadius.all(Radius.circular(12)),
+                ),
+                child: const ImageCachedWidget(
+                  url:
+                      'https://image.api.playstation.com/vulcan/ap/rnd/202106/1704/2ZfAUG5CTXdM34S1OhmMW1zF.jpg',
                 ),
               ),
             ),

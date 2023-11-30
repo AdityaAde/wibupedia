@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
+import '../component/theme/theme.dart';
+
 class ShimmerWidget extends StatelessWidget {
   const ShimmerWidget({
     Key? key,
@@ -12,8 +14,8 @@ class ShimmerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
-      baseColor: Colors.grey.shade300,
-      highlightColor: Colors.grey.shade100,
+      baseColor: AppColor.dark2,
+      highlightColor: AppColor.dark3,
       child: child,
     );
   }
