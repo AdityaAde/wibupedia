@@ -28,7 +28,7 @@ class AnimeRepository {
           return Left(Exception());
       }
     } catch (e) {
-      return Left(Exception());
+      return Left(Exception(e));
     }
   }
 }
