@@ -19,18 +19,23 @@ class BasePage extends StatefulWidget {
 
 class _BasePageState extends State<BasePage> with WidgetsBindingObserver {
   late final OngoingCubit _ongoingCubit;
+  late final CompletedCubit _completedCubit;
 
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
     _ongoingCubit = OngoingCubit.create();
+    _completedCubit = CompletedCubit.create();
   }
 
   @override
   Widget build(BuildContext contex) {
-    return BlocProvider.value(
-      value: _ongoingCubit,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider.value(value: _ongoingCubit),
+        BlocProvider.value(value: _completedCubit),
+      ],
       child: AutoTabsScaffold(
         routes: const [
           HomeRoute(),
@@ -84,6 +89,8 @@ class _BasePageState extends State<BasePage> with WidgetsBindingObserver {
   @override
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
+    _ongoingCubit.close();
+    _completedCubit.close();
     super.dispose();
   }
 }

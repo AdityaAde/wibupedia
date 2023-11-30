@@ -59,7 +59,7 @@ class ListAnimeTileWidget extends StatelessWidget {
                     itemBuilder: (context, index) {
                       final ongoing = ongoingAnime?.ongoing?[index];
                       final completed = completedAnime?.completed?[index];
-
+                      debugPrint('clog thumb ${completed?.title}');
                       return Container(
                         width: 150,
                         decoration: const BoxDecoration(

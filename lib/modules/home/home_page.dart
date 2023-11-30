@@ -35,8 +35,25 @@ class HomePage extends StatelessWidget {
                 );
               },
             ),
-            const SizedBox(height: 18),
-            const ListAnimeTileWidget(title: 'Anime Completed'),
+            const SizedBox(height: 32),
+            BlocBuilder<CompletedCubit, CompletedState>(
+              builder: (context, state) {
+                return state.maybeWhen(
+                  orElse: () => const SizedBox(),
+                  loading: () => const ListAnimeTileWidget(
+                    title: 'Anime Completed',
+                    isLoading: true,
+                  ),
+                  success: (anime) => ListAnimeTileWidget(
+                    title: 'Anime Completed',
+                    completedAnime: anime,
+                  ),
+                  error: (err) => Center(
+                    child: Text('Something went wrong $err'),
+                  ),
+                );
+              },
+            ),
             const SizedBox(height: 24),
           ],
         ),
