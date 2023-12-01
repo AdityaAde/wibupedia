@@ -52,4 +52,24 @@ class AnimeRepository {
       return Left(Exception(e));
     }
   }
+
+  Future<Either<Exception, AnimeModels>> detailAnime(String anime) async {
+    try {
+      final result = await _animeService.detailAnime(anime);
+      return Right(result);
+    } on DioException catch (dioError) {
+      switch (dioError.type) {
+        case DioExceptionType.connectionTimeout:
+        case DioExceptionType.receiveTimeout:
+        case DioExceptionType.sendTimeout:
+          return Left(Exception('No Connection'));
+        case DioExceptionType.badResponse:
+          return Left(Exception('Error Data Parsing'));
+        default:
+          return Left(Exception());
+      }
+    } catch (e) {
+      return Left(Exception(e));
+    }
+  }
 }

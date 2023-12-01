@@ -24,6 +24,9 @@ mixin _$AnimeModels {
   String? get thumb => throw _privateConstructorUsedError;
   String? get score => throw _privateConstructorUsedError;
   String? get totalEpisode => throw _privateConstructorUsedError;
+  List<String>? get sinopsis => throw _privateConstructorUsedError;
+  List<String>? get detail => throw _privateConstructorUsedError;
+  List<EpisodeModels>? get episodeList => throw _privateConstructorUsedError;
   String? get updatedOn => throw _privateConstructorUsedError;
   String? get updatedDay => throw _privateConstructorUsedError;
   String? get endpoint => throw _privateConstructorUsedError;
@@ -45,6 +48,9 @@ abstract class $AnimeModelsCopyWith<$Res> {
       String? thumb,
       String? score,
       String? totalEpisode,
+      List<String>? sinopsis,
+      List<String>? detail,
+      List<EpisodeModels>? episodeList,
       String? updatedOn,
       String? updatedDay,
       String? endpoint});
@@ -67,6 +73,9 @@ class _$AnimeModelsCopyWithImpl<$Res, $Val extends AnimeModels>
     Object? thumb = freezed,
     Object? score = freezed,
     Object? totalEpisode = freezed,
+    Object? sinopsis = freezed,
+    Object? detail = freezed,
+    Object? episodeList = freezed,
     Object? updatedOn = freezed,
     Object? updatedDay = freezed,
     Object? endpoint = freezed,
@@ -88,6 +97,18 @@ class _$AnimeModelsCopyWithImpl<$Res, $Val extends AnimeModels>
           ? _value.totalEpisode
           : totalEpisode // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinopsis: freezed == sinopsis
+          ? _value.sinopsis
+          : sinopsis // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      detail: freezed == detail
+          ? _value.detail
+          : detail // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      episodeList: freezed == episodeList
+          ? _value.episodeList
+          : episodeList // ignore: cast_nullable_to_non_nullable
+              as List<EpisodeModels>?,
       updatedOn: freezed == updatedOn
           ? _value.updatedOn
           : updatedOn // ignore: cast_nullable_to_non_nullable
@@ -117,6 +138,9 @@ abstract class _$$_AnimeModelsCopyWith<$Res>
       String? thumb,
       String? score,
       String? totalEpisode,
+      List<String>? sinopsis,
+      List<String>? detail,
+      List<EpisodeModels>? episodeList,
       String? updatedOn,
       String? updatedDay,
       String? endpoint});
@@ -137,6 +161,9 @@ class __$$_AnimeModelsCopyWithImpl<$Res>
     Object? thumb = freezed,
     Object? score = freezed,
     Object? totalEpisode = freezed,
+    Object? sinopsis = freezed,
+    Object? detail = freezed,
+    Object? episodeList = freezed,
     Object? updatedOn = freezed,
     Object? updatedDay = freezed,
     Object? endpoint = freezed,
@@ -158,6 +185,18 @@ class __$$_AnimeModelsCopyWithImpl<$Res>
           ? _value.totalEpisode
           : totalEpisode // ignore: cast_nullable_to_non_nullable
               as String?,
+      sinopsis: freezed == sinopsis
+          ? _value._sinopsis
+          : sinopsis // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      detail: freezed == detail
+          ? _value._detail
+          : detail // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      episodeList: freezed == episodeList
+          ? _value._episodeList
+          : episodeList // ignore: cast_nullable_to_non_nullable
+              as List<EpisodeModels>?,
       updatedOn: freezed == updatedOn
           ? _value.updatedOn
           : updatedOn // ignore: cast_nullable_to_non_nullable
@@ -182,9 +221,15 @@ class _$_AnimeModels implements _AnimeModels {
       this.thumb,
       this.score,
       this.totalEpisode,
+      final List<String>? sinopsis,
+      final List<String>? detail,
+      final List<EpisodeModels>? episodeList,
       this.updatedOn,
       this.updatedDay,
-      this.endpoint});
+      this.endpoint})
+      : _sinopsis = sinopsis,
+        _detail = detail,
+        _episodeList = episodeList;
 
   factory _$_AnimeModels.fromJson(Map<String, dynamic> json) =>
       _$$_AnimeModelsFromJson(json);
@@ -197,6 +242,36 @@ class _$_AnimeModels implements _AnimeModels {
   final String? score;
   @override
   final String? totalEpisode;
+  final List<String>? _sinopsis;
+  @override
+  List<String>? get sinopsis {
+    final value = _sinopsis;
+    if (value == null) return null;
+    if (_sinopsis is EqualUnmodifiableListView) return _sinopsis;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<String>? _detail;
+  @override
+  List<String>? get detail {
+    final value = _detail;
+    if (value == null) return null;
+    if (_detail is EqualUnmodifiableListView) return _detail;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<EpisodeModels>? _episodeList;
+  @override
+  List<EpisodeModels>? get episodeList {
+    final value = _episodeList;
+    if (value == null) return null;
+    if (_episodeList is EqualUnmodifiableListView) return _episodeList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final String? updatedOn;
   @override
@@ -206,7 +281,7 @@ class _$_AnimeModels implements _AnimeModels {
 
   @override
   String toString() {
-    return 'AnimeModels(title: $title, thumb: $thumb, score: $score, totalEpisode: $totalEpisode, updatedOn: $updatedOn, updatedDay: $updatedDay, endpoint: $endpoint)';
+    return 'AnimeModels(title: $title, thumb: $thumb, score: $score, totalEpisode: $totalEpisode, sinopsis: $sinopsis, detail: $detail, episodeList: $episodeList, updatedOn: $updatedOn, updatedDay: $updatedDay, endpoint: $endpoint)';
   }
 
   @override
@@ -219,6 +294,10 @@ class _$_AnimeModels implements _AnimeModels {
             (identical(other.score, score) || other.score == score) &&
             (identical(other.totalEpisode, totalEpisode) ||
                 other.totalEpisode == totalEpisode) &&
+            const DeepCollectionEquality().equals(other._sinopsis, _sinopsis) &&
+            const DeepCollectionEquality().equals(other._detail, _detail) &&
+            const DeepCollectionEquality()
+                .equals(other._episodeList, _episodeList) &&
             (identical(other.updatedOn, updatedOn) ||
                 other.updatedOn == updatedOn) &&
             (identical(other.updatedDay, updatedDay) ||
@@ -229,8 +308,18 @@ class _$_AnimeModels implements _AnimeModels {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, title, thumb, score,
-      totalEpisode, updatedOn, updatedDay, endpoint);
+  int get hashCode => Object.hash(
+      runtimeType,
+      title,
+      thumb,
+      score,
+      totalEpisode,
+      const DeepCollectionEquality().hash(_sinopsis),
+      const DeepCollectionEquality().hash(_detail),
+      const DeepCollectionEquality().hash(_episodeList),
+      updatedOn,
+      updatedDay,
+      endpoint);
 
   @JsonKey(ignore: true)
   @override
@@ -252,6 +341,9 @@ abstract class _AnimeModels implements AnimeModels {
       final String? thumb,
       final String? score,
       final String? totalEpisode,
+      final List<String>? sinopsis,
+      final List<String>? detail,
+      final List<EpisodeModels>? episodeList,
       final String? updatedOn,
       final String? updatedDay,
       final String? endpoint}) = _$_AnimeModels;
@@ -268,6 +360,12 @@ abstract class _AnimeModels implements AnimeModels {
   @override
   String? get totalEpisode;
   @override
+  List<String>? get sinopsis;
+  @override
+  List<String>? get detail;
+  @override
+  List<EpisodeModels>? get episodeList;
+  @override
   String? get updatedOn;
   @override
   String? get updatedDay;
@@ -276,5 +374,183 @@ abstract class _AnimeModels implements AnimeModels {
   @override
   @JsonKey(ignore: true)
   _$$_AnimeModelsCopyWith<_$_AnimeModels> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+EpisodeModels _$EpisodeModelsFromJson(Map<String, dynamic> json) {
+  return _EpisodeModels.fromJson(json);
+}
+
+/// @nodoc
+mixin _$EpisodeModels {
+  String? get episodeTitle => throw _privateConstructorUsedError;
+  String? get episodeEndpoint => throw _privateConstructorUsedError;
+  String? get episodeDate => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $EpisodeModelsCopyWith<EpisodeModels> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $EpisodeModelsCopyWith<$Res> {
+  factory $EpisodeModelsCopyWith(
+          EpisodeModels value, $Res Function(EpisodeModels) then) =
+      _$EpisodeModelsCopyWithImpl<$Res, EpisodeModels>;
+  @useResult
+  $Res call(
+      {String? episodeTitle, String? episodeEndpoint, String? episodeDate});
+}
+
+/// @nodoc
+class _$EpisodeModelsCopyWithImpl<$Res, $Val extends EpisodeModels>
+    implements $EpisodeModelsCopyWith<$Res> {
+  _$EpisodeModelsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? episodeTitle = freezed,
+    Object? episodeEndpoint = freezed,
+    Object? episodeDate = freezed,
+  }) {
+    return _then(_value.copyWith(
+      episodeTitle: freezed == episodeTitle
+          ? _value.episodeTitle
+          : episodeTitle // ignore: cast_nullable_to_non_nullable
+              as String?,
+      episodeEndpoint: freezed == episodeEndpoint
+          ? _value.episodeEndpoint
+          : episodeEndpoint // ignore: cast_nullable_to_non_nullable
+              as String?,
+      episodeDate: freezed == episodeDate
+          ? _value.episodeDate
+          : episodeDate // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_EpisodeModelsCopyWith<$Res>
+    implements $EpisodeModelsCopyWith<$Res> {
+  factory _$$_EpisodeModelsCopyWith(
+          _$_EpisodeModels value, $Res Function(_$_EpisodeModels) then) =
+      __$$_EpisodeModelsCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? episodeTitle, String? episodeEndpoint, String? episodeDate});
+}
+
+/// @nodoc
+class __$$_EpisodeModelsCopyWithImpl<$Res>
+    extends _$EpisodeModelsCopyWithImpl<$Res, _$_EpisodeModels>
+    implements _$$_EpisodeModelsCopyWith<$Res> {
+  __$$_EpisodeModelsCopyWithImpl(
+      _$_EpisodeModels _value, $Res Function(_$_EpisodeModels) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? episodeTitle = freezed,
+    Object? episodeEndpoint = freezed,
+    Object? episodeDate = freezed,
+  }) {
+    return _then(_$_EpisodeModels(
+      episodeTitle: freezed == episodeTitle
+          ? _value.episodeTitle
+          : episodeTitle // ignore: cast_nullable_to_non_nullable
+              as String?,
+      episodeEndpoint: freezed == episodeEndpoint
+          ? _value.episodeEndpoint
+          : episodeEndpoint // ignore: cast_nullable_to_non_nullable
+              as String?,
+      episodeDate: freezed == episodeDate
+          ? _value.episodeDate
+          : episodeDate // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_EpisodeModels implements _EpisodeModels {
+  const _$_EpisodeModels(
+      {this.episodeTitle, this.episodeEndpoint, this.episodeDate});
+
+  factory _$_EpisodeModels.fromJson(Map<String, dynamic> json) =>
+      _$$_EpisodeModelsFromJson(json);
+
+  @override
+  final String? episodeTitle;
+  @override
+  final String? episodeEndpoint;
+  @override
+  final String? episodeDate;
+
+  @override
+  String toString() {
+    return 'EpisodeModels(episodeTitle: $episodeTitle, episodeEndpoint: $episodeEndpoint, episodeDate: $episodeDate)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_EpisodeModels &&
+            (identical(other.episodeTitle, episodeTitle) ||
+                other.episodeTitle == episodeTitle) &&
+            (identical(other.episodeEndpoint, episodeEndpoint) ||
+                other.episodeEndpoint == episodeEndpoint) &&
+            (identical(other.episodeDate, episodeDate) ||
+                other.episodeDate == episodeDate));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, episodeTitle, episodeEndpoint, episodeDate);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_EpisodeModelsCopyWith<_$_EpisodeModels> get copyWith =>
+      __$$_EpisodeModelsCopyWithImpl<_$_EpisodeModels>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_EpisodeModelsToJson(
+      this,
+    );
+  }
+}
+
+abstract class _EpisodeModels implements EpisodeModels {
+  const factory _EpisodeModels(
+      {final String? episodeTitle,
+      final String? episodeEndpoint,
+      final String? episodeDate}) = _$_EpisodeModels;
+
+  factory _EpisodeModels.fromJson(Map<String, dynamic> json) =
+      _$_EpisodeModels.fromJson;
+
+  @override
+  String? get episodeTitle;
+  @override
+  String? get episodeEndpoint;
+  @override
+  String? get episodeDate;
+  @override
+  @JsonKey(ignore: true)
+  _$$_EpisodeModelsCopyWith<_$_EpisodeModels> get copyWith =>
       throw _privateConstructorUsedError;
 }
