@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../component/theme/theme.dart';
 import '../../../gen/assets.gen.dart';
@@ -8,16 +9,19 @@ class InformationAnimeWidget extends StatelessWidget {
   const InformationAnimeWidget({
     super.key,
     required this.anime,
+    required this.animeUrl,
   });
 
-  final AnimeModels? anime;
+  final DetailAnimeModels anime;
+  final String animeUrl;
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          anime?.title ?? '',
+          anime.animeDetail?.title ?? '',
           style: AppStyle.materialTextStyle.headlineMedium,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
@@ -28,21 +32,21 @@ class InformationAnimeWidget extends StatelessWidget {
           children: [
             Assets.icons.starIcon.image(),
             const SizedBox(width: 8),
-            Text('9.8',
+            Text(anime.animeDetail?.scoreAnime ?? '',
                 style: AppStyle.materialTextStyle.bodyLarge
                     ?.copyWith(color: AppColor.primary500)),
             const SizedBox(width: 12),
             const Icon(Icons.chevron_right),
             const SizedBox(width: 12),
-            _boxInformationAnime('MAPPA'),
+            _boxInformationAnime(anime.animeDetail?.studioAnime ?? ''),
             const SizedBox(width: 12),
-            _boxInformationAnime('Ongoing'),
+            _boxInformationAnime(anime.animeDetail?.statusAnime ?? ''),
             const SizedBox(width: 12),
           ],
         ),
         const SizedBox(height: 20),
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () => launchUrl(Uri.parse(animeUrl)),
           child: Padding(
             padding: const EdgeInsets.only(right: 4),
             child: Row(
@@ -64,8 +68,7 @@ class InformationAnimeWidget extends StatelessWidget {
         ),
         const SizedBox(height: 20),
         Text(
-          'Genre: Action, Martial Arts, Adventure, Dark Fantasy, Thriller, ...',
-          maxLines: 1,
+          anime.animeDetail?.genreAnime ?? '',
           overflow: TextOverflow.ellipsis,
           style: AppStyle.materialTextStyle.bodyMedium
               ?.copyWith(fontWeight: FontWeight.w500),

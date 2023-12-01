@@ -53,7 +53,7 @@ class AnimeRepository {
     }
   }
 
-  Future<Either<Exception, AnimeModels>> detailAnime(String anime) async {
+  Future<Either<Exception, DetailAnimeModels>> detailAnime(String anime) async {
     try {
       final result = await _animeService.detailAnime(anime);
       return Right(result);

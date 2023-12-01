@@ -72,7 +72,11 @@ class ListAnimeTileWidget extends StatelessWidget {
                               url: ongoing?.thumb ?? completed?.thumb),
                         ),
                         onTap: () => context.pushRoute(
-                          DetailAnimeRoute(anime: ongoing ?? completed),
+                          DetailAnimeRoute(
+                            titleAnime: ongoing?.endpointAnime ??
+                                completed?.endpointAnime,
+                            animeUrl: ongoing?.endpoint ?? completed?.endpoint,
+                          ),
                         ),
                       );
                     },

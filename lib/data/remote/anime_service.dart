@@ -32,13 +32,13 @@ class AnimeService extends Endpoint {
     return result;
   }
 
-  Future<AnimeModels> detailAnime(String anime) async {
+  Future<DetailAnimeModels> detailAnime(String anime) async {
     final url = endpointBaseUrlWithVersion(
-      path: '${ServiceUrl.ongoingUrl}/$anime',
+      path: '${ServiceUrl.detailAnimeUrl}/$anime',
     );
     final response = await _baseService.dio.get(url);
     final Map<String, dynamic> data = jsonDecode(response.data);
-    final result = AnimeModels.fromJson(data);
+    final result = DetailAnimeModels.fromJson(data);
     return result;
   }
 }

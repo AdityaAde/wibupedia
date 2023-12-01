@@ -13,17 +13,14 @@ _$_AnimeModels _$$_AnimeModelsFromJson(Map<String, dynamic> json) =>
       title: json['title'] as String?,
       thumb: json['thumb'] as String?,
       score: json['score'] as String?,
-      totalEpisode: json['totalEpisode'] as String?,
+      totalEpisode: json['total_episode'] as String?,
       sinopsis: (json['sinopsis'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
       detail:
           (json['detail'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      episodeList: (json['episodeList'] as List<dynamic>?)
-          ?.map((e) => EpisodeModels.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      updatedOn: json['updatedOn'] as String?,
-      updatedDay: json['updatedDay'] as String?,
+      updatedOn: json['updated_on'] as String?,
+      updatedDay: json['updated_day'] as String?,
       endpoint: json['endpoint'] as String?,
     );
 
@@ -32,25 +29,24 @@ Map<String, dynamic> _$$_AnimeModelsToJson(_$_AnimeModels instance) =>
       'title': instance.title,
       'thumb': instance.thumb,
       'score': instance.score,
-      'totalEpisode': instance.totalEpisode,
+      'total_episode': instance.totalEpisode,
       'sinopsis': instance.sinopsis,
       'detail': instance.detail,
-      'episodeList': instance.episodeList,
-      'updatedOn': instance.updatedOn,
-      'updatedDay': instance.updatedDay,
+      'updated_on': instance.updatedOn,
+      'updated_day': instance.updatedDay,
       'endpoint': instance.endpoint,
     };
 
 _$_EpisodeModels _$$_EpisodeModelsFromJson(Map<String, dynamic> json) =>
     _$_EpisodeModels(
-      episodeTitle: json['episodeTitle'] as String?,
-      episodeEndpoint: json['episodeEndpoint'] as String?,
-      episodeDate: json['episodeDate'] as String?,
+      episodeTitle: json['episode_title'] as String?,
+      episodeEndpoint: json['episode_endpoint'] as String?,
+      episodeDate: json['episode_date'] as String?,
     );
 
 Map<String, dynamic> _$$_EpisodeModelsToJson(_$_EpisodeModels instance) =>
     <String, dynamic>{
-      'episodeTitle': instance.episodeTitle,
-      'episodeEndpoint': instance.episodeEndpoint,
-      'episodeDate': instance.episodeDate,
+      'episode_title': instance.episodeTitle,
+      'episode_endpoint': instance.episodeEndpoint,
+      'episode_date': instance.episodeDate,
     };

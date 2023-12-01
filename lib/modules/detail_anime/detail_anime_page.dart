@@ -2,52 +2,80 @@ import 'dart:io';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../component/theme/theme.dart';
-import '../../models/models.dart';
+import '../../widgets/widgets.dart';
+import 'detail_anime.dart';
 import 'widgets/widgets.dart';
 
 @RoutePage()
-class DetailAnimePage extends StatelessWidget {
+class DetailAnimePage extends StatefulWidget {
   const DetailAnimePage({
     super.key,
-    @QueryParam('anime') this.anime,
+    @QueryParam('title-anime') this.titleAnime,
+    @QueryParam('anime-url') this.animeUrl,
   });
 
-  final AnimeModels? anime;
+  final String? titleAnime;
+  final String? animeUrl;
+
+  @override
+  State<DetailAnimePage> createState() => _DetailAnimePageState();
+}
+
+class _DetailAnimePageState extends State<DetailAnimePage> {
+  late final DetailAnimeCubit _detailAnimeCubit;
+  @override
+  void initState() {
+    super.initState();
+    _detailAnimeCubit = DetailAnimeCubit.create(widget.titleAnime ?? '');
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _thumbnailAnimeWidget(context),
-            Padding(
-              padding: const EdgeInsets.all(24),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  InformationAnimeWidget(anime: anime),
-                  const EpisodeAnimeWidget(),
-                ],
+    return BlocProvider.value(
+      value: _detailAnimeCubit,
+      child: Scaffold(
+        body: BlocBuilder<DetailAnimeCubit, DetailAnimeState>(
+          builder: (context, state) {
+            return state.maybeWhen(
+              orElse: () => const SizedBox(),
+              loading: () => LoadingWidget.loadingWidget(),
+              success: (anime) => SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _thumbnailAnimeWidget(anime.animeDetail?.thumb ?? ''),
+                    Padding(
+                      padding: const EdgeInsets.all(24),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          InformationAnimeWidget(
+                            anime: anime,
+                            animeUrl: widget.animeUrl ?? '',
+                          ),
+                          EpisodeAnimeWidget(anime: anime),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            );
+          },
         ),
       ),
     );
   }
 
-  Stack _thumbnailAnimeWidget(BuildContext context) {
+  Stack _thumbnailAnimeWidget(String thumbnail) {
     return Stack(
       children: [
-        Container(
+        SizedBox(
           height: 320,
           width: double.infinity,
-          color: AppColor.dark2,
-          child: Image.network(anime?.thumb ?? '', fit: BoxFit.cover),
+          child: Image.network(thumbnail, fit: BoxFit.cover),
         ),
         Positioned(
           top: 52,
@@ -59,5 +87,11 @@ class DetailAnimePage extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  @override
+  void dispose() {
+    _detailAnimeCubit.close();
+    super.dispose();
   }
 }

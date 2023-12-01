@@ -13,7 +13,6 @@ import 'package:flutter/material.dart' as _i14;
 import 'package:wibupedia/component/route/wrapper/authentication_wrapper.dart'
     as _i1;
 import 'package:wibupedia/component/route/wrapper/home_wrapper.dart' as _i2;
-import 'package:wibupedia/models/models.dart' as _i15;
 import 'package:wibupedia/modules/authentication/login/login_page.dart' as _i10;
 import 'package:wibupedia/modules/authentication/login_email/login_email_page.dart'
     as _i9;
@@ -59,12 +58,16 @@ abstract class $AppRouter extends _i13.RootStackRouter {
     DetailAnimeRoute.name: (routeData) {
       final queryParams = routeData.queryParams;
       final args = routeData.argsAs<DetailAnimeRouteArgs>(
-          orElse: () => DetailAnimeRouteArgs(anime: queryParams.get('anime')));
+          orElse: () => DetailAnimeRouteArgs(
+                titleAnime: queryParams.optString('title-anime'),
+                animeUrl: queryParams.optString('anime-url'),
+              ));
       return _i13.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i5.DetailAnimePage(
           key: args.key,
-          anime: args.anime,
+          titleAnime: args.titleAnime,
+          animeUrl: args.animeUrl,
         ),
       );
     },
@@ -174,15 +177,20 @@ class MyListRoute extends _i13.PageRouteInfo<void> {
 class DetailAnimeRoute extends _i13.PageRouteInfo<DetailAnimeRouteArgs> {
   DetailAnimeRoute({
     _i14.Key? key,
-    _i15.AnimeModels? anime,
+    String? titleAnime,
+    String? animeUrl,
     List<_i13.PageRouteInfo>? children,
   }) : super(
           DetailAnimeRoute.name,
           args: DetailAnimeRouteArgs(
             key: key,
-            anime: anime,
+            titleAnime: titleAnime,
+            animeUrl: animeUrl,
           ),
-          rawQueryParams: {'anime': anime},
+          rawQueryParams: {
+            'title-anime': titleAnime,
+            'anime-url': animeUrl,
+          },
           initialChildren: children,
         );
 
@@ -195,16 +203,19 @@ class DetailAnimeRoute extends _i13.PageRouteInfo<DetailAnimeRouteArgs> {
 class DetailAnimeRouteArgs {
   const DetailAnimeRouteArgs({
     this.key,
-    this.anime,
+    this.titleAnime,
+    this.animeUrl,
   });
 
   final _i14.Key? key;
 
-  final _i15.AnimeModels? anime;
+  final String? titleAnime;
+
+  final String? animeUrl;
 
   @override
   String toString() {
-    return 'DetailAnimeRouteArgs{key: $key, anime: $anime}';
+    return 'DetailAnimeRouteArgs{key: $key, titleAnime: $titleAnime, animeUrl: $animeUrl}';
   }
 }
 

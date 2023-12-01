@@ -20,7 +20,7 @@ mixin _$DetailAnimeState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(AnimeModels anime) success,
+    required TResult Function(DetailAnimeModels anime) success,
     required TResult Function(String err) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$DetailAnimeState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(AnimeModels anime)? success,
+    TResult? Function(DetailAnimeModels anime)? success,
     TResult? Function(String err)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$DetailAnimeState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(AnimeModels anime)? success,
+    TResult Function(DetailAnimeModels anime)? success,
     TResult Function(String err)? error,
     required TResult orElse(),
   }) =>
@@ -125,7 +125,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(AnimeModels anime) success,
+    required TResult Function(DetailAnimeModels anime) success,
     required TResult Function(String err) error,
   }) {
     return initial();
@@ -136,7 +136,7 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(AnimeModels anime)? success,
+    TResult? Function(DetailAnimeModels anime)? success,
     TResult? Function(String err)? error,
   }) {
     return initial?.call();
@@ -147,7 +147,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(AnimeModels anime)? success,
+    TResult Function(DetailAnimeModels anime)? success,
     TResult Function(String err)? error,
     required TResult orElse(),
   }) {
@@ -238,7 +238,7 @@ class _$_Loading implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(AnimeModels anime) success,
+    required TResult Function(DetailAnimeModels anime) success,
     required TResult Function(String err) error,
   }) {
     return loading();
@@ -249,7 +249,7 @@ class _$_Loading implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(AnimeModels anime)? success,
+    TResult? Function(DetailAnimeModels anime)? success,
     TResult? Function(String err)? error,
   }) {
     return loading?.call();
@@ -260,7 +260,7 @@ class _$_Loading implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(AnimeModels anime)? success,
+    TResult Function(DetailAnimeModels anime)? success,
     TResult Function(String err)? error,
     required TResult orElse(),
   }) {
@@ -318,7 +318,9 @@ abstract class _$$_SuccessCopyWith<$Res> {
           _$_Success value, $Res Function(_$_Success) then) =
       __$$_SuccessCopyWithImpl<$Res>;
   @useResult
-  $Res call({AnimeModels anime});
+  $Res call({DetailAnimeModels anime});
+
+  $DetailAnimeModelsCopyWith<$Res> get anime;
 }
 
 /// @nodoc
@@ -331,14 +333,22 @@ class __$$_SuccessCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? anime = freezed,
+    Object? anime = null,
   }) {
     return _then(_$_Success(
-      freezed == anime
+      null == anime
           ? _value.anime
           : anime // ignore: cast_nullable_to_non_nullable
-              as AnimeModels,
+              as DetailAnimeModels,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DetailAnimeModelsCopyWith<$Res> get anime {
+    return $DetailAnimeModelsCopyWith<$Res>(_value.anime, (value) {
+      return _then(_value.copyWith(anime: value));
+    });
   }
 }
 
@@ -348,7 +358,7 @@ class _$_Success implements _Success {
   const _$_Success(this.anime);
 
   @override
-  final AnimeModels anime;
+  final DetailAnimeModels anime;
 
   @override
   String toString() {
@@ -360,12 +370,11 @@ class _$_Success implements _Success {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Success &&
-            const DeepCollectionEquality().equals(other.anime, anime));
+            (identical(other.anime, anime) || other.anime == anime));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(anime));
+  int get hashCode => Object.hash(runtimeType, anime);
 
   @JsonKey(ignore: true)
   @override
@@ -378,7 +387,7 @@ class _$_Success implements _Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(AnimeModels anime) success,
+    required TResult Function(DetailAnimeModels anime) success,
     required TResult Function(String err) error,
   }) {
     return success(anime);
@@ -389,7 +398,7 @@ class _$_Success implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(AnimeModels anime)? success,
+    TResult? Function(DetailAnimeModels anime)? success,
     TResult? Function(String err)? error,
   }) {
     return success?.call(anime);
@@ -400,7 +409,7 @@ class _$_Success implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(AnimeModels anime)? success,
+    TResult Function(DetailAnimeModels anime)? success,
     TResult Function(String err)? error,
     required TResult orElse(),
   }) {
@@ -449,9 +458,9 @@ class _$_Success implements _Success {
 }
 
 abstract class _Success implements DetailAnimeState {
-  const factory _Success(final AnimeModels anime) = _$_Success;
+  const factory _Success(final DetailAnimeModels anime) = _$_Success;
 
-  AnimeModels get anime;
+  DetailAnimeModels get anime;
   @JsonKey(ignore: true)
   _$$_SuccessCopyWith<_$_Success> get copyWith =>
       throw _privateConstructorUsedError;
@@ -521,7 +530,7 @@ class _$_Error implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(AnimeModels anime) success,
+    required TResult Function(DetailAnimeModels anime) success,
     required TResult Function(String err) error,
   }) {
     return error(err);
@@ -532,7 +541,7 @@ class _$_Error implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(AnimeModels anime)? success,
+    TResult? Function(DetailAnimeModels anime)? success,
     TResult? Function(String err)? error,
   }) {
     return error?.call(err);
@@ -543,7 +552,7 @@ class _$_Error implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(AnimeModels anime)? success,
+    TResult Function(DetailAnimeModels anime)? success,
     TResult Function(String err)? error,
     required TResult orElse(),
   }) {

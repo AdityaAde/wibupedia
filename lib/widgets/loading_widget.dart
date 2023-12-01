@@ -19,4 +19,18 @@ class LoadingWidget {
       ),
     );
   }
+
+  static Widget loadingWidget() {
+    return Center(
+      child: SizedBox(
+        width: 65,
+        height: 65,
+        child: LottieBuilder.asset(
+          'assets/lottie/loading.json',
+          repeat: true,
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
 }
