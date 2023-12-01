@@ -51,6 +51,10 @@ class AppRouter extends $AppRouter {
                 ),
               ],
             ),
+            AutoRoute(
+              page: DetailAnimeRoute.page,
+              path: 'detail-anime',
+            ),
           ],
         ),
       ];

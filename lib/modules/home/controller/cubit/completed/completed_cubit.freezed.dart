@@ -319,6 +319,8 @@ abstract class _$$_SuccessCopyWith<$Res> {
       __$$_SuccessCopyWithImpl<$Res>;
   @useResult
   $Res call({CompletedModels anime});
+
+  $CompletedModelsCopyWith<$Res> get anime;
 }
 
 /// @nodoc
@@ -331,14 +333,22 @@ class __$$_SuccessCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? anime = freezed,
+    Object? anime = null,
   }) {
     return _then(_$_Success(
-      freezed == anime
+      null == anime
           ? _value.anime
           : anime // ignore: cast_nullable_to_non_nullable
               as CompletedModels,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $CompletedModelsCopyWith<$Res> get anime {
+    return $CompletedModelsCopyWith<$Res>(_value.anime, (value) {
+      return _then(_value.copyWith(anime: value));
+    });
   }
 }
 
@@ -360,12 +370,11 @@ class _$_Success implements _Success {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Success &&
-            const DeepCollectionEquality().equals(other.anime, anime));
+            (identical(other.anime, anime) || other.anime == anime));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(anime));
+  int get hashCode => Object.hash(runtimeType, anime);
 
   @JsonKey(ignore: true)
   @override

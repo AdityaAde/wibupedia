@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../../component/route/routers.gr.dart';
 import '../../../component/theme/theme.dart';
 import '../../../models/models.dart';
 import '../../../widgets/widgets.dart';
@@ -59,15 +61,19 @@ class ListAnimeTileWidget extends StatelessWidget {
                     itemBuilder: (context, index) {
                       final ongoing = ongoingAnime?.ongoing?[index];
                       final completed = completedAnime?.completed?[index];
-                      debugPrint('clog thumb ${completed?.title}');
-                      return Container(
-                        width: 150,
-                        decoration: const BoxDecoration(
-                          color: AppColor.dark2,
-                          borderRadius: BorderRadius.all(Radius.circular(12)),
+                      return InkWell(
+                        child: Container(
+                          width: 150,
+                          decoration: const BoxDecoration(
+                            color: AppColor.dark2,
+                            borderRadius: BorderRadius.all(Radius.circular(12)),
+                          ),
+                          child: ImageCachedWidget(
+                              url: ongoing?.thumb ?? completed?.thumb),
                         ),
-                        child: ImageCachedWidget(
-                            url: ongoing?.thumb ?? completed?.thumb),
+                        onTap: () => context.pushRoute(
+                          DetailAnimeRoute(anime: ongoing ?? completed),
+                        ),
                       );
                     },
                   ),

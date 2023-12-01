@@ -60,6 +60,7 @@ dependencies:
   shimmer: ^3.0.0
   timeago: ^3.2.2
   twitter_login: ^4.0.1
+  url_launcher: ^6.1.11
 
 dev_dependencies:
   auto_route_generator: ^6.2.0

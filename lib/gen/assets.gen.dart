@@ -72,6 +72,10 @@ class $AssetsIconsGen {
   AssetGenImage get searchIcon =>
       const AssetGenImage('assets/icons/search-icon.png');
 
+  /// File path: assets/icons/star-icon.png
+  AssetGenImage get starIcon =>
+      const AssetGenImage('assets/icons/star-icon.png');
+
   /// File path: assets/icons/twitter-icon.png
   AssetGenImage get twitterIcon =>
       const AssetGenImage('assets/icons/twitter-icon.png');
@@ -86,6 +90,7 @@ class $AssetsIconsGen {
         lockIcon,
         personIcon,
         searchIcon,
+        starIcon,
         twitterIcon
       ];
 }
