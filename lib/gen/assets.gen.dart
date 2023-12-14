@@ -52,6 +52,10 @@ class $AssetsIconsGen {
   AssetGenImage get facebookIcon =>
       const AssetGenImage('assets/icons/facebook-icon.png');
 
+  /// File path: assets/icons/filter-icon.png
+  AssetGenImage get filterIcon =>
+      const AssetGenImage('assets/icons/filter-icon.png');
+
   /// File path: assets/icons/google-icon.png
   AssetGenImage get googleIcon =>
       const AssetGenImage('assets/icons/google-icon.png');
@@ -85,6 +89,7 @@ class $AssetsIconsGen {
         bookmarksIcon,
         emailIcon,
         facebookIcon,
+        filterIcon,
         googleIcon,
         homeIcon,
         lockIcon,

@@ -13,11 +13,11 @@ _$_CompletedModels _$$_CompletedModelsFromJson(Map<String, dynamic> json) =>
       completed: (json['completed'] as List<dynamic>?)
           ?.map((e) => AnimeModels.fromJson(e as Map<String, dynamic>))
           .toList(),
-      currentpage: json['currentPage'] as String?,
+      currentpage: json['currentpage'] as String?,
     );
 
 Map<String, dynamic> _$$_CompletedModelsToJson(_$_CompletedModels instance) =>
     <String, dynamic>{
       'completed': instance.completed,
-      'currentPage': instance.currentpage,
+      'currentpage': instance.currentpage,
     };
