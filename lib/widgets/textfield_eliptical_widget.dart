@@ -11,6 +11,8 @@ class TextfieldElipticalWidget extends StatelessWidget {
     this.controller,
     this.obsecureText = false,
     this.validator,
+    this.onChanged,
+    this.autofocus = false,
   });
 
   final String hint;
@@ -19,11 +21,14 @@ class TextfieldElipticalWidget extends StatelessWidget {
   final TextEditingController? controller;
   final bool obsecureText;
   final FormFieldValidator<String>? validator;
+  final ValueChanged<String>? onChanged;
+  final bool autofocus;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      autofocus: autofocus,
       obscureText: obsecureText,
       decoration: InputDecoration(
         filled: true,
@@ -45,6 +50,7 @@ class TextfieldElipticalWidget extends StatelessWidget {
         ),
       ),
       validator: validator,
+      onChanged: onChanged,
     );
   }
 }

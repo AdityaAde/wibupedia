@@ -1,6 +1,5 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:wibupedia/models/search_models/search_models.dart';
 
 import '../component/injector.dart';
 import '../data/remote/remote.dart';

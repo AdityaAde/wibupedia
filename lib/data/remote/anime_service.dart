@@ -1,7 +1,5 @@
 import 'dart:convert';
 
-import 'package:wibupedia/models/search_models/search_models.dart';
-
 import '../../component/endpoint.dart';
 import '../../component/injector.dart';
 import '../../component/keys.dart';
