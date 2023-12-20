@@ -6,3 +6,4 @@ export 'my_list/my_list.dart';
 export 'onboarding/onboarding.dart';
 export 'profile/profile.dart';
 export 'search/search.dart';
+export 'detail_list_anime/detail_list_anime.dart';

@@ -34,8 +34,15 @@ class ListAnimeTileWidget extends StatelessWidget {
                 style: AppStyle.materialTextStyle.titleLarge
                     ?.copyWith(fontWeight: FontWeight.w700),
               ),
-              const Text('See All',
-                  style: TextStyle(color: AppColor.primary500)),
+              InkWell(
+                child: const Text(
+                  'See All',
+                  style: TextStyle(color: AppColor.primary500),
+                ),
+                onTap: () => context.pushRoute(
+                  DetailListAnimeRoute(title: title),
+                ),
+              ),
             ],
           ),
           const SizedBox(height: 16),
