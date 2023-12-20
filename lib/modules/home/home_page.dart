@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../component/route/routers.gr.dart';
 import '../modules.dart';
 import 'widgets/widgets.dart';
 
@@ -11,6 +12,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ongoingCubit = context.read<OngoingCubit>();
+    final completedCubit = context.read<CompletedCubit>();
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -28,6 +31,14 @@ class HomePage extends StatelessWidget {
                   success: (anime) => ListAnimeTileWidget(
                     title: 'On Going',
                     ongoingAnime: anime,
+                    onTapSeeAll: () => context.pushRoute(
+                      DetailListAnimeRoute(
+                        title: 'On Going',
+                        isOngoingAnime: true,
+                        ongoingCubit: ongoingCubit,
+                        completedCubit: completedCubit,
+                      ),
+                    ),
                   ),
                   error: (err) => Center(
                     child: Text('Something went wrong $err'),
@@ -47,6 +58,13 @@ class HomePage extends StatelessWidget {
                   success: (anime) => ListAnimeTileWidget(
                     title: 'Anime Completed',
                     completedAnime: anime,
+                    onTapSeeAll: () => context.pushRoute(
+                      DetailListAnimeRoute(
+                        title: 'On Going',
+                        ongoingCubit: ongoingCubit,
+                        completedCubit: completedCubit,
+                      ),
+                    ),
                   ),
                   error: (err) => Center(
                     child: Text('Something went wrong $err'),

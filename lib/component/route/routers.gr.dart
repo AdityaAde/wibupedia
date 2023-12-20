@@ -23,6 +23,7 @@ import 'package:wibupedia/modules/detail_anime/detail_anime_page.dart' as _i7;
 import 'package:wibupedia/modules/detail_list_anime/detail_list_anime_page.dart'
     as _i13;
 import 'package:wibupedia/modules/home/home_page.dart' as _i8;
+import 'package:wibupedia/modules/modules.dart' as _i16;
 import 'package:wibupedia/modules/my_list/my_list_page.dart' as _i9;
 import 'package:wibupedia/modules/onboarding/onboarding_page.dart' as _i10;
 import 'package:wibupedia/modules/profile/profile_page.dart' as _i11;
@@ -117,14 +118,22 @@ abstract class $AppRouter extends _i14.RootStackRouter {
     },
     DetailListAnimeRoute.name: (routeData) {
       final pathParams = routeData.inheritedPathParams;
+      final queryParams = routeData.queryParams;
       final args = routeData.argsAs<DetailListAnimeRouteArgs>(
-          orElse: () =>
-              DetailListAnimeRouteArgs(title: pathParams.getString('title')));
+          orElse: () => DetailListAnimeRouteArgs(
+                title: pathParams.getString('title'),
+                isOngoingAnime: queryParams.optBool('isOngoingAnime'),
+                ongoingCubit: queryParams.get('ongoingCubit'),
+                completedCubit: queryParams.get('completedCubit'),
+              ));
       return _i14.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i13.DetailListAnimePage(
           key: args.key,
           title: args.title,
+          isOngoingAnime: args.isOngoingAnime,
+          ongoingCubit: args.ongoingCubit,
+          completedCubit: args.completedCubit,
         ),
       );
     },
@@ -339,14 +348,25 @@ class DetailListAnimeRoute
   DetailListAnimeRoute({
     _i15.Key? key,
     required String title,
+    bool? isOngoingAnime,
+    _i16.OngoingCubit? ongoingCubit,
+    _i16.CompletedCubit? completedCubit,
     List<_i14.PageRouteInfo>? children,
   }) : super(
           DetailListAnimeRoute.name,
           args: DetailListAnimeRouteArgs(
             key: key,
             title: title,
+            isOngoingAnime: isOngoingAnime,
+            ongoingCubit: ongoingCubit,
+            completedCubit: completedCubit,
           ),
           rawPathParams: {'title': title},
+          rawQueryParams: {
+            'isOngoingAnime': isOngoingAnime,
+            'ongoingCubit': ongoingCubit,
+            'completedCubit': completedCubit,
+          },
           initialChildren: children,
         );
 
@@ -360,14 +380,23 @@ class DetailListAnimeRouteArgs {
   const DetailListAnimeRouteArgs({
     this.key,
     required this.title,
+    this.isOngoingAnime,
+    this.ongoingCubit,
+    this.completedCubit,
   });
 
   final _i15.Key? key;
 
   final String title;
 
+  final bool? isOngoingAnime;
+
+  final _i16.OngoingCubit? ongoingCubit;
+
+  final _i16.CompletedCubit? completedCubit;
+
   @override
   String toString() {
-    return 'DetailListAnimeRouteArgs{key: $key, title: $title}';
+    return 'DetailListAnimeRouteArgs{key: $key, title: $title, isOngoingAnime: $isOngoingAnime, ongoingCubit: $ongoingCubit, completedCubit: $completedCubit}';
   }
 }
