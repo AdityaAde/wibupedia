@@ -60,7 +60,7 @@ class HomePage extends StatelessWidget {
                     completedAnime: anime,
                     onTapSeeAll: () => context.pushRoute(
                       DetailListAnimeRoute(
-                        title: 'On Going',
+                        title: 'Anime Completed',
                         ongoingCubit: ongoingCubit,
                         completedCubit: completedCubit,
                       ),

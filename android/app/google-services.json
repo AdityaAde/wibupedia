@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "72318015266-rg2n4jra5ep6a8e7bu0msepsjrb31dib.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.wibupedia.app",
+            "certificate_hash": "fe61e0a92864d606cea3ac7e1b25764921ddaaa1"
+          }
+        },
+        {
           "client_id": "72318015266-9500gh0uuckdv0k9s4ddpho8g43okb6m.apps.googleusercontent.com",
           "client_type": 3
         }
