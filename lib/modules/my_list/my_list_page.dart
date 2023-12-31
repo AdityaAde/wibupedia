@@ -17,10 +17,7 @@ class MyListPage extends StatelessWidget {
           style: AppStyle.materialTextStyle.titleLarge,
         ),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(24.0),
-        child: EmptyListWidget(),
-      ),
+      body: const MylistWidget(),
     );
   }
 }

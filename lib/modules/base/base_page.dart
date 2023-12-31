@@ -64,7 +64,8 @@ class _BasePageState extends State<BasePage> with WidgetsBindingObserver {
             ),
             BottomNavigationBarItem(
               label: '',
-              icon: Assets.icons.searchIcon.image(scale: 1.3),
+              icon: Assets.icons.searchIcon
+                  .image(scale: 1.3, color: AppColor.ink03),
               activeIcon: Assets.icons.searchIcon.image(
                 color: AppColor.primary500,
               ),
