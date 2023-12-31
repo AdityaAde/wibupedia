@@ -17,4 +17,16 @@ class BookmarksService {
       'endpoint': anime.endpoint,
     });
   }
+
+  Future<List<BookmarksModels>> getBookmarks() async {
+    final List<BookmarksModels> bookmarks = [];
+    final data = await users.doc(user?.uid).collection('bookmarks').get();
+
+    for (var bookmark in data.docs) {
+      var result = BookmarksModels.fromJson(bookmark.data());
+      bookmarks.add(result);
+    }
+
+    return bookmarks;
+  }
 }
