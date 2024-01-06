@@ -37,6 +37,8 @@ class Injector {
   void _onRegisterService() {
     getIt.registerLazySingleton<BaseService>(() => BaseService.create());
     getIt.registerLazySingleton<AnimeService>(() => AnimeService.create());
+    getIt.registerLazySingleton<BookmarksService>(
+        () => BookmarksService.create());
     getIt.registerLazySingleton<AuthenticationService>(
         () => AuthenticationService());
   }

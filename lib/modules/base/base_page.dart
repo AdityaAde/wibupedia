@@ -20,6 +20,7 @@ class BasePage extends StatefulWidget {
 class _BasePageState extends State<BasePage> with WidgetsBindingObserver {
   late final OngoingCubit _ongoingCubit;
   late final CompletedCubit _completedCubit;
+  late final SearchAnimeCubit _searchAnimeCubit;
 
   @override
   void initState() {
@@ -27,6 +28,7 @@ class _BasePageState extends State<BasePage> with WidgetsBindingObserver {
     WidgetsBinding.instance.addObserver(this);
     _ongoingCubit = OngoingCubit.create();
     _completedCubit = CompletedCubit.create();
+    _searchAnimeCubit = SearchAnimeCubit.create();
   }
 
   @override
@@ -35,6 +37,7 @@ class _BasePageState extends State<BasePage> with WidgetsBindingObserver {
       providers: [
         BlocProvider.value(value: _ongoingCubit),
         BlocProvider.value(value: _completedCubit),
+        BlocProvider.value(value: _searchAnimeCubit),
       ],
       child: AutoTabsScaffold(
         routes: const [
@@ -61,7 +64,8 @@ class _BasePageState extends State<BasePage> with WidgetsBindingObserver {
             ),
             BottomNavigationBarItem(
               label: '',
-              icon: Assets.icons.searchIcon.image(scale: 1.3),
+              icon: Assets.icons.searchIcon
+                  .image(scale: 1.3, color: AppColor.ink03),
               activeIcon: Assets.icons.searchIcon.image(
                 color: AppColor.primary500,
               ),
@@ -91,6 +95,7 @@ class _BasePageState extends State<BasePage> with WidgetsBindingObserver {
     WidgetsBinding.instance.removeObserver(this);
     _ongoingCubit.close();
     _completedCubit.close();
+    _searchAnimeCubit.close();
     super.dispose();
   }
 }

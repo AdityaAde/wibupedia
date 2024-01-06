@@ -52,6 +52,10 @@ class $AssetsIconsGen {
   AssetGenImage get facebookIcon =>
       const AssetGenImage('assets/icons/facebook-icon.png');
 
+  /// File path: assets/icons/filter-icon.png
+  AssetGenImage get filterIcon =>
+      const AssetGenImage('assets/icons/filter-icon.png');
+
   /// File path: assets/icons/google-icon.png
   AssetGenImage get googleIcon =>
       const AssetGenImage('assets/icons/google-icon.png');
@@ -85,6 +89,7 @@ class $AssetsIconsGen {
         bookmarksIcon,
         emailIcon,
         facebookIcon,
+        filterIcon,
         googleIcon,
         homeIcon,
         lockIcon,
@@ -98,6 +103,9 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/empty.png
+  AssetGenImage get empty => const AssetGenImage('assets/images/empty.png');
+
   /// File path: assets/images/lets-in.png
   AssetGenImage get letsIn => const AssetGenImage('assets/images/lets-in.png');
 
@@ -109,7 +117,7 @@ class $AssetsImagesGen {
       const AssetGenImage('assets/images/onboarding.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [letsIn, logo, onboarding];
+  List<AssetGenImage> get values => [empty, letsIn, logo, onboarding];
 }
 
 class $AssetsLottieGen {

@@ -72,7 +72,10 @@ class InformationAnimeWidget extends StatelessWidget {
         ),
         const SizedBox(height: 4),
         Text(
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...',
+          // ignore: prefer_is_empty
+          anime.animeDetail!.sinopsis!.length != 0
+              ? anime.animeDetail!.sinopsis![0]
+              : 'Sinopsis: -',
           style: AppStyle.materialTextStyle.bodyMedium
               ?.copyWith(fontWeight: FontWeight.w300),
           maxLines: 3,

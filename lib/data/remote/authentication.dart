@@ -6,6 +6,16 @@ import 'package:twitter_login/twitter_login.dart';
 class AuthenticationService {
   User? user;
   FirebaseAuth auth = FirebaseAuth.instance;
+  CollectionReference users = FirebaseFirestore.instance.collection('users');
+
+  void setUserProfile() {
+    users.doc(user?.uid).set({
+      'uid': user?.uid,
+      'name': user?.displayName,
+      'email': user?.email,
+      'avatar': user?.photoURL,
+    });
+  }
 
   Future<User?> signInWithGoogle() async {
     final GoogleSignIn googleSignIn = GoogleSignIn(
@@ -29,6 +39,8 @@ class AuthenticationService {
 
       user = userCredential.user;
     }
+
+    setUserProfile();
 
     return user;
   }
@@ -61,6 +73,8 @@ class AuthenticationService {
       user = userCredential.user;
     }
 
+    setUserProfile();
+
     return user;
   }
 
@@ -68,6 +82,8 @@ class AuthenticationService {
     final UserCredential userCredential = await auth
         .createUserWithEmailAndPassword(email: email, password: password);
     user = userCredential.user;
+
+    setUserProfile();
 
     return user;
   }
@@ -77,6 +93,9 @@ class AuthenticationService {
         await auth.signInWithEmailAndPassword(email: email, password: password);
 
     user = userCredential.user;
+
+    setUserProfile();
+
     return user;
   }
 

@@ -13,12 +13,14 @@ class ListAnimeTileWidget extends StatelessWidget {
     this.isLoading = false,
     this.ongoingAnime,
     this.completedAnime,
+    this.onTapSeeAll,
   });
 
   final String title;
   final bool isLoading;
   final OngoingModels? ongoingAnime;
   final CompletedModels? completedAnime;
+  final VoidCallback? onTapSeeAll;
 
   @override
   Widget build(BuildContext context) {
@@ -34,8 +36,13 @@ class ListAnimeTileWidget extends StatelessWidget {
                 style: AppStyle.materialTextStyle.titleLarge
                     ?.copyWith(fontWeight: FontWeight.w700),
               ),
-              const Text('See All',
-                  style: TextStyle(color: AppColor.primary500)),
+              InkWell(
+                onTap: onTapSeeAll,
+                child: const Text(
+                  'See All',
+                  style: TextStyle(color: AppColor.primary500),
+                ),
+              ),
             ],
           ),
           const SizedBox(height: 16),
