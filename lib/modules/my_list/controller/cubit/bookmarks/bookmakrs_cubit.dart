@@ -11,7 +11,8 @@ part 'bookmakrs_cubit.freezed.dart';
 class BookmakrsCubit extends Cubit<BookmakrsState> {
   BookmarksRepositories _bookmarksRepositories;
 
-  factory BookmakrsCubit.create() => BookmakrsCubit(getIt.get());
+  factory BookmakrsCubit.create() =>
+      BookmakrsCubit(getIt.get())..getBookmarks();
 
   BookmakrsCubit(this._bookmarksRepositories)
       : super(const BookmakrsState.initial());

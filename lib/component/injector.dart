@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+import 'package:wibupedia/repositories/bookmarks_repositories.dart';
 
 import '../data/local/secure_key_dao.dart';
 import '../data/remote/remote.dart';
@@ -44,6 +45,8 @@ class Injector {
   }
 
   void _onRegisterRepository() {
+    getIt.registerLazySingleton<BookmarksRepositories>(
+        () => BookmarksRepositories.create());
     getIt.registerLazySingleton<AuthenticationRepository>(
         () => AuthenticationRepository());
     getIt.registerLazySingleton<AnimeRepository>(

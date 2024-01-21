@@ -8,7 +8,7 @@ class BookmarksModels with _$BookmarksModels {
   const factory BookmarksModels({
     String? name,
     String? thumbnail,
-    String? endpoint,
+    String? endpoints,
     String? status,
   }) = _BookmarksModels;
 

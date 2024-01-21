@@ -1,6 +1,11 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wibupedia/modules/my_list/controller/controller.dart';
 
+import '../../../component/route/routers.gr.dart';
 import '../../../component/theme/theme.dart';
+import '../../../models/models.dart';
 import '../../../widgets/widgets.dart';
 
 class MylistWidget extends StatelessWidget {
@@ -12,55 +17,90 @@ class MylistWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(24.0),
-      child: ListView.separated(
-        itemCount: 12,
-        separatorBuilder: (context, index) => const SizedBox(height: 16),
-        itemBuilder: (context, index) => const _AnimeTileWidget(),
+      child: BlocBuilder<BookmakrsCubit, BookmakrsState>(
+        builder: (context, state) {
+          return state.maybeWhen(
+            orElse: () => const SizedBox(),
+            loading: () => LoadingWidget.loadingWidget(),
+            success: (bookmarks) => ListView.separated(
+              itemCount: bookmarks.length,
+              separatorBuilder: (context, index) => const SizedBox(height: 16),
+              itemBuilder: (context, index) =>
+                  _AnimeTileWidget(bookmarks: bookmarks[index]),
+            ),
+            error: (err) => Center(child: Text('Error $err')),
+          );
+        },
       ),
     );
   }
 }
 
 class _AnimeTileWidget extends StatelessWidget {
-  const _AnimeTileWidget();
+  final BookmarksModels bookmarks;
+
+  const _AnimeTileWidget({required this.bookmarks});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 113,
-      width: double.infinity,
-      child: Row(
-        children: [
-          const Expanded(
-            child: SizedBox(
-              width: double.infinity,
-              height: 113,
-              child: ImageCachedWidget(
-                url:
-                    'https://2.bp.blogspot.com/--Zu8xjagyTc/XU6ATMj0dGI/AAAAAAAAKvk/Bsc_cGo3S709bd-r_xe3yyLnHVzDxMDwwCLcBGAs/w919/dr-stone-characters-senku-ishigami-uhdpaper.com-4K-3.298-wp.thumbnail.jpg',
+    return InkWell(
+      onTap: () => context.pushRoute(
+        DetailAnimeRoute(
+          titleAnime: bookmarks.endpoints,
+          animeUrl: bookmarks.endpoints,
+        ),
+      ),
+      child: SizedBox(
+        height: 113,
+        width: double.infinity,
+        child: Row(
+          children: [
+            Expanded(
+              child: SizedBox(
+                width: double.infinity,
+                height: 113,
+                child: ImageCachedWidget(
+                  url: bookmarks.thumbnail,
+                ),
               ),
             ),
-          ),
-          const SizedBox(width: 12),
-          Expanded(
-            flex: 2,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Demon Slayer: Kimetsu no Yaiba Entertainm...',
-                  maxLines: 2,
-                  overflow: TextOverflow.visible,
-                  style: AppStyle.materialTextStyle.bodyLarge
-                      ?.copyWith(fontWeight: FontWeight.w700),
-                ),
-                const SizedBox(height: 12),
-                Text('Status: Ongoing',
-                    style: AppStyle.materialTextStyle.bodyMedium),
-              ],
-            ),
-          )
-        ],
+            const SizedBox(width: 12),
+            Expanded(
+              flex: 2,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        bookmarks.name ?? '',
+                        maxLines: 2,
+                        overflow: TextOverflow.visible,
+                        style: AppStyle.materialTextStyle.bodyLarge
+                            ?.copyWith(fontWeight: FontWeight.w700),
+                      ),
+                      const SizedBox(height: 12),
+                      Text('Status: ${bookmarks.status}',
+                          style: AppStyle.materialTextStyle.bodyMedium),
+                    ],
+                  ),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.delete_outline,
+                        color: AppColor.utilityDangerError,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

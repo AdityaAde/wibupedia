@@ -12,7 +12,7 @@ _$_BookmarksModels _$$_BookmarksModelsFromJson(Map<String, dynamic> json) =>
     _$_BookmarksModels(
       name: json['name'] as String?,
       thumbnail: json['thumbnail'] as String?,
-      endpoint: json['endpoint'] as String?,
+      endpoints: json['endpoints'] as String?,
       status: json['status'] as String?,
     );
 
@@ -20,6 +20,6 @@ Map<String, dynamic> _$$_BookmarksModelsToJson(_$_BookmarksModels instance) =>
     <String, dynamic>{
       'name': instance.name,
       'thumbnail': instance.thumbnail,
-      'endpoint': instance.endpoint,
+      'endpoints': instance.endpoints,
       'status': instance.status,
     };

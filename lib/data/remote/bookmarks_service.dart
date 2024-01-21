@@ -14,7 +14,7 @@ class BookmarksService {
     users.doc(user?.uid).collection('bookmarks').add({
       'name': anime.name,
       'thumbnail': anime.thumbnail,
-      'endpoint': anime.endpoint,
+      'endpoint': anime.endpoints,
     });
   }
 
