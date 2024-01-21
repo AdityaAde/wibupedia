@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wibupedia/modules/my_list/controller/controller.dart';
 
 import '../../widgets/widgets.dart';
 import 'detail_anime.dart';
@@ -25,16 +26,22 @@ class DetailAnimePage extends StatefulWidget {
 
 class _DetailAnimePageState extends State<DetailAnimePage> {
   late final DetailAnimeCubit _detailAnimeCubit;
+  late final BookmakrsCubit _bookmakrsCubit;
+
   @override
   void initState() {
     super.initState();
     _detailAnimeCubit = DetailAnimeCubit.create(widget.titleAnime ?? '');
+    _bookmakrsCubit = BookmakrsCubit.create();
   }
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider.value(
-      value: _detailAnimeCubit,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider.value(value: _detailAnimeCubit),
+        BlocProvider.value(value: _bookmakrsCubit),
+      ],
       child: Scaffold(
         body: BlocBuilder<DetailAnimeCubit, DetailAnimeState>(
           builder: (context, state) {
@@ -54,6 +61,7 @@ class _DetailAnimePageState extends State<DetailAnimePage> {
                           InformationAnimeWidget(
                             anime: anime,
                             animeUrl: widget.animeUrl ?? '',
+                            endpointAnime: widget.titleAnime ?? '',
                           ),
                           EpisodeAnimeWidget(anime: anime),
                         ],
@@ -92,6 +100,7 @@ class _DetailAnimePageState extends State<DetailAnimePage> {
   @override
   void dispose() {
     _detailAnimeCubit.close();
+    _bookmakrsCubit.close();
     super.dispose();
   }
 }

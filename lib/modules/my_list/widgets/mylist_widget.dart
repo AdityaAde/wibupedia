@@ -46,12 +46,11 @@ class _AnimeTileWidget extends StatelessWidget {
     return InkWell(
       onTap: () => context.pushRoute(
         DetailAnimeRoute(
-          titleAnime: bookmarks.endpoints,
-          animeUrl: bookmarks.endpoints,
+          titleAnime: bookmarks.endpoint,
+          animeUrl: bookmarks.endpoint,
         ),
       ),
       child: SizedBox(
-        height: 113,
         width: double.infinity,
         child: Row(
           children: [

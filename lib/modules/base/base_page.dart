@@ -6,6 +6,7 @@ import '../../component/route/routers.gr.dart';
 import '../../component/theme/theme.dart';
 import '../../gen/assets.gen.dart';
 import '../modules.dart';
+import '../my_list/controller/controller.dart';
 
 export 'base_page.dart';
 
@@ -21,6 +22,7 @@ class _BasePageState extends State<BasePage> with WidgetsBindingObserver {
   late final OngoingCubit _ongoingCubit;
   late final CompletedCubit _completedCubit;
   late final SearchAnimeCubit _searchAnimeCubit;
+  late final BookmakrsCubit _bookmakrsCubit;
 
   @override
   void initState() {
@@ -29,6 +31,7 @@ class _BasePageState extends State<BasePage> with WidgetsBindingObserver {
     _ongoingCubit = OngoingCubit.create();
     _completedCubit = CompletedCubit.create();
     _searchAnimeCubit = SearchAnimeCubit.create();
+    _bookmakrsCubit = BookmakrsCubit.create();
   }
 
   @override
@@ -38,6 +41,7 @@ class _BasePageState extends State<BasePage> with WidgetsBindingObserver {
         BlocProvider.value(value: _ongoingCubit),
         BlocProvider.value(value: _completedCubit),
         BlocProvider.value(value: _searchAnimeCubit),
+        BlocProvider.value(value: _bookmakrsCubit),
       ],
       child: AutoTabsScaffold(
         routes: const [
@@ -54,7 +58,10 @@ class _BasePageState extends State<BasePage> with WidgetsBindingObserver {
           unselectedItemColor: const Color(0xff757d8a),
           selectedFontSize: 12,
           unselectedFontSize: 12,
-          onTap: (index) => tabRouter.setActiveIndex(index),
+          onTap: (index) {
+            tabRouter.setActiveIndex(index);
+            if (index == 2) _bookmakrsCubit.getBookmarks();
+          },
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               label: '',
@@ -96,6 +103,7 @@ class _BasePageState extends State<BasePage> with WidgetsBindingObserver {
     _ongoingCubit.close();
     _completedCubit.close();
     _searchAnimeCubit.close();
+    _bookmakrsCubit.close();
     super.dispose();
   }
 }
