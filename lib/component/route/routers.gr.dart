@@ -13,21 +13,21 @@ import 'package:flutter/material.dart' as _i15;
 import 'package:wibupedia/component/route/wrapper/authentication_wrapper.dart'
     as _i1;
 import 'package:wibupedia/component/route/wrapper/home_wrapper.dart' as _i2;
-import 'package:wibupedia/modules/authentication/login/login_page.dart' as _i3;
+import 'package:wibupedia/modules/authentication/login/login_page.dart' as _i10;
 import 'package:wibupedia/modules/authentication/login_email/login_email_page.dart'
-    as _i4;
+    as _i9;
 import 'package:wibupedia/modules/authentication/signup/signup_page.dart'
-    as _i5;
-import 'package:wibupedia/modules/base/base_page.dart' as _i6;
-import 'package:wibupedia/modules/detail_anime/detail_anime_page.dart' as _i7;
+    as _i8;
+import 'package:wibupedia/modules/base/base_page.dart' as _i11;
+import 'package:wibupedia/modules/detail_anime/detail_anime_page.dart' as _i5;
 import 'package:wibupedia/modules/detail_list_anime/detail_list_anime_page.dart'
     as _i13;
-import 'package:wibupedia/modules/home/home_page.dart' as _i8;
+import 'package:wibupedia/modules/home/home_page.dart' as _i3;
 import 'package:wibupedia/modules/modules.dart' as _i16;
-import 'package:wibupedia/modules/my_list/my_list_page.dart' as _i9;
-import 'package:wibupedia/modules/onboarding/onboarding_page.dart' as _i10;
-import 'package:wibupedia/modules/profile/profile_page.dart' as _i11;
-import 'package:wibupedia/modules/search/search_page.dart' as _i12;
+import 'package:wibupedia/modules/my_list/my_list_page.dart' as _i4;
+import 'package:wibupedia/modules/onboarding/onboarding_page.dart' as _i12;
+import 'package:wibupedia/modules/profile/profile_page.dart' as _i7;
+import 'package:wibupedia/modules/search/search_page.dart' as _i6;
 
 abstract class $AppRouter extends _i14.RootStackRouter {
   $AppRouter({super.navigatorKey});
@@ -46,28 +46,16 @@ abstract class $AppRouter extends _i14.RootStackRouter {
         child: _i14.WrappedRoute(child: const _i2.HomeWrapper()),
       );
     },
-    LoginRoute.name: (routeData) {
+    HomeRoute.name: (routeData) {
       return _i14.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i3.LoginPage(),
+        child: const _i3.HomePage(),
       );
     },
-    LoginEmailRoute.name: (routeData) {
+    MyListRoute.name: (routeData) {
       return _i14.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i4.LoginEmailPage(),
-      );
-    },
-    SignupRoute.name: (routeData) {
-      return _i14.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i5.SignupPage(),
-      );
-    },
-    BaseRoute.name: (routeData) {
-      return _i14.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i6.BasePage(),
+        child: const _i4.MyListPage(),
       );
     },
     DetailAnimeRoute.name: (routeData) {
@@ -79,41 +67,53 @@ abstract class $AppRouter extends _i14.RootStackRouter {
               ));
       return _i14.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i7.DetailAnimePage(
+        child: _i5.DetailAnimePage(
           key: args.key,
           titleAnime: args.titleAnime,
           animeUrl: args.animeUrl,
         ),
       );
     },
-    HomeRoute.name: (routeData) {
+    SearchRoute.name: (routeData) {
       return _i14.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i8.HomePage(),
-      );
-    },
-    MyListRoute.name: (routeData) {
-      return _i14.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i9.MyListPage(),
-      );
-    },
-    OnboardingRoute.name: (routeData) {
-      return _i14.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i10.OnboardingPage(),
+        child: const _i6.SearchPage(),
       );
     },
     ProfileRoute.name: (routeData) {
       return _i14.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i11.ProfilePage(),
+        child: const _i7.ProfilePage(),
       );
     },
-    SearchRoute.name: (routeData) {
+    SignupRoute.name: (routeData) {
       return _i14.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i12.SearchPage(),
+        child: const _i8.SignupPage(),
+      );
+    },
+    LoginEmailRoute.name: (routeData) {
+      return _i14.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i9.LoginEmailPage(),
+      );
+    },
+    LoginRoute.name: (routeData) {
+      return _i14.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i10.LoginPage(),
+      );
+    },
+    BaseRoute.name: (routeData) {
+      return _i14.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i11.BasePage(),
+      );
+    },
+    OnboardingRoute.name: (routeData) {
+      return _i14.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i12.OnboardingPage(),
       );
     },
     DetailListAnimeRoute.name: (routeData) {
@@ -169,63 +169,35 @@ class HomeWrapper extends _i14.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i3.LoginPage]
-class LoginRoute extends _i14.PageRouteInfo<void> {
-  const LoginRoute({List<_i14.PageRouteInfo>? children})
+/// [_i3.HomePage]
+class HomeRoute extends _i14.PageRouteInfo<void> {
+  const HomeRoute({List<_i14.PageRouteInfo>? children})
       : super(
-          LoginRoute.name,
+          HomeRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'LoginRoute';
+  static const String name = 'HomeRoute';
 
   static const _i14.PageInfo<void> page = _i14.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i4.LoginEmailPage]
-class LoginEmailRoute extends _i14.PageRouteInfo<void> {
-  const LoginEmailRoute({List<_i14.PageRouteInfo>? children})
+/// [_i4.MyListPage]
+class MyListRoute extends _i14.PageRouteInfo<void> {
+  const MyListRoute({List<_i14.PageRouteInfo>? children})
       : super(
-          LoginEmailRoute.name,
+          MyListRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'LoginEmailRoute';
+  static const String name = 'MyListRoute';
 
   static const _i14.PageInfo<void> page = _i14.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i5.SignupPage]
-class SignupRoute extends _i14.PageRouteInfo<void> {
-  const SignupRoute({List<_i14.PageRouteInfo>? children})
-      : super(
-          SignupRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'SignupRoute';
-
-  static const _i14.PageInfo<void> page = _i14.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i6.BasePage]
-class BaseRoute extends _i14.PageRouteInfo<void> {
-  const BaseRoute({List<_i14.PageRouteInfo>? children})
-      : super(
-          BaseRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'BaseRoute';
-
-  static const _i14.PageInfo<void> page = _i14.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i7.DetailAnimePage]
+/// [_i5.DetailAnimePage]
 class DetailAnimeRoute extends _i14.PageRouteInfo<DetailAnimeRouteArgs> {
   DetailAnimeRoute({
     _i15.Key? key,
@@ -272,49 +244,21 @@ class DetailAnimeRouteArgs {
 }
 
 /// generated route for
-/// [_i8.HomePage]
-class HomeRoute extends _i14.PageRouteInfo<void> {
-  const HomeRoute({List<_i14.PageRouteInfo>? children})
+/// [_i6.SearchPage]
+class SearchRoute extends _i14.PageRouteInfo<void> {
+  const SearchRoute({List<_i14.PageRouteInfo>? children})
       : super(
-          HomeRoute.name,
+          SearchRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'HomeRoute';
+  static const String name = 'SearchRoute';
 
   static const _i14.PageInfo<void> page = _i14.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i9.MyListPage]
-class MyListRoute extends _i14.PageRouteInfo<void> {
-  const MyListRoute({List<_i14.PageRouteInfo>? children})
-      : super(
-          MyListRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'MyListRoute';
-
-  static const _i14.PageInfo<void> page = _i14.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i10.OnboardingPage]
-class OnboardingRoute extends _i14.PageRouteInfo<void> {
-  const OnboardingRoute({List<_i14.PageRouteInfo>? children})
-      : super(
-          OnboardingRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'OnboardingRoute';
-
-  static const _i14.PageInfo<void> page = _i14.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i11.ProfilePage]
+/// [_i7.ProfilePage]
 class ProfileRoute extends _i14.PageRouteInfo<void> {
   const ProfileRoute({List<_i14.PageRouteInfo>? children})
       : super(
@@ -328,15 +272,71 @@ class ProfileRoute extends _i14.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i12.SearchPage]
-class SearchRoute extends _i14.PageRouteInfo<void> {
-  const SearchRoute({List<_i14.PageRouteInfo>? children})
+/// [_i8.SignupPage]
+class SignupRoute extends _i14.PageRouteInfo<void> {
+  const SignupRoute({List<_i14.PageRouteInfo>? children})
       : super(
-          SearchRoute.name,
+          SignupRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'SearchRoute';
+  static const String name = 'SignupRoute';
+
+  static const _i14.PageInfo<void> page = _i14.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i9.LoginEmailPage]
+class LoginEmailRoute extends _i14.PageRouteInfo<void> {
+  const LoginEmailRoute({List<_i14.PageRouteInfo>? children})
+      : super(
+          LoginEmailRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'LoginEmailRoute';
+
+  static const _i14.PageInfo<void> page = _i14.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i10.LoginPage]
+class LoginRoute extends _i14.PageRouteInfo<void> {
+  const LoginRoute({List<_i14.PageRouteInfo>? children})
+      : super(
+          LoginRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'LoginRoute';
+
+  static const _i14.PageInfo<void> page = _i14.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i11.BasePage]
+class BaseRoute extends _i14.PageRouteInfo<void> {
+  const BaseRoute({List<_i14.PageRouteInfo>? children})
+      : super(
+          BaseRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'BaseRoute';
+
+  static const _i14.PageInfo<void> page = _i14.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i12.OnboardingPage]
+class OnboardingRoute extends _i14.PageRouteInfo<void> {
+  const OnboardingRoute({List<_i14.PageRouteInfo>? children})
+      : super(
+          OnboardingRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'OnboardingRoute';
 
   static const _i14.PageInfo<void> page = _i14.PageInfo<void>(name);
 }

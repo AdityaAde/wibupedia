@@ -4,9 +4,10 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import '../../../../../component/component.dart';
 import '../../../../../models/models.dart';
 import '../../../../../repositories/bookmarks_repositories.dart';
+import '../../../../../widgets/widgets.dart';
 
-part 'bookmakrs_state.dart';
 part 'bookmakrs_cubit.freezed.dart';
+part 'bookmakrs_state.dart';
 
 class BookmakrsCubit extends Cubit<BookmakrsState> {
   BookmarksRepositories _bookmarksRepositories;
@@ -29,9 +30,25 @@ class BookmakrsCubit extends Cubit<BookmakrsState> {
   void getBookmarks() async {
     emit(const BookmakrsState.loading());
     final result = await _bookmarksRepositories.getBookmarks();
-    result.fold(
-      (l) => emit(BookmakrsState.error(l.toString())),
-      (r) => emit(BookmakrsState.success(r)),
-    );
+    result.fold((l) => emit(BookmakrsState.error(l.toString())), (r) {
+      if (r.isEmpty) {
+        emit(const BookmakrsState.empty());
+      } else {
+        emit(BookmakrsState.success(r));
+      }
+    });
+  }
+
+  void deleteBookmarks(String docId) async {
+    emit(const BookmakrsState.loading());
+    final result = await _bookmarksRepositories.deleteBookmarks(docId);
+    result.fold((l) => emit(BookmakrsState.error(l.toString())), (r) {
+      if (r) {
+        getBookmarks();
+        ToastWidget.showToast('Berhasil menghapus anime');
+      } else {
+        emit(const BookmakrsState.error('Gagal menghapus bookmarks'));
+      }
+    });
   }
 }

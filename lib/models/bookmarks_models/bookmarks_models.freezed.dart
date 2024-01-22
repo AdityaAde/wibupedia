@@ -24,6 +24,7 @@ mixin _$BookmarksModels {
   String? get thumbnail => throw _privateConstructorUsedError;
   String? get endpoint => throw _privateConstructorUsedError;
   String? get status => throw _privateConstructorUsedError;
+  String? get docId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,7 +39,11 @@ abstract class $BookmarksModelsCopyWith<$Res> {
       _$BookmarksModelsCopyWithImpl<$Res, BookmarksModels>;
   @useResult
   $Res call(
-      {String? name, String? thumbnail, String? endpoint, String? status});
+      {String? name,
+      String? thumbnail,
+      String? endpoint,
+      String? status,
+      String? docId});
 }
 
 /// @nodoc
@@ -58,6 +63,7 @@ class _$BookmarksModelsCopyWithImpl<$Res, $Val extends BookmarksModels>
     Object? thumbnail = freezed,
     Object? endpoint = freezed,
     Object? status = freezed,
+    Object? docId = freezed,
   }) {
     return _then(_value.copyWith(
       name: freezed == name
@@ -76,6 +82,10 @@ class _$BookmarksModelsCopyWithImpl<$Res, $Val extends BookmarksModels>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String?,
+      docId: freezed == docId
+          ? _value.docId
+          : docId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -89,7 +99,11 @@ abstract class _$$_BookmarksModelsCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? name, String? thumbnail, String? endpoint, String? status});
+      {String? name,
+      String? thumbnail,
+      String? endpoint,
+      String? status,
+      String? docId});
 }
 
 /// @nodoc
@@ -107,6 +121,7 @@ class __$$_BookmarksModelsCopyWithImpl<$Res>
     Object? thumbnail = freezed,
     Object? endpoint = freezed,
     Object? status = freezed,
+    Object? docId = freezed,
   }) {
     return _then(_$_BookmarksModels(
       name: freezed == name
@@ -125,6 +140,10 @@ class __$$_BookmarksModelsCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String?,
+      docId: freezed == docId
+          ? _value.docId
+          : docId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -133,7 +152,7 @@ class __$$_BookmarksModelsCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_BookmarksModels implements _BookmarksModels {
   const _$_BookmarksModels(
-      {this.name, this.thumbnail, this.endpoint, this.status});
+      {this.name, this.thumbnail, this.endpoint, this.status, this.docId});
 
   factory _$_BookmarksModels.fromJson(Map<String, dynamic> json) =>
       _$$_BookmarksModelsFromJson(json);
@@ -146,10 +165,12 @@ class _$_BookmarksModels implements _BookmarksModels {
   final String? endpoint;
   @override
   final String? status;
+  @override
+  final String? docId;
 
   @override
   String toString() {
-    return 'BookmarksModels(name: $name, thumbnail: $thumbnail, endpoint: $endpoint, status: $status)';
+    return 'BookmarksModels(name: $name, thumbnail: $thumbnail, endpoint: $endpoint, status: $status, docId: $docId)';
   }
 
   @override
@@ -162,13 +183,14 @@ class _$_BookmarksModels implements _BookmarksModels {
                 other.thumbnail == thumbnail) &&
             (identical(other.endpoint, endpoint) ||
                 other.endpoint == endpoint) &&
-            (identical(other.status, status) || other.status == status));
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.docId, docId) || other.docId == docId));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, name, thumbnail, endpoint, status);
+      Object.hash(runtimeType, name, thumbnail, endpoint, status, docId);
 
   @JsonKey(ignore: true)
   @override
@@ -189,7 +211,8 @@ abstract class _BookmarksModels implements BookmarksModels {
       {final String? name,
       final String? thumbnail,
       final String? endpoint,
-      final String? status}) = _$_BookmarksModels;
+      final String? status,
+      final String? docId}) = _$_BookmarksModels;
 
   factory _BookmarksModels.fromJson(Map<String, dynamic> json) =
       _$_BookmarksModels.fromJson;
@@ -202,6 +225,8 @@ abstract class _BookmarksModels implements BookmarksModels {
   String? get endpoint;
   @override
   String? get status;
+  @override
+  String? get docId;
   @override
   @JsonKey(ignore: true)
   _$$_BookmarksModelsCopyWith<_$_BookmarksModels> get copyWith =>
