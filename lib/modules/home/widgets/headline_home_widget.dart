@@ -11,8 +11,14 @@ class HeadlineHomeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppColor.dark2,
       height: 400,
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: NetworkImage(
+              'https://pict.sindonews.net/dyn/850/pena/news/2021/01/07/165/292628/demon-slayer-kimetsu-no-yaiba-the-movie-mugen-train-pew.jpg'),
+          fit: BoxFit.cover,
+        ),
+      ),
       child: Stack(
         children: [
           Positioned(
