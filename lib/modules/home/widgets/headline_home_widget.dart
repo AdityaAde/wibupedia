@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../../component/route/routers.gr.dart';
 import '../../../component/theme/theme.dart';
 import '../../../widgets/widgets.dart';
 
@@ -15,7 +17,7 @@ class HeadlineHomeWidget extends StatelessWidget {
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: NetworkImage(
-              'https://pict.sindonews.net/dyn/850/pena/news/2021/01/07/165/292628/demon-slayer-kimetsu-no-yaiba-the-movie-mugen-train-pew.jpg'),
+              'https://otakudesu.media/wp-content/uploads/2023/05/Kimetsu-no-Yaiba-Katanakaji-no-Sato-hen-Sub-Indo.jpg'),
           fit: BoxFit.cover,
         ),
       ),
@@ -32,7 +34,7 @@ class HeadlineHomeWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Demon Slayer: Kimetsu No Yaiba',
+                    'Kimetsu no Yaiba: Yuukaku-hen',
                     style: AppStyle.materialTextStyle.headlineMedium
                         ?.copyWith(fontWeight: FontWeight.w700),
                     maxLines: 2,
@@ -49,7 +51,13 @@ class HeadlineHomeWidget extends StatelessWidget {
                     children: [
                       Flexible(
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () => context.pushRoute(
+                            DetailAnimeRoute(
+                              titleAnime: 'kimetsu-yaiba-s3-sub-indo/',
+                              animeUrl:
+                                  'https:/otakudesu.media/anime/kimetsu-yaiba-s3-sub-indo/',
+                            ),
+                          ),
                           child: Padding(
                             padding: const EdgeInsets.only(right: 4),
                             child: Row(
@@ -76,7 +84,7 @@ class HeadlineHomeWidget extends StatelessWidget {
                           '+  My List   ',
                           height: 48,
                           radius: 100,
-                          onTap: () {},
+                          onTap: () => context.tabsRouter.setActiveIndex(2),
                         ),
                       ),
                     ],
