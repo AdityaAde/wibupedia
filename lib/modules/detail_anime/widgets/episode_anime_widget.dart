@@ -14,9 +14,10 @@ class EpisodeAnimeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 250,
+    return Container(
+      constraints: const BoxConstraints(maxHeight: 250),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
@@ -25,7 +26,7 @@ class EpisodeAnimeWidget extends StatelessWidget {
                 ?.copyWith(fontWeight: FontWeight.w700),
           ),
           const SizedBox(height: 24),
-          Expanded(
+          Flexible(
             child: Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
@@ -35,6 +36,7 @@ class EpisodeAnimeWidget extends StatelessWidget {
                 padding: EdgeInsets.zero,
                 itemCount: anime?.episodeList?.length ?? 0,
                 separatorBuilder: (_, __) => const SizedBox(height: 12),
+                shrinkWrap: true,
                 itemBuilder: (context, index) {
                   final content = anime?.episodeAnime[index];
                   return InkWell(

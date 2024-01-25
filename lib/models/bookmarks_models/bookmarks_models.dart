@@ -10,6 +10,7 @@ class BookmarksModels with _$BookmarksModels {
     String? thumbnail,
     String? endpoint,
     String? status,
+    String? docId,
   }) = _BookmarksModels;
 
   factory BookmarksModels.fromJson(Map<String, dynamic> json) =>

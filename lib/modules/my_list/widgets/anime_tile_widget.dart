@@ -8,41 +8,14 @@ import '../../../component/theme/theme.dart';
 import '../../../models/models.dart';
 import '../../../widgets/widgets.dart';
 
-class MylistWidget extends StatelessWidget {
-  const MylistWidget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(24.0),
-      child: BlocBuilder<BookmakrsCubit, BookmakrsState>(
-        builder: (context, state) {
-          return state.maybeWhen(
-            orElse: () => const SizedBox(),
-            loading: () => LoadingWidget.loadingWidget(),
-            success: (bookmarks) => ListView.separated(
-              itemCount: bookmarks.length,
-              separatorBuilder: (context, index) => const SizedBox(height: 16),
-              itemBuilder: (context, index) =>
-                  _AnimeTileWidget(bookmarks: bookmarks[index]),
-            ),
-            error: (err) => Center(child: Text('Error $err')),
-          );
-        },
-      ),
-    );
-  }
-}
-
-class _AnimeTileWidget extends StatelessWidget {
+class AnimeTileWidget extends StatelessWidget {
   final BookmarksModels bookmarks;
 
-  const _AnimeTileWidget({required this.bookmarks});
+  const AnimeTileWidget({super.key, required this.bookmarks});
 
   @override
   Widget build(BuildContext context) {
+    final bookmarksCubit = context.read<BookmakrsCubit>();
     return InkWell(
       onTap: () => context.pushRoute(
         DetailAnimeRoute(
@@ -88,7 +61,8 @@ class _AnimeTileWidget extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerRight,
                     child: IconButton(
-                      onPressed: () {},
+                      onPressed: () =>
+                          bookmarksCubit.deleteBookmarks(bookmarks.docId ?? ''),
                       icon: const Icon(
                         Icons.delete_outline,
                         color: AppColor.utilityDangerError,

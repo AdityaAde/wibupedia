@@ -24,10 +24,19 @@ class BookmarksService {
     final data = await users.doc(user?.uid).collection('bookmarks').get();
 
     for (var bookmark in data.docs) {
-      var result = BookmarksModels.fromJson(bookmark.data());
+      var result = BookmarksModels.fromJson(bookmark.data())
+          .copyWith(docId: bookmark.id);
       bookmarks.add(result);
     }
-
     return bookmarks;
+  }
+
+  Future<bool> deleteBookmarks(String docId) async {
+    try {
+      await users.doc(user?.uid).collection('bookmarks').doc(docId).delete();
+      return true;
+    } catch (_) {
+      return false;
+    }
   }
 }
