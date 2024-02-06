@@ -14,6 +14,8 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
   factory AuthenticationCubit.create() => AuthenticationCubit();
   AuthenticationCubit() : super(const AuthenticationState.initial());
 
+  User? user = FirebaseAuth.instance.currentUser;
+
   void googleAuth() async {
     emit(const AuthenticationState.loading());
     final result = await _authenticationRepository.googleAuth();
