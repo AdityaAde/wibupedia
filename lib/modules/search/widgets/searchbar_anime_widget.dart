@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wibupedia/component/route/routers.gr.dart';
 
 import '../../../gen/assets.gen.dart';
 import '../../../widgets/widgets.dart';
@@ -29,7 +31,9 @@ class _SearchbarAnimeWidgetState extends State<SearchbarAnimeWidget> {
         controller: _searchAnimeController,
         autofocus: true,
         hint: 'Search Anime',
-        suffixIcon: Assets.icons.filterIcon.image(),
+        suffixIcon: InkWell(
+            onTap: () => context.pushRoute(const SearchFilterRoute()),
+            child: Assets.icons.filterIcon.image()),
         onChanged: (value) => searchAnimeCubit.searchAnime(value),
       ),
       expandedHeight: 80,

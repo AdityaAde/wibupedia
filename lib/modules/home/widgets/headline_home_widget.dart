@@ -71,7 +71,9 @@ class HeadlineHomeWidget extends StatelessWidget {
                                 Text(
                                   'Play',
                                   style: AppStyle.materialTextStyle.bodyLarge
-                                      ?.copyWith(fontWeight: FontWeight.w500),
+                                      ?.copyWith(
+                                          fontWeight: FontWeight.w500,
+                                          color: AppColor.ink06),
                                 )
                               ],
                             ),

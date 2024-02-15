@@ -59,6 +59,10 @@ class AppRouter extends $AppRouter {
               page: DetailAnimeRoute.page,
               path: 'detail-anime',
             ),
+            AutoRoute(
+              page: SearchFilterRoute.page,
+              path: 'search-filter',
+            )
           ],
         ),
       ];
