@@ -14,30 +14,13 @@ class ProfileWidget extends StatelessWidget {
     final user = context.read<AuthenticationCubit>();
     return Row(
       children: [
-        Stack(
-          children: [
-            SizedBox(
-              height: 100,
-              child: CircleAvatar(
-                backgroundColor: Colors.blue,
-                radius: 42,
-                backgroundImage: NetworkImage(user.user?.photoURL ?? ''),
-              ),
-            ),
-            const Positioned(
-              bottom: 12,
-              right: 0,
-              child: CircleAvatar(
-                backgroundColor: AppColor.primary500,
-                radius: 14,
-                child: Icon(
-                  Icons.edit,
-                  size: 18,
-                  color: AppColor.ink06,
-                ),
-              ),
-            )
-          ],
+        SizedBox(
+          height: 100,
+          child: CircleAvatar(
+            backgroundColor: Colors.blue,
+            radius: 42,
+            backgroundImage: NetworkImage(user.user?.photoURL ?? ''),
+          ),
         ),
         const SizedBox(width: 24),
         Column(

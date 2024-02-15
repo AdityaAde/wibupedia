@@ -31,9 +31,9 @@ class AppRouter extends $AppRouter {
               initial: true,
               page: BaseRoute.page,
               path: 'base',
+              guards: [AuthGuard()],
               children: [
                 AutoRoute(
-                  guards: [AuthGuard()],
                   page: HomeRoute.page,
                   path: 'home',
                 ),
