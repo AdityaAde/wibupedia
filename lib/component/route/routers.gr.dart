@@ -21,15 +21,15 @@ import 'package:wibupedia/modules/authentication/signup/signup_page.dart'
 import 'package:wibupedia/modules/base/base_page.dart' as _i6;
 import 'package:wibupedia/modules/detail_anime/detail_anime_page.dart' as _i7;
 import 'package:wibupedia/modules/detail_list_anime/detail_list_anime_page.dart'
-    as _i13;
-import 'package:wibupedia/modules/home/home_page.dart' as _i8;
+    as _i8;
+import 'package:wibupedia/modules/home/home_page.dart' as _i9;
 import 'package:wibupedia/modules/modules.dart' as _i17;
-import 'package:wibupedia/modules/my_list/my_list_page.dart' as _i9;
-import 'package:wibupedia/modules/onboarding/onboarding_page.dart' as _i10;
-import 'package:wibupedia/modules/profile/profile_page.dart' as _i11;
+import 'package:wibupedia/modules/my_list/my_list_page.dart' as _i10;
+import 'package:wibupedia/modules/onboarding/onboarding_page.dart' as _i11;
+import 'package:wibupedia/modules/profile/profile_page.dart' as _i12;
 import 'package:wibupedia/modules/search/search_filter/search_filter_page.dart'
-    as _i14;
-import 'package:wibupedia/modules/search/search_page.dart' as _i12;
+    as _i13;
+import 'package:wibupedia/modules/search/search_page.dart' as _i14;
 
 abstract class $AppRouter extends _i15.RootStackRouter {
   $AppRouter({super.navigatorKey});
@@ -88,36 +88,6 @@ abstract class $AppRouter extends _i15.RootStackRouter {
         ),
       );
     },
-    HomeRoute.name: (routeData) {
-      return _i15.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i8.HomePage(),
-      );
-    },
-    MyListRoute.name: (routeData) {
-      return _i15.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i9.MyListPage(),
-      );
-    },
-    OnboardingRoute.name: (routeData) {
-      return _i15.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i10.OnboardingPage(),
-      );
-    },
-    ProfileRoute.name: (routeData) {
-      return _i15.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i11.ProfilePage(),
-      );
-    },
-    SearchRoute.name: (routeData) {
-      return _i15.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i12.SearchPage(),
-      );
-    },
     DetailListAnimeRoute.name: (routeData) {
       final pathParams = routeData.inheritedPathParams;
       final queryParams = routeData.queryParams;
@@ -130,7 +100,7 @@ abstract class $AppRouter extends _i15.RootStackRouter {
               ));
       return _i15.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i13.DetailListAnimePage(
+        child: _i8.DetailListAnimePage(
           key: args.key,
           title: args.title,
           isOngoingAnime: args.isOngoingAnime,
@@ -139,10 +109,40 @@ abstract class $AppRouter extends _i15.RootStackRouter {
         ),
       );
     },
+    HomeRoute.name: (routeData) {
+      return _i15.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i9.HomePage(),
+      );
+    },
+    MyListRoute.name: (routeData) {
+      return _i15.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i10.MyListPage(),
+      );
+    },
+    OnboardingRoute.name: (routeData) {
+      return _i15.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i11.OnboardingPage(),
+      );
+    },
+    ProfileRoute.name: (routeData) {
+      return _i15.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i12.ProfilePage(),
+      );
+    },
     SearchFilterRoute.name: (routeData) {
       return _i15.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i14.SearchFilterPage(),
+        child: const _i13.SearchFilterPage(),
+      );
+    },
+    SearchRoute.name: (routeData) {
+      return _i15.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i14.SearchPage(),
       );
     },
   };
@@ -280,77 +280,7 @@ class DetailAnimeRouteArgs {
 }
 
 /// generated route for
-/// [_i8.HomePage]
-class HomeRoute extends _i15.PageRouteInfo<void> {
-  const HomeRoute({List<_i15.PageRouteInfo>? children})
-      : super(
-          HomeRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'HomeRoute';
-
-  static const _i15.PageInfo<void> page = _i15.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i9.MyListPage]
-class MyListRoute extends _i15.PageRouteInfo<void> {
-  const MyListRoute({List<_i15.PageRouteInfo>? children})
-      : super(
-          MyListRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'MyListRoute';
-
-  static const _i15.PageInfo<void> page = _i15.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i10.OnboardingPage]
-class OnboardingRoute extends _i15.PageRouteInfo<void> {
-  const OnboardingRoute({List<_i15.PageRouteInfo>? children})
-      : super(
-          OnboardingRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'OnboardingRoute';
-
-  static const _i15.PageInfo<void> page = _i15.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i11.ProfilePage]
-class ProfileRoute extends _i15.PageRouteInfo<void> {
-  const ProfileRoute({List<_i15.PageRouteInfo>? children})
-      : super(
-          ProfileRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'ProfileRoute';
-
-  static const _i15.PageInfo<void> page = _i15.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i12.SearchPage]
-class SearchRoute extends _i15.PageRouteInfo<void> {
-  const SearchRoute({List<_i15.PageRouteInfo>? children})
-      : super(
-          SearchRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'SearchRoute';
-
-  static const _i15.PageInfo<void> page = _i15.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i13.DetailListAnimePage]
+/// [_i8.DetailListAnimePage]
 class DetailListAnimeRoute
     extends _i15.PageRouteInfo<DetailListAnimeRouteArgs> {
   DetailListAnimeRoute({
@@ -410,7 +340,63 @@ class DetailListAnimeRouteArgs {
 }
 
 /// generated route for
-/// [_i14.SearchFilterPage]
+/// [_i9.HomePage]
+class HomeRoute extends _i15.PageRouteInfo<void> {
+  const HomeRoute({List<_i15.PageRouteInfo>? children})
+      : super(
+          HomeRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'HomeRoute';
+
+  static const _i15.PageInfo<void> page = _i15.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i10.MyListPage]
+class MyListRoute extends _i15.PageRouteInfo<void> {
+  const MyListRoute({List<_i15.PageRouteInfo>? children})
+      : super(
+          MyListRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'MyListRoute';
+
+  static const _i15.PageInfo<void> page = _i15.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i11.OnboardingPage]
+class OnboardingRoute extends _i15.PageRouteInfo<void> {
+  const OnboardingRoute({List<_i15.PageRouteInfo>? children})
+      : super(
+          OnboardingRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'OnboardingRoute';
+
+  static const _i15.PageInfo<void> page = _i15.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i12.ProfilePage]
+class ProfileRoute extends _i15.PageRouteInfo<void> {
+  const ProfileRoute({List<_i15.PageRouteInfo>? children})
+      : super(
+          ProfileRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ProfileRoute';
+
+  static const _i15.PageInfo<void> page = _i15.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i13.SearchFilterPage]
 class SearchFilterRoute extends _i15.PageRouteInfo<void> {
   const SearchFilterRoute({List<_i15.PageRouteInfo>? children})
       : super(
@@ -419,6 +405,20 @@ class SearchFilterRoute extends _i15.PageRouteInfo<void> {
         );
 
   static const String name = 'SearchFilterRoute';
+
+  static const _i15.PageInfo<void> page = _i15.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i14.SearchPage]
+class SearchRoute extends _i15.PageRouteInfo<void> {
+  const SearchRoute({List<_i15.PageRouteInfo>? children})
+      : super(
+          SearchRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SearchRoute';
 
   static const _i15.PageInfo<void> page = _i15.PageInfo<void>(name);
 }

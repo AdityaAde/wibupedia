@@ -12,7 +12,7 @@ part of 'ongoing_models.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 OngoingModels _$OngoingModelsFromJson(Map<String, dynamic> json) {
   return _OngoingModels.fromJson(json);
@@ -68,22 +68,22 @@ class _$OngoingModelsCopyWithImpl<$Res, $Val extends OngoingModels>
 }
 
 /// @nodoc
-abstract class _$$_OngoingModelsCopyWith<$Res>
+abstract class _$$OngoingModelsImplCopyWith<$Res>
     implements $OngoingModelsCopyWith<$Res> {
-  factory _$$_OngoingModelsCopyWith(
-          _$_OngoingModels value, $Res Function(_$_OngoingModels) then) =
-      __$$_OngoingModelsCopyWithImpl<$Res>;
+  factory _$$OngoingModelsImplCopyWith(
+          _$OngoingModelsImpl value, $Res Function(_$OngoingModelsImpl) then) =
+      __$$OngoingModelsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<AnimeModels>? ongoing, String? currentpage});
 }
 
 /// @nodoc
-class __$$_OngoingModelsCopyWithImpl<$Res>
-    extends _$OngoingModelsCopyWithImpl<$Res, _$_OngoingModels>
-    implements _$$_OngoingModelsCopyWith<$Res> {
-  __$$_OngoingModelsCopyWithImpl(
-      _$_OngoingModels _value, $Res Function(_$_OngoingModels) _then)
+class __$$OngoingModelsImplCopyWithImpl<$Res>
+    extends _$OngoingModelsCopyWithImpl<$Res, _$OngoingModelsImpl>
+    implements _$$OngoingModelsImplCopyWith<$Res> {
+  __$$OngoingModelsImplCopyWithImpl(
+      _$OngoingModelsImpl _value, $Res Function(_$OngoingModelsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +92,7 @@ class __$$_OngoingModelsCopyWithImpl<$Res>
     Object? ongoing = freezed,
     Object? currentpage = freezed,
   }) {
-    return _then(_$_OngoingModels(
+    return _then(_$OngoingModelsImpl(
       ongoing: freezed == ongoing
           ? _value._ongoing
           : ongoing // ignore: cast_nullable_to_non_nullable
@@ -107,12 +107,13 @@ class __$$_OngoingModelsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_OngoingModels implements _OngoingModels {
-  const _$_OngoingModels({final List<AnimeModels>? ongoing, this.currentpage})
+class _$OngoingModelsImpl implements _OngoingModels {
+  const _$OngoingModelsImpl(
+      {final List<AnimeModels>? ongoing, this.currentpage})
       : _ongoing = ongoing;
 
-  factory _$_OngoingModels.fromJson(Map<String, dynamic> json) =>
-      _$$_OngoingModelsFromJson(json);
+  factory _$OngoingModelsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$OngoingModelsImplFromJson(json);
 
   final List<AnimeModels>? _ongoing;
   @override
@@ -133,10 +134,10 @@ class _$_OngoingModels implements _OngoingModels {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OngoingModels &&
+            other is _$OngoingModelsImpl &&
             const DeepCollectionEquality().equals(other._ongoing, _ongoing) &&
             (identical(other.currentpage, currentpage) ||
                 other.currentpage == currentpage));
@@ -150,12 +151,12 @@ class _$_OngoingModels implements _OngoingModels {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OngoingModelsCopyWith<_$_OngoingModels> get copyWith =>
-      __$$_OngoingModelsCopyWithImpl<_$_OngoingModels>(this, _$identity);
+  _$$OngoingModelsImplCopyWith<_$OngoingModelsImpl> get copyWith =>
+      __$$OngoingModelsImplCopyWithImpl<_$OngoingModelsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OngoingModelsToJson(
+    return _$$OngoingModelsImplToJson(
       this,
     );
   }
@@ -164,10 +165,10 @@ class _$_OngoingModels implements _OngoingModels {
 abstract class _OngoingModels implements OngoingModels {
   const factory _OngoingModels(
       {final List<AnimeModels>? ongoing,
-      final String? currentpage}) = _$_OngoingModels;
+      final String? currentpage}) = _$OngoingModelsImpl;
 
   factory _OngoingModels.fromJson(Map<String, dynamic> json) =
-      _$_OngoingModels.fromJson;
+      _$OngoingModelsImpl.fromJson;
 
   @override
   List<AnimeModels>? get ongoing;
@@ -175,6 +176,6 @@ abstract class _OngoingModels implements OngoingModels {
   String? get currentpage;
   @override
   @JsonKey(ignore: true)
-  _$$_OngoingModelsCopyWith<_$_OngoingModels> get copyWith =>
+  _$$OngoingModelsImplCopyWith<_$OngoingModelsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

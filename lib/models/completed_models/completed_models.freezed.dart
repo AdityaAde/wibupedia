@@ -12,7 +12,7 @@ part of 'completed_models.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 CompletedModels _$CompletedModelsFromJson(Map<String, dynamic> json) {
   return _CompletedModels.fromJson(json);
@@ -68,22 +68,22 @@ class _$CompletedModelsCopyWithImpl<$Res, $Val extends CompletedModels>
 }
 
 /// @nodoc
-abstract class _$$_CompletedModelsCopyWith<$Res>
+abstract class _$$CompletedModelsImplCopyWith<$Res>
     implements $CompletedModelsCopyWith<$Res> {
-  factory _$$_CompletedModelsCopyWith(
-          _$_CompletedModels value, $Res Function(_$_CompletedModels) then) =
-      __$$_CompletedModelsCopyWithImpl<$Res>;
+  factory _$$CompletedModelsImplCopyWith(_$CompletedModelsImpl value,
+          $Res Function(_$CompletedModelsImpl) then) =
+      __$$CompletedModelsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<AnimeModels>? completed, String? currentpage});
 }
 
 /// @nodoc
-class __$$_CompletedModelsCopyWithImpl<$Res>
-    extends _$CompletedModelsCopyWithImpl<$Res, _$_CompletedModels>
-    implements _$$_CompletedModelsCopyWith<$Res> {
-  __$$_CompletedModelsCopyWithImpl(
-      _$_CompletedModels _value, $Res Function(_$_CompletedModels) _then)
+class __$$CompletedModelsImplCopyWithImpl<$Res>
+    extends _$CompletedModelsCopyWithImpl<$Res, _$CompletedModelsImpl>
+    implements _$$CompletedModelsImplCopyWith<$Res> {
+  __$$CompletedModelsImplCopyWithImpl(
+      _$CompletedModelsImpl _value, $Res Function(_$CompletedModelsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +92,7 @@ class __$$_CompletedModelsCopyWithImpl<$Res>
     Object? completed = freezed,
     Object? currentpage = freezed,
   }) {
-    return _then(_$_CompletedModels(
+    return _then(_$CompletedModelsImpl(
       completed: freezed == completed
           ? _value._completed
           : completed // ignore: cast_nullable_to_non_nullable
@@ -107,13 +107,13 @@ class __$$_CompletedModelsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_CompletedModels implements _CompletedModels {
-  const _$_CompletedModels(
+class _$CompletedModelsImpl implements _CompletedModels {
+  const _$CompletedModelsImpl(
       {final List<AnimeModels>? completed, this.currentpage})
       : _completed = completed;
 
-  factory _$_CompletedModels.fromJson(Map<String, dynamic> json) =>
-      _$$_CompletedModelsFromJson(json);
+  factory _$CompletedModelsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CompletedModelsImplFromJson(json);
 
   final List<AnimeModels>? _completed;
   @override
@@ -134,10 +134,10 @@ class _$_CompletedModels implements _CompletedModels {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CompletedModels &&
+            other is _$CompletedModelsImpl &&
             const DeepCollectionEquality()
                 .equals(other._completed, _completed) &&
             (identical(other.currentpage, currentpage) ||
@@ -152,12 +152,13 @@ class _$_CompletedModels implements _CompletedModels {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CompletedModelsCopyWith<_$_CompletedModels> get copyWith =>
-      __$$_CompletedModelsCopyWithImpl<_$_CompletedModels>(this, _$identity);
+  _$$CompletedModelsImplCopyWith<_$CompletedModelsImpl> get copyWith =>
+      __$$CompletedModelsImplCopyWithImpl<_$CompletedModelsImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CompletedModelsToJson(
+    return _$$CompletedModelsImplToJson(
       this,
     );
   }
@@ -166,10 +167,10 @@ class _$_CompletedModels implements _CompletedModels {
 abstract class _CompletedModels implements CompletedModels {
   const factory _CompletedModels(
       {final List<AnimeModels>? completed,
-      final String? currentpage}) = _$_CompletedModels;
+      final String? currentpage}) = _$CompletedModelsImpl;
 
   factory _CompletedModels.fromJson(Map<String, dynamic> json) =
-      _$_CompletedModels.fromJson;
+      _$CompletedModelsImpl.fromJson;
 
   @override
   List<AnimeModels>? get completed;
@@ -177,6 +178,6 @@ abstract class _CompletedModels implements CompletedModels {
   String? get currentpage;
   @override
   @JsonKey(ignore: true)
-  _$$_CompletedModelsCopyWith<_$_CompletedModels> get copyWith =>
+  _$$CompletedModelsImplCopyWith<_$CompletedModelsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,9 +1,10 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:choice/choice.dart';
 import 'package:flutter/material.dart';
-import 'package:wibupedia/component/theme/theme.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../widgets/widgets.dart';
+import '../../modules.dart';
+import 'widgets/widgets.dart';
 
 @RoutePage()
 class SearchFilterPage extends StatefulWidget {
@@ -14,72 +15,50 @@ class SearchFilterPage extends StatefulWidget {
 }
 
 class _SearchFilterPageState extends State<SearchFilterPage> {
-  List<String> choices = [
-    'News',
-    'Entertainment',
-    'Politics',
-    'Automotive',
-    'Sports',
-    'Education',
-    'Fashion',
-    'Travel',
-    'Food',
-    'Tech',
-    'Science',
-    'Arts'
-  ];
-  List<String> selectedValue = [];
+  late final GenreAnimeCubit _genreAnimeCubit;
+
+  @override
+  void initState() {
+    super.initState();
+    _genreAnimeCubit = GenreAnimeCubit.create();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Choose Your Interest')),
-      body: Padding(
-        padding: const EdgeInsets.only(left: 24, right: 24, bottom: 24),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              children: [
-                Text(
-                  'Choose your interests and get the best anime recommendations. Don\'t worry, you can always change it later.',
-                  style: AppStyle.materialTextStyle.bodyLarge
-                      ?.copyWith(fontWeight: FontWeight.w500),
+    return BlocProvider.value(
+      value: _genreAnimeCubit,
+      child: Scaffold(
+        appBar: AppBar(title: const Text('Choose Your Interest')),
+        body: Padding(
+          padding: const EdgeInsets.only(left: 24, right: 24, bottom: 24),
+          child: BlocBuilder<GenreAnimeCubit, GenreAnimeState>(
+            builder: (context, state) {
+              return state.maybeWhen(
+                orElse: () => const SizedBox(),
+                loading: () => Center(child: LoadingWidget.loadingWidget()),
+                success: (genres) => SingleChildScrollView(
+                  child: FilterChipWidget(genres: genres),
                 ),
-                const SizedBox(height: 24),
-                InlineChoice<String>.multiple(
-                  clearable: true,
-                  value: selectedValue,
-                  onChanged: (value) {
-                    setState(() {
-                      selectedValue.clear();
-                      selectedValue.addAll(value);
-                    });
-                  },
-                  itemCount: choices.length,
-                  itemBuilder: (state, i) {
-                    return ChoiceChip(
-                      showCheckmark: false,
-                      selected: state.selected(choices[i]),
-                      onSelected: state.onSelected(choices[i]),
-                      label: Text(choices[i]),
-                      selectedColor: Colors.green,
-                    );
-                  },
-                  listBuilder: ChoiceList.createWrapped(
-                    spacing: 10,
-                    runSpacing: 10,
-                  ),
-                ),
-              ],
-            ),
-            ButtonWidget.button(
-              'Continue',
-              onTap: () {},
-              height: 50,
-            ),
-          ],
+                error: (err) => Center(child: Text(err)),
+              );
+            },
+          ),
+        ),
+        bottomNavigationBar: Padding(
+          padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
+          child: ButtonWidget.button(
+            'Continue',
+            onTap: () {},
+            height: 50,
+          ),
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _genreAnimeCubit.close();
+    super.dispose();
   }
 }

@@ -12,7 +12,7 @@ part of 'bookmarks_models.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 BookmarksModels _$BookmarksModelsFromJson(Map<String, dynamic> json) {
   return _BookmarksModels.fromJson(json);
@@ -91,11 +91,11 @@ class _$BookmarksModelsCopyWithImpl<$Res, $Val extends BookmarksModels>
 }
 
 /// @nodoc
-abstract class _$$_BookmarksModelsCopyWith<$Res>
+abstract class _$$BookmarksModelsImplCopyWith<$Res>
     implements $BookmarksModelsCopyWith<$Res> {
-  factory _$$_BookmarksModelsCopyWith(
-          _$_BookmarksModels value, $Res Function(_$_BookmarksModels) then) =
-      __$$_BookmarksModelsCopyWithImpl<$Res>;
+  factory _$$BookmarksModelsImplCopyWith(_$BookmarksModelsImpl value,
+          $Res Function(_$BookmarksModelsImpl) then) =
+      __$$BookmarksModelsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -107,11 +107,11 @@ abstract class _$$_BookmarksModelsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_BookmarksModelsCopyWithImpl<$Res>
-    extends _$BookmarksModelsCopyWithImpl<$Res, _$_BookmarksModels>
-    implements _$$_BookmarksModelsCopyWith<$Res> {
-  __$$_BookmarksModelsCopyWithImpl(
-      _$_BookmarksModels _value, $Res Function(_$_BookmarksModels) _then)
+class __$$BookmarksModelsImplCopyWithImpl<$Res>
+    extends _$BookmarksModelsCopyWithImpl<$Res, _$BookmarksModelsImpl>
+    implements _$$BookmarksModelsImplCopyWith<$Res> {
+  __$$BookmarksModelsImplCopyWithImpl(
+      _$BookmarksModelsImpl _value, $Res Function(_$BookmarksModelsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -123,7 +123,7 @@ class __$$_BookmarksModelsCopyWithImpl<$Res>
     Object? status = freezed,
     Object? docId = freezed,
   }) {
-    return _then(_$_BookmarksModels(
+    return _then(_$BookmarksModelsImpl(
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -150,12 +150,12 @@ class __$$_BookmarksModelsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_BookmarksModels implements _BookmarksModels {
-  const _$_BookmarksModels(
+class _$BookmarksModelsImpl implements _BookmarksModels {
+  const _$BookmarksModelsImpl(
       {this.name, this.thumbnail, this.endpoint, this.status, this.docId});
 
-  factory _$_BookmarksModels.fromJson(Map<String, dynamic> json) =>
-      _$$_BookmarksModelsFromJson(json);
+  factory _$BookmarksModelsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BookmarksModelsImplFromJson(json);
 
   @override
   final String? name;
@@ -174,10 +174,10 @@ class _$_BookmarksModels implements _BookmarksModels {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_BookmarksModels &&
+            other is _$BookmarksModelsImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.thumbnail, thumbnail) ||
                 other.thumbnail == thumbnail) &&
@@ -195,12 +195,13 @@ class _$_BookmarksModels implements _BookmarksModels {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_BookmarksModelsCopyWith<_$_BookmarksModels> get copyWith =>
-      __$$_BookmarksModelsCopyWithImpl<_$_BookmarksModels>(this, _$identity);
+  _$$BookmarksModelsImplCopyWith<_$BookmarksModelsImpl> get copyWith =>
+      __$$BookmarksModelsImplCopyWithImpl<_$BookmarksModelsImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BookmarksModelsToJson(
+    return _$$BookmarksModelsImplToJson(
       this,
     );
   }
@@ -212,10 +213,10 @@ abstract class _BookmarksModels implements BookmarksModels {
       final String? thumbnail,
       final String? endpoint,
       final String? status,
-      final String? docId}) = _$_BookmarksModels;
+      final String? docId}) = _$BookmarksModelsImpl;
 
   factory _BookmarksModels.fromJson(Map<String, dynamic> json) =
-      _$_BookmarksModels.fromJson;
+      _$BookmarksModelsImpl.fromJson;
 
   @override
   String? get name;
@@ -229,6 +230,6 @@ abstract class _BookmarksModels implements BookmarksModels {
   String? get docId;
   @override
   @JsonKey(ignore: true)
-  _$$_BookmarksModelsCopyWith<_$_BookmarksModels> get copyWith =>
+  _$$BookmarksModelsImplCopyWith<_$BookmarksModelsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

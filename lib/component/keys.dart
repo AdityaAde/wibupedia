@@ -3,4 +3,5 @@ class ServiceUrl {
   static String completedAnimeUrl = 'completed';
   static String detailAnimeUrl = 'detail';
   static String searchAnimeUrl = 'search';
+  static String genreAnimeUrl = 'genres';
 }

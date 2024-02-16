@@ -1,15 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// ignore_for_file: non_constant_identifier_names
-
 part of 'anime_models.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_AnimeModels _$$_AnimeModelsFromJson(Map<String, dynamic> json) =>
-    _$_AnimeModels(
+_$AnimeModelsImpl _$$AnimeModelsImplFromJson(Map<String, dynamic> json) =>
+    _$AnimeModelsImpl(
       title: json['title'] as String?,
       thumb: json['thumb'] as String?,
       score: json['score'] as String?,
@@ -24,7 +22,7 @@ _$_AnimeModels _$$_AnimeModelsFromJson(Map<String, dynamic> json) =>
       endpoint: json['endpoint'] as String?,
     );
 
-Map<String, dynamic> _$$_AnimeModelsToJson(_$_AnimeModels instance) =>
+Map<String, dynamic> _$$AnimeModelsImplToJson(_$AnimeModelsImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
       'thumb': instance.thumb,
@@ -37,14 +35,14 @@ Map<String, dynamic> _$$_AnimeModelsToJson(_$_AnimeModels instance) =>
       'endpoint': instance.endpoint,
     };
 
-_$_EpisodeModels _$$_EpisodeModelsFromJson(Map<String, dynamic> json) =>
-    _$_EpisodeModels(
+_$EpisodeModelsImpl _$$EpisodeModelsImplFromJson(Map<String, dynamic> json) =>
+    _$EpisodeModelsImpl(
       episodeTitle: json['episode_title'] as String?,
       episodeEndpoint: json['episode_endpoint'] as String?,
       episodeDate: json['episode_date'] as String?,
     );
 
-Map<String, dynamic> _$$_EpisodeModelsToJson(_$_EpisodeModels instance) =>
+Map<String, dynamic> _$$EpisodeModelsImplToJson(_$EpisodeModelsImpl instance) =>
     <String, dynamic>{
       'episode_title': instance.episodeTitle,
       'episode_endpoint': instance.episodeEndpoint,

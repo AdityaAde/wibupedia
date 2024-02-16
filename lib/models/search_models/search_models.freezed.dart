@@ -12,7 +12,7 @@ part of 'search_models.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 SearchAnimeModels _$SearchAnimeModelsFromJson(Map<String, dynamic> json) {
   return _SearchAnimeModels.fromJson(json);
@@ -62,22 +62,22 @@ class _$SearchAnimeModelsCopyWithImpl<$Res, $Val extends SearchAnimeModels>
 }
 
 /// @nodoc
-abstract class _$$_SearchAnimeModelsCopyWith<$Res>
+abstract class _$$SearchAnimeModelsImplCopyWith<$Res>
     implements $SearchAnimeModelsCopyWith<$Res> {
-  factory _$$_SearchAnimeModelsCopyWith(_$_SearchAnimeModels value,
-          $Res Function(_$_SearchAnimeModels) then) =
-      __$$_SearchAnimeModelsCopyWithImpl<$Res>;
+  factory _$$SearchAnimeModelsImplCopyWith(_$SearchAnimeModelsImpl value,
+          $Res Function(_$SearchAnimeModelsImpl) then) =
+      __$$SearchAnimeModelsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<AnimeModels>? search});
 }
 
 /// @nodoc
-class __$$_SearchAnimeModelsCopyWithImpl<$Res>
-    extends _$SearchAnimeModelsCopyWithImpl<$Res, _$_SearchAnimeModels>
-    implements _$$_SearchAnimeModelsCopyWith<$Res> {
-  __$$_SearchAnimeModelsCopyWithImpl(
-      _$_SearchAnimeModels _value, $Res Function(_$_SearchAnimeModels) _then)
+class __$$SearchAnimeModelsImplCopyWithImpl<$Res>
+    extends _$SearchAnimeModelsCopyWithImpl<$Res, _$SearchAnimeModelsImpl>
+    implements _$$SearchAnimeModelsImplCopyWith<$Res> {
+  __$$SearchAnimeModelsImplCopyWithImpl(_$SearchAnimeModelsImpl _value,
+      $Res Function(_$SearchAnimeModelsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -85,7 +85,7 @@ class __$$_SearchAnimeModelsCopyWithImpl<$Res>
   $Res call({
     Object? search = freezed,
   }) {
-    return _then(_$_SearchAnimeModels(
+    return _then(_$SearchAnimeModelsImpl(
       search: freezed == search
           ? _value._search
           : search // ignore: cast_nullable_to_non_nullable
@@ -96,12 +96,12 @@ class __$$_SearchAnimeModelsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SearchAnimeModels implements _SearchAnimeModels {
-  const _$_SearchAnimeModels({final List<AnimeModels>? search})
+class _$SearchAnimeModelsImpl implements _SearchAnimeModels {
+  const _$SearchAnimeModelsImpl({final List<AnimeModels>? search})
       : _search = search;
 
-  factory _$_SearchAnimeModels.fromJson(Map<String, dynamic> json) =>
-      _$$_SearchAnimeModelsFromJson(json);
+  factory _$SearchAnimeModelsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SearchAnimeModelsImplFromJson(json);
 
   final List<AnimeModels>? _search;
   @override
@@ -119,10 +119,10 @@ class _$_SearchAnimeModels implements _SearchAnimeModels {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SearchAnimeModels &&
+            other is _$SearchAnimeModelsImpl &&
             const DeepCollectionEquality().equals(other._search, _search));
   }
 
@@ -134,13 +134,13 @@ class _$_SearchAnimeModels implements _SearchAnimeModels {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SearchAnimeModelsCopyWith<_$_SearchAnimeModels> get copyWith =>
-      __$$_SearchAnimeModelsCopyWithImpl<_$_SearchAnimeModels>(
+  _$$SearchAnimeModelsImplCopyWith<_$SearchAnimeModelsImpl> get copyWith =>
+      __$$SearchAnimeModelsImplCopyWithImpl<_$SearchAnimeModelsImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SearchAnimeModelsToJson(
+    return _$$SearchAnimeModelsImplToJson(
       this,
     );
   }
@@ -148,15 +148,15 @@ class _$_SearchAnimeModels implements _SearchAnimeModels {
 
 abstract class _SearchAnimeModels implements SearchAnimeModels {
   const factory _SearchAnimeModels({final List<AnimeModels>? search}) =
-      _$_SearchAnimeModels;
+      _$SearchAnimeModelsImpl;
 
   factory _SearchAnimeModels.fromJson(Map<String, dynamic> json) =
-      _$_SearchAnimeModels.fromJson;
+      _$SearchAnimeModelsImpl.fromJson;
 
   @override
   List<AnimeModels>? get search;
   @override
   @JsonKey(ignore: true)
-  _$$_SearchAnimeModelsCopyWith<_$_SearchAnimeModels> get copyWith =>
+  _$$SearchAnimeModelsImplCopyWith<_$SearchAnimeModelsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

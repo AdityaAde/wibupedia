@@ -12,7 +12,7 @@ part of 'anime_models.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 AnimeModels _$AnimeModelsFromJson(Map<String, dynamic> json) {
   return _AnimeModels.fromJson(json);
@@ -119,11 +119,11 @@ class _$AnimeModelsCopyWithImpl<$Res, $Val extends AnimeModels>
 }
 
 /// @nodoc
-abstract class _$$_AnimeModelsCopyWith<$Res>
+abstract class _$$AnimeModelsImplCopyWith<$Res>
     implements $AnimeModelsCopyWith<$Res> {
-  factory _$$_AnimeModelsCopyWith(
-          _$_AnimeModels value, $Res Function(_$_AnimeModels) then) =
-      __$$_AnimeModelsCopyWithImpl<$Res>;
+  factory _$$AnimeModelsImplCopyWith(
+          _$AnimeModelsImpl value, $Res Function(_$AnimeModelsImpl) then) =
+      __$$AnimeModelsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -139,11 +139,11 @@ abstract class _$$_AnimeModelsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_AnimeModelsCopyWithImpl<$Res>
-    extends _$AnimeModelsCopyWithImpl<$Res, _$_AnimeModels>
-    implements _$$_AnimeModelsCopyWith<$Res> {
-  __$$_AnimeModelsCopyWithImpl(
-      _$_AnimeModels _value, $Res Function(_$_AnimeModels) _then)
+class __$$AnimeModelsImplCopyWithImpl<$Res>
+    extends _$AnimeModelsCopyWithImpl<$Res, _$AnimeModelsImpl>
+    implements _$$AnimeModelsImplCopyWith<$Res> {
+  __$$AnimeModelsImplCopyWithImpl(
+      _$AnimeModelsImpl _value, $Res Function(_$AnimeModelsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -159,7 +159,7 @@ class __$$_AnimeModelsCopyWithImpl<$Res>
     Object? updatedDay = freezed,
     Object? endpoint = freezed,
   }) {
-    return _then(_$_AnimeModels(
+    return _then(_$AnimeModelsImpl(
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -202,8 +202,8 @@ class __$$_AnimeModelsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AnimeModels extends _AnimeModels {
-  const _$_AnimeModels(
+class _$AnimeModelsImpl extends _AnimeModels {
+  const _$AnimeModelsImpl(
       {this.title,
       this.thumb,
       this.score,
@@ -217,8 +217,8 @@ class _$_AnimeModels extends _AnimeModels {
         _detail = detail,
         super._();
 
-  factory _$_AnimeModels.fromJson(Map<String, dynamic> json) =>
-      _$$_AnimeModelsFromJson(json);
+  factory _$AnimeModelsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AnimeModelsImplFromJson(json);
 
   @override
   final String? title;
@@ -261,10 +261,10 @@ class _$_AnimeModels extends _AnimeModels {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AnimeModels &&
+            other is _$AnimeModelsImpl &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.thumb, thumb) || other.thumb == thumb) &&
             (identical(other.score, score) || other.score == score) &&
@@ -297,12 +297,12 @@ class _$_AnimeModels extends _AnimeModels {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AnimeModelsCopyWith<_$_AnimeModels> get copyWith =>
-      __$$_AnimeModelsCopyWithImpl<_$_AnimeModels>(this, _$identity);
+  _$$AnimeModelsImplCopyWith<_$AnimeModelsImpl> get copyWith =>
+      __$$AnimeModelsImplCopyWithImpl<_$AnimeModelsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AnimeModelsToJson(
+    return _$$AnimeModelsImplToJson(
       this,
     );
   }
@@ -318,11 +318,11 @@ abstract class _AnimeModels extends AnimeModels {
       final List<String>? detail,
       final String? updatedOn,
       final String? updatedDay,
-      final String? endpoint}) = _$_AnimeModels;
+      final String? endpoint}) = _$AnimeModelsImpl;
   const _AnimeModels._() : super._();
 
   factory _AnimeModels.fromJson(Map<String, dynamic> json) =
-      _$_AnimeModels.fromJson;
+      _$AnimeModelsImpl.fromJson;
 
   @override
   String? get title;
@@ -344,7 +344,7 @@ abstract class _AnimeModels extends AnimeModels {
   String? get endpoint;
   @override
   @JsonKey(ignore: true)
-  _$$_AnimeModelsCopyWith<_$_AnimeModels> get copyWith =>
+  _$$AnimeModelsImplCopyWith<_$AnimeModelsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -409,11 +409,11 @@ class _$EpisodeModelsCopyWithImpl<$Res, $Val extends EpisodeModels>
 }
 
 /// @nodoc
-abstract class _$$_EpisodeModelsCopyWith<$Res>
+abstract class _$$EpisodeModelsImplCopyWith<$Res>
     implements $EpisodeModelsCopyWith<$Res> {
-  factory _$$_EpisodeModelsCopyWith(
-          _$_EpisodeModels value, $Res Function(_$_EpisodeModels) then) =
-      __$$_EpisodeModelsCopyWithImpl<$Res>;
+  factory _$$EpisodeModelsImplCopyWith(
+          _$EpisodeModelsImpl value, $Res Function(_$EpisodeModelsImpl) then) =
+      __$$EpisodeModelsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -421,11 +421,11 @@ abstract class _$$_EpisodeModelsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_EpisodeModelsCopyWithImpl<$Res>
-    extends _$EpisodeModelsCopyWithImpl<$Res, _$_EpisodeModels>
-    implements _$$_EpisodeModelsCopyWith<$Res> {
-  __$$_EpisodeModelsCopyWithImpl(
-      _$_EpisodeModels _value, $Res Function(_$_EpisodeModels) _then)
+class __$$EpisodeModelsImplCopyWithImpl<$Res>
+    extends _$EpisodeModelsCopyWithImpl<$Res, _$EpisodeModelsImpl>
+    implements _$$EpisodeModelsImplCopyWith<$Res> {
+  __$$EpisodeModelsImplCopyWithImpl(
+      _$EpisodeModelsImpl _value, $Res Function(_$EpisodeModelsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -435,7 +435,7 @@ class __$$_EpisodeModelsCopyWithImpl<$Res>
     Object? episodeEndpoint = freezed,
     Object? episodeDate = freezed,
   }) {
-    return _then(_$_EpisodeModels(
+    return _then(_$EpisodeModelsImpl(
       episodeTitle: freezed == episodeTitle
           ? _value.episodeTitle
           : episodeTitle // ignore: cast_nullable_to_non_nullable
@@ -454,13 +454,13 @@ class __$$_EpisodeModelsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_EpisodeModels extends _EpisodeModels {
-  const _$_EpisodeModels(
+class _$EpisodeModelsImpl extends _EpisodeModels {
+  const _$EpisodeModelsImpl(
       {this.episodeTitle, this.episodeEndpoint, this.episodeDate})
       : super._();
 
-  factory _$_EpisodeModels.fromJson(Map<String, dynamic> json) =>
-      _$$_EpisodeModelsFromJson(json);
+  factory _$EpisodeModelsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EpisodeModelsImplFromJson(json);
 
   @override
   final String? episodeTitle;
@@ -475,10 +475,10 @@ class _$_EpisodeModels extends _EpisodeModels {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_EpisodeModels &&
+            other is _$EpisodeModelsImpl &&
             (identical(other.episodeTitle, episodeTitle) ||
                 other.episodeTitle == episodeTitle) &&
             (identical(other.episodeEndpoint, episodeEndpoint) ||
@@ -495,12 +495,12 @@ class _$_EpisodeModels extends _EpisodeModels {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_EpisodeModelsCopyWith<_$_EpisodeModels> get copyWith =>
-      __$$_EpisodeModelsCopyWithImpl<_$_EpisodeModels>(this, _$identity);
+  _$$EpisodeModelsImplCopyWith<_$EpisodeModelsImpl> get copyWith =>
+      __$$EpisodeModelsImplCopyWithImpl<_$EpisodeModelsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EpisodeModelsToJson(
+    return _$$EpisodeModelsImplToJson(
       this,
     );
   }
@@ -510,11 +510,11 @@ abstract class _EpisodeModels extends EpisodeModels {
   const factory _EpisodeModels(
       {final String? episodeTitle,
       final String? episodeEndpoint,
-      final String? episodeDate}) = _$_EpisodeModels;
+      final String? episodeDate}) = _$EpisodeModelsImpl;
   const _EpisodeModels._() : super._();
 
   factory _EpisodeModels.fromJson(Map<String, dynamic> json) =
-      _$_EpisodeModels.fromJson;
+      _$EpisodeModelsImpl.fromJson;
 
   @override
   String? get episodeTitle;
@@ -524,6 +524,6 @@ abstract class _EpisodeModels extends EpisodeModels {
   String? get episodeDate;
   @override
   @JsonKey(ignore: true)
-  _$$_EpisodeModelsCopyWith<_$_EpisodeModels> get copyWith =>
+  _$$EpisodeModelsImplCopyWith<_$EpisodeModelsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

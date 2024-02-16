@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'ongoing_cubit.dart';
+part of 'genre_anime_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,12 +15,12 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$OngoingState {
+mixin _$GenreAnimeState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(OngoingModels anime) success,
+    required TResult Function(List<GenreModels> genres) success,
     required TResult Function(String err) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$OngoingState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(OngoingModels anime)? success,
+    TResult? Function(List<GenreModels> genres)? success,
     TResult? Function(String err)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$OngoingState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(OngoingModels anime)? success,
+    TResult Function(List<GenreModels> genres)? success,
     TResult Function(String err)? error,
     required TResult orElse(),
   }) =>
@@ -69,16 +69,16 @@ mixin _$OngoingState {
 }
 
 /// @nodoc
-abstract class $OngoingStateCopyWith<$Res> {
-  factory $OngoingStateCopyWith(
-          OngoingState value, $Res Function(OngoingState) then) =
-      _$OngoingStateCopyWithImpl<$Res, OngoingState>;
+abstract class $GenreAnimeStateCopyWith<$Res> {
+  factory $GenreAnimeStateCopyWith(
+          GenreAnimeState value, $Res Function(GenreAnimeState) then) =
+      _$GenreAnimeStateCopyWithImpl<$Res, GenreAnimeState>;
 }
 
 /// @nodoc
-class _$OngoingStateCopyWithImpl<$Res, $Val extends OngoingState>
-    implements $OngoingStateCopyWith<$Res> {
-  _$OngoingStateCopyWithImpl(this._value, this._then);
+class _$GenreAnimeStateCopyWithImpl<$Res, $Val extends GenreAnimeState>
+    implements $GenreAnimeStateCopyWith<$Res> {
+  _$GenreAnimeStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -95,7 +95,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$OngoingStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$GenreAnimeStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -109,7 +109,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'OngoingState.initial()';
+    return 'GenreAnimeState.initial()';
   }
 
   @override
@@ -126,7 +126,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(OngoingModels anime) success,
+    required TResult Function(List<GenreModels> genres) success,
     required TResult Function(String err) error,
   }) {
     return initial();
@@ -137,7 +137,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(OngoingModels anime)? success,
+    TResult? Function(List<GenreModels> genres)? success,
     TResult? Function(String err)? error,
   }) {
     return initial?.call();
@@ -148,7 +148,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(OngoingModels anime)? success,
+    TResult Function(List<GenreModels> genres)? success,
     TResult Function(String err)? error,
     required TResult orElse(),
   }) {
@@ -196,7 +196,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements OngoingState {
+abstract class _Initial implements GenreAnimeState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -209,7 +209,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$OngoingStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$GenreAnimeStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
@@ -223,7 +223,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'OngoingState.loading()';
+    return 'GenreAnimeState.loading()';
   }
 
   @override
@@ -240,7 +240,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(OngoingModels anime) success,
+    required TResult Function(List<GenreModels> genres) success,
     required TResult Function(String err) error,
   }) {
     return loading();
@@ -251,7 +251,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(OngoingModels anime)? success,
+    TResult? Function(List<GenreModels> genres)? success,
     TResult? Function(String err)? error,
   }) {
     return loading?.call();
@@ -262,7 +262,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(OngoingModels anime)? success,
+    TResult Function(List<GenreModels> genres)? success,
     TResult Function(String err)? error,
     required TResult orElse(),
   }) {
@@ -310,7 +310,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements OngoingState {
+abstract class _Loading implements GenreAnimeState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -320,14 +320,12 @@ abstract class _$$SuccessImplCopyWith<$Res> {
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({OngoingModels anime});
-
-  $OngoingModelsCopyWith<$Res> get anime;
+  $Res call({List<GenreModels> genres});
 }
 
 /// @nodoc
 class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$OngoingStateCopyWithImpl<$Res, _$SuccessImpl>
+    extends _$GenreAnimeStateCopyWithImpl<$Res, _$SuccessImpl>
     implements _$$SuccessImplCopyWith<$Res> {
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
@@ -336,36 +334,33 @@ class __$$SuccessImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? anime = null,
+    Object? genres = null,
   }) {
     return _then(_$SuccessImpl(
-      null == anime
-          ? _value.anime
-          : anime // ignore: cast_nullable_to_non_nullable
-              as OngoingModels,
+      null == genres
+          ? _value._genres
+          : genres // ignore: cast_nullable_to_non_nullable
+              as List<GenreModels>,
     ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $OngoingModelsCopyWith<$Res> get anime {
-    return $OngoingModelsCopyWith<$Res>(_value.anime, (value) {
-      return _then(_value.copyWith(anime: value));
-    });
   }
 }
 
 /// @nodoc
 
 class _$SuccessImpl implements _Success {
-  const _$SuccessImpl(this.anime);
+  const _$SuccessImpl(final List<GenreModels> genres) : _genres = genres;
 
+  final List<GenreModels> _genres;
   @override
-  final OngoingModels anime;
+  List<GenreModels> get genres {
+    if (_genres is EqualUnmodifiableListView) return _genres;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_genres);
+  }
 
   @override
   String toString() {
-    return 'OngoingState.success(anime: $anime)';
+    return 'GenreAnimeState.success(genres: $genres)';
   }
 
   @override
@@ -373,11 +368,12 @@ class _$SuccessImpl implements _Success {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SuccessImpl &&
-            (identical(other.anime, anime) || other.anime == anime));
+            const DeepCollectionEquality().equals(other._genres, _genres));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, anime);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_genres));
 
   @JsonKey(ignore: true)
   @override
@@ -390,10 +386,10 @@ class _$SuccessImpl implements _Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(OngoingModels anime) success,
+    required TResult Function(List<GenreModels> genres) success,
     required TResult Function(String err) error,
   }) {
-    return success(anime);
+    return success(genres);
   }
 
   @override
@@ -401,10 +397,10 @@ class _$SuccessImpl implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(OngoingModels anime)? success,
+    TResult? Function(List<GenreModels> genres)? success,
     TResult? Function(String err)? error,
   }) {
-    return success?.call(anime);
+    return success?.call(genres);
   }
 
   @override
@@ -412,12 +408,12 @@ class _$SuccessImpl implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(OngoingModels anime)? success,
+    TResult Function(List<GenreModels> genres)? success,
     TResult Function(String err)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(anime);
+      return success(genres);
     }
     return orElse();
   }
@@ -460,10 +456,10 @@ class _$SuccessImpl implements _Success {
   }
 }
 
-abstract class _Success implements OngoingState {
-  const factory _Success(final OngoingModels anime) = _$SuccessImpl;
+abstract class _Success implements GenreAnimeState {
+  const factory _Success(final List<GenreModels> genres) = _$SuccessImpl;
 
-  OngoingModels get anime;
+  List<GenreModels> get genres;
   @JsonKey(ignore: true)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -480,7 +476,7 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$OngoingStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$GenreAnimeStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
@@ -510,7 +506,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'OngoingState.error(err: $err)';
+    return 'GenreAnimeState.error(err: $err)';
   }
 
   @override
@@ -535,7 +531,7 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(OngoingModels anime) success,
+    required TResult Function(List<GenreModels> genres) success,
     required TResult Function(String err) error,
   }) {
     return error(err);
@@ -546,7 +542,7 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(OngoingModels anime)? success,
+    TResult? Function(List<GenreModels> genres)? success,
     TResult? Function(String err)? error,
   }) {
     return error?.call(err);
@@ -557,7 +553,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(OngoingModels anime)? success,
+    TResult Function(List<GenreModels> genres)? success,
     TResult Function(String err)? error,
     required TResult orElse(),
   }) {
@@ -605,7 +601,7 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements OngoingState {
+abstract class _Error implements GenreAnimeState {
   const factory _Error(final String err) = _$ErrorImpl;
 
   String get err;

@@ -1,15 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// ignore_for_file: non_constant_identifier_names
-
 part of 'detail_anime_models.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DetailAnimeModels _$$_DetailAnimeModelsFromJson(Map<String, dynamic> json) =>
-    _$_DetailAnimeModels(
+_$DetailAnimeModelsImpl _$$DetailAnimeModelsImplFromJson(
+        Map<String, dynamic> json) =>
+    _$DetailAnimeModelsImpl(
       animeDetail: json['anime_detail'] == null
           ? null
           : AnimeModels.fromJson(json['anime_detail'] as Map<String, dynamic>),
@@ -18,8 +17,8 @@ _$_DetailAnimeModels _$$_DetailAnimeModelsFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_DetailAnimeModelsToJson(
-        _$_DetailAnimeModels instance) =>
+Map<String, dynamic> _$$DetailAnimeModelsImplToJson(
+        _$DetailAnimeModelsImpl instance) =>
     <String, dynamic>{
       'anime_detail': instance.animeDetail,
       'episode_list': instance.episodeList,

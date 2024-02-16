@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 
 import '../../component/endpoint.dart';
 import '../../component/injector.dart';
@@ -50,5 +51,29 @@ class AnimeService extends Endpoint {
     final Map<String, dynamic> data = jsonDecode(response.data);
     final result = SearchAnimeModels.fromJson(data);
     return result;
+  }
+
+  Future<List<GenreModels>> genresAnime() async {
+    final url = endpointBaseUrlWithVersion(path: ServiceUrl.genreAnimeUrl);
+    final response = await _baseService.dio.get(url);
+    final Map<String, dynamic> data = jsonDecode(response.data);
+    final result = await compute(
+      _decodeJsonGenre,
+      data['genres'] as List,
+    );
+
+    return result;
+  }
+
+  static List<GenreModels> _decodeJsonGenre(List<dynamic>? json) {
+    final genres = <GenreModels>[];
+
+    final List<dynamic> result = json ?? [];
+    for (final item in result) {
+      final Map<String, dynamic> a = item;
+      final type = GenreModels.fromJson(a);
+      genres.add(type);
+    }
+    return genres;
   }
 }

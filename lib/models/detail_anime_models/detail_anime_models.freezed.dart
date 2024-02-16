@@ -12,7 +12,7 @@ part of 'detail_anime_models.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 DetailAnimeModels _$DetailAnimeModelsFromJson(Map<String, dynamic> json) {
   return _DetailAnimeModels.fromJson(json);
@@ -82,11 +82,11 @@ class _$DetailAnimeModelsCopyWithImpl<$Res, $Val extends DetailAnimeModels>
 }
 
 /// @nodoc
-abstract class _$$_DetailAnimeModelsCopyWith<$Res>
+abstract class _$$DetailAnimeModelsImplCopyWith<$Res>
     implements $DetailAnimeModelsCopyWith<$Res> {
-  factory _$$_DetailAnimeModelsCopyWith(_$_DetailAnimeModels value,
-          $Res Function(_$_DetailAnimeModels) then) =
-      __$$_DetailAnimeModelsCopyWithImpl<$Res>;
+  factory _$$DetailAnimeModelsImplCopyWith(_$DetailAnimeModelsImpl value,
+          $Res Function(_$DetailAnimeModelsImpl) then) =
+      __$$DetailAnimeModelsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({AnimeModels? animeDetail, List<EpisodeModels>? episodeList});
@@ -96,11 +96,11 @@ abstract class _$$_DetailAnimeModelsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DetailAnimeModelsCopyWithImpl<$Res>
-    extends _$DetailAnimeModelsCopyWithImpl<$Res, _$_DetailAnimeModels>
-    implements _$$_DetailAnimeModelsCopyWith<$Res> {
-  __$$_DetailAnimeModelsCopyWithImpl(
-      _$_DetailAnimeModels _value, $Res Function(_$_DetailAnimeModels) _then)
+class __$$DetailAnimeModelsImplCopyWithImpl<$Res>
+    extends _$DetailAnimeModelsCopyWithImpl<$Res, _$DetailAnimeModelsImpl>
+    implements _$$DetailAnimeModelsImplCopyWith<$Res> {
+  __$$DetailAnimeModelsImplCopyWithImpl(_$DetailAnimeModelsImpl _value,
+      $Res Function(_$DetailAnimeModelsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -109,7 +109,7 @@ class __$$_DetailAnimeModelsCopyWithImpl<$Res>
     Object? animeDetail = freezed,
     Object? episodeList = freezed,
   }) {
-    return _then(_$_DetailAnimeModels(
+    return _then(_$DetailAnimeModelsImpl(
       animeDetail: freezed == animeDetail
           ? _value.animeDetail
           : animeDetail // ignore: cast_nullable_to_non_nullable
@@ -124,14 +124,14 @@ class __$$_DetailAnimeModelsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DetailAnimeModels extends _DetailAnimeModels {
-  const _$_DetailAnimeModels(
+class _$DetailAnimeModelsImpl extends _DetailAnimeModels {
+  const _$DetailAnimeModelsImpl(
       {this.animeDetail, final List<EpisodeModels>? episodeList})
       : _episodeList = episodeList,
         super._();
 
-  factory _$_DetailAnimeModels.fromJson(Map<String, dynamic> json) =>
-      _$$_DetailAnimeModelsFromJson(json);
+  factory _$DetailAnimeModelsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DetailAnimeModelsImplFromJson(json);
 
   @override
   final AnimeModels? animeDetail;
@@ -151,10 +151,10 @@ class _$_DetailAnimeModels extends _DetailAnimeModels {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DetailAnimeModels &&
+            other is _$DetailAnimeModelsImpl &&
             (identical(other.animeDetail, animeDetail) ||
                 other.animeDetail == animeDetail) &&
             const DeepCollectionEquality()
@@ -169,13 +169,13 @@ class _$_DetailAnimeModels extends _DetailAnimeModels {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DetailAnimeModelsCopyWith<_$_DetailAnimeModels> get copyWith =>
-      __$$_DetailAnimeModelsCopyWithImpl<_$_DetailAnimeModels>(
+  _$$DetailAnimeModelsImplCopyWith<_$DetailAnimeModelsImpl> get copyWith =>
+      __$$DetailAnimeModelsImplCopyWithImpl<_$DetailAnimeModelsImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DetailAnimeModelsToJson(
+    return _$$DetailAnimeModelsImplToJson(
       this,
     );
   }
@@ -184,11 +184,11 @@ class _$_DetailAnimeModels extends _DetailAnimeModels {
 abstract class _DetailAnimeModels extends DetailAnimeModels {
   const factory _DetailAnimeModels(
       {final AnimeModels? animeDetail,
-      final List<EpisodeModels>? episodeList}) = _$_DetailAnimeModels;
+      final List<EpisodeModels>? episodeList}) = _$DetailAnimeModelsImpl;
   const _DetailAnimeModels._() : super._();
 
   factory _DetailAnimeModels.fromJson(Map<String, dynamic> json) =
-      _$_DetailAnimeModels.fromJson;
+      _$DetailAnimeModelsImpl.fromJson;
 
   @override
   AnimeModels? get animeDetail;
@@ -196,6 +196,6 @@ abstract class _DetailAnimeModels extends DetailAnimeModels {
   List<EpisodeModels>? get episodeList;
   @override
   @JsonKey(ignore: true)
-  _$$_DetailAnimeModelsCopyWith<_$_DetailAnimeModels> get copyWith =>
+  _$$DetailAnimeModelsImplCopyWith<_$DetailAnimeModelsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
