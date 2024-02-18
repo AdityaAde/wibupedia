@@ -1,10 +1,10 @@
 import 'package:get_it/get_it.dart';
-import 'package:wibupedia/repositories/bookmarks_repositories.dart';
 
 import '../data/local/secure_key_dao.dart';
 import '../data/remote/remote.dart';
 import '../extensions/extension.dart';
 import '../modules/modules.dart';
+import '../repositories/bookmarks_repositories.dart';
 import '../repositories/repositories.dart';
 import 'dao_storage.dart';
 
@@ -60,5 +60,6 @@ class Injector {
 
   void _onBusinnessLogic() {
     getIt.registerLazySingleton(() => AuthenticationCubit.create());
+    getIt.registerLazySingleton(() => GenreAnimeCubit.create());
   }
 }

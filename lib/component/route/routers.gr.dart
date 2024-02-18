@@ -12,24 +12,24 @@ import 'package:auto_route/auto_route.dart' as _i15;
 import 'package:flutter/material.dart' as _i16;
 import 'package:wibupedia/component/route/wrapper/authentication_wrapper.dart'
     as _i1;
-import 'package:wibupedia/component/route/wrapper/home_wrapper.dart' as _i2;
-import 'package:wibupedia/modules/authentication/login/login_page.dart' as _i3;
+import 'package:wibupedia/component/route/wrapper/home_wrapper.dart' as _i14;
+import 'package:wibupedia/modules/authentication/login/login_page.dart' as _i2;
 import 'package:wibupedia/modules/authentication/login_email/login_email_page.dart'
-    as _i4;
+    as _i3;
 import 'package:wibupedia/modules/authentication/signup/signup_page.dart'
-    as _i5;
-import 'package:wibupedia/modules/base/base_page.dart' as _i6;
-import 'package:wibupedia/modules/detail_anime/detail_anime_page.dart' as _i7;
+    as _i4;
+import 'package:wibupedia/modules/base/base_page.dart' as _i5;
+import 'package:wibupedia/modules/detail_anime/detail_anime_page.dart' as _i6;
 import 'package:wibupedia/modules/detail_list_anime/detail_list_anime_page.dart'
-    as _i8;
-import 'package:wibupedia/modules/home/home_page.dart' as _i9;
+    as _i7;
+import 'package:wibupedia/modules/home/home_page.dart' as _i8;
 import 'package:wibupedia/modules/modules.dart' as _i17;
-import 'package:wibupedia/modules/my_list/my_list_page.dart' as _i10;
-import 'package:wibupedia/modules/onboarding/onboarding_page.dart' as _i11;
-import 'package:wibupedia/modules/profile/profile_page.dart' as _i12;
+import 'package:wibupedia/modules/my_list/my_list_page.dart' as _i9;
+import 'package:wibupedia/modules/onboarding/onboarding_page.dart' as _i10;
+import 'package:wibupedia/modules/profile/profile_page.dart' as _i11;
 import 'package:wibupedia/modules/search/search_filter/search_filter_page.dart'
-    as _i13;
-import 'package:wibupedia/modules/search/search_page.dart' as _i14;
+    as _i12;
+import 'package:wibupedia/modules/search/search_page.dart' as _i13;
 
 abstract class $AppRouter extends _i15.RootStackRouter {
   $AppRouter({super.navigatorKey});
@@ -42,34 +42,28 @@ abstract class $AppRouter extends _i15.RootStackRouter {
         child: _i15.WrappedRoute(child: const _i1.AuthenticationWrapper()),
       );
     },
-    HomeWrapper.name: (routeData) {
-      return _i15.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: _i15.WrappedRoute(child: const _i2.HomeWrapper()),
-      );
-    },
     LoginRoute.name: (routeData) {
       return _i15.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i3.LoginPage(),
+        child: const _i2.LoginPage(),
       );
     },
     LoginEmailRoute.name: (routeData) {
       return _i15.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i4.LoginEmailPage(),
+        child: const _i3.LoginEmailPage(),
       );
     },
     SignupRoute.name: (routeData) {
       return _i15.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i5.SignupPage(),
+        child: const _i4.SignupPage(),
       );
     },
     BaseRoute.name: (routeData) {
       return _i15.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i6.BasePage(),
+        child: const _i5.BasePage(),
       );
     },
     DetailAnimeRoute.name: (routeData) {
@@ -81,7 +75,7 @@ abstract class $AppRouter extends _i15.RootStackRouter {
               ));
       return _i15.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i7.DetailAnimePage(
+        child: _i6.DetailAnimePage(
           key: args.key,
           titleAnime: args.titleAnime,
           animeUrl: args.animeUrl,
@@ -100,7 +94,7 @@ abstract class $AppRouter extends _i15.RootStackRouter {
               ));
       return _i15.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i8.DetailListAnimePage(
+        child: _i7.DetailListAnimePage(
           key: args.key,
           title: args.title,
           isOngoingAnime: args.isOngoingAnime,
@@ -112,37 +106,43 @@ abstract class $AppRouter extends _i15.RootStackRouter {
     HomeRoute.name: (routeData) {
       return _i15.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i9.HomePage(),
+        child: const _i8.HomePage(),
       );
     },
     MyListRoute.name: (routeData) {
       return _i15.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i10.MyListPage(),
+        child: const _i9.MyListPage(),
       );
     },
     OnboardingRoute.name: (routeData) {
       return _i15.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i11.OnboardingPage(),
+        child: const _i10.OnboardingPage(),
       );
     },
     ProfileRoute.name: (routeData) {
       return _i15.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i12.ProfilePage(),
+        child: const _i11.ProfilePage(),
       );
     },
     SearchFilterRoute.name: (routeData) {
       return _i15.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i13.SearchFilterPage(),
+        child: const _i12.SearchFilterPage(),
       );
     },
     SearchRoute.name: (routeData) {
       return _i15.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i14.SearchPage(),
+        child: const _i13.SearchPage(),
+      );
+    },
+    HomeWrapper.name: (routeData) {
+      return _i15.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: _i15.WrappedRoute(child: const _i14.HomeWrapper()),
       );
     },
   };
@@ -163,21 +163,7 @@ class AuthenticationWrapper extends _i15.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i2.HomeWrapper]
-class HomeWrapper extends _i15.PageRouteInfo<void> {
-  const HomeWrapper({List<_i15.PageRouteInfo>? children})
-      : super(
-          HomeWrapper.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'HomeWrapper';
-
-  static const _i15.PageInfo<void> page = _i15.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i3.LoginPage]
+/// [_i2.LoginPage]
 class LoginRoute extends _i15.PageRouteInfo<void> {
   const LoginRoute({List<_i15.PageRouteInfo>? children})
       : super(
@@ -191,7 +177,7 @@ class LoginRoute extends _i15.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i4.LoginEmailPage]
+/// [_i3.LoginEmailPage]
 class LoginEmailRoute extends _i15.PageRouteInfo<void> {
   const LoginEmailRoute({List<_i15.PageRouteInfo>? children})
       : super(
@@ -205,7 +191,7 @@ class LoginEmailRoute extends _i15.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i5.SignupPage]
+/// [_i4.SignupPage]
 class SignupRoute extends _i15.PageRouteInfo<void> {
   const SignupRoute({List<_i15.PageRouteInfo>? children})
       : super(
@@ -219,7 +205,7 @@ class SignupRoute extends _i15.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i6.BasePage]
+/// [_i5.BasePage]
 class BaseRoute extends _i15.PageRouteInfo<void> {
   const BaseRoute({List<_i15.PageRouteInfo>? children})
       : super(
@@ -233,7 +219,7 @@ class BaseRoute extends _i15.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i7.DetailAnimePage]
+/// [_i6.DetailAnimePage]
 class DetailAnimeRoute extends _i15.PageRouteInfo<DetailAnimeRouteArgs> {
   DetailAnimeRoute({
     _i16.Key? key,
@@ -280,7 +266,7 @@ class DetailAnimeRouteArgs {
 }
 
 /// generated route for
-/// [_i8.DetailListAnimePage]
+/// [_i7.DetailListAnimePage]
 class DetailListAnimeRoute
     extends _i15.PageRouteInfo<DetailListAnimeRouteArgs> {
   DetailListAnimeRoute({
@@ -340,7 +326,7 @@ class DetailListAnimeRouteArgs {
 }
 
 /// generated route for
-/// [_i9.HomePage]
+/// [_i8.HomePage]
 class HomeRoute extends _i15.PageRouteInfo<void> {
   const HomeRoute({List<_i15.PageRouteInfo>? children})
       : super(
@@ -354,7 +340,7 @@ class HomeRoute extends _i15.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i10.MyListPage]
+/// [_i9.MyListPage]
 class MyListRoute extends _i15.PageRouteInfo<void> {
   const MyListRoute({List<_i15.PageRouteInfo>? children})
       : super(
@@ -368,7 +354,7 @@ class MyListRoute extends _i15.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i11.OnboardingPage]
+/// [_i10.OnboardingPage]
 class OnboardingRoute extends _i15.PageRouteInfo<void> {
   const OnboardingRoute({List<_i15.PageRouteInfo>? children})
       : super(
@@ -382,7 +368,7 @@ class OnboardingRoute extends _i15.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i12.ProfilePage]
+/// [_i11.ProfilePage]
 class ProfileRoute extends _i15.PageRouteInfo<void> {
   const ProfileRoute({List<_i15.PageRouteInfo>? children})
       : super(
@@ -396,7 +382,7 @@ class ProfileRoute extends _i15.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i13.SearchFilterPage]
+/// [_i12.SearchFilterPage]
 class SearchFilterRoute extends _i15.PageRouteInfo<void> {
   const SearchFilterRoute({List<_i15.PageRouteInfo>? children})
       : super(
@@ -410,7 +396,7 @@ class SearchFilterRoute extends _i15.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i14.SearchPage]
+/// [_i13.SearchPage]
 class SearchRoute extends _i15.PageRouteInfo<void> {
   const SearchRoute({List<_i15.PageRouteInfo>? children})
       : super(
@@ -419,6 +405,20 @@ class SearchRoute extends _i15.PageRouteInfo<void> {
         );
 
   static const String name = 'SearchRoute';
+
+  static const _i15.PageInfo<void> page = _i15.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i14.HomeWrapper]
+class HomeWrapper extends _i15.PageRouteInfo<void> {
+  const HomeWrapper({List<_i15.PageRouteInfo>? children})
+      : super(
+          HomeWrapper.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'HomeWrapper';
 
   static const _i15.PageInfo<void> page = _i15.PageInfo<void>(name);
 }

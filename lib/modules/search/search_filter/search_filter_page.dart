@@ -2,31 +2,20 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../component/component.dart';
 import '../../../widgets/widgets.dart';
 import '../../modules.dart';
 import 'widgets/widgets.dart';
 
 @RoutePage()
-class SearchFilterPage extends StatefulWidget {
+class SearchFilterPage extends StatelessWidget {
   const SearchFilterPage({super.key});
 
   @override
-  State<SearchFilterPage> createState() => _SearchFilterPageState();
-}
-
-class _SearchFilterPageState extends State<SearchFilterPage> {
-  late final GenreAnimeCubit _genreAnimeCubit;
-
-  @override
-  void initState() {
-    super.initState();
-    _genreAnimeCubit = GenreAnimeCubit.create();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final genreAnimeCubit = getIt<GenreAnimeCubit>();
     return BlocProvider.value(
-      value: _genreAnimeCubit,
+      value: genreAnimeCubit,
       child: Scaffold(
         appBar: AppBar(title: const Text('Choose Your Interest')),
         body: Padding(
@@ -54,11 +43,5 @@ class _SearchFilterPageState extends State<SearchFilterPage> {
         ),
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    _genreAnimeCubit.close();
-    super.dispose();
   }
 }
