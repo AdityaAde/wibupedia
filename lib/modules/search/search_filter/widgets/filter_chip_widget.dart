@@ -1,6 +1,8 @@
 import 'package:choice/choice.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wibupedia/models/models.dart';
+import 'package:wibupedia/modules/modules.dart';
 
 import '../../../../component/theme/theme.dart';
 
@@ -14,10 +16,9 @@ class FilterChipWidget extends StatefulWidget {
 }
 
 class _FilterChipWidgetState extends State<FilterChipWidget> {
-  List<String> selectedValue = [];
-
   @override
   Widget build(BuildContext context) {
+    final genreAnimeCubit = context.read<GenreAnimeCubit>();
     return Column(
       children: [
         Text(
@@ -28,12 +29,10 @@ class _FilterChipWidgetState extends State<FilterChipWidget> {
         const SizedBox(height: 24),
         InlineChoice<String>.multiple(
           clearable: true,
-          value: selectedValue,
+          value: genreAnimeCubit.choosedGenre,
           onChanged: (value) {
-            setState(() {
-              selectedValue.clear();
-              selectedValue.addAll(value);
-            });
+            genreAnimeCubit.setChoosedGenre.clear();
+            genreAnimeCubit.setChoosedGenre.addAll(value);
           },
           itemCount: widget.genres.length,
           itemBuilder: (state, i) {

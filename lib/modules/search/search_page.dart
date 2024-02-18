@@ -19,6 +19,7 @@ class SearchPage extends StatelessWidget {
           slivers: [
             SliverToBoxAdapter(child: SizedBox(height: 18)),
             SearchbarAnimeWidget(),
+            ListChipFilterWidget(),
             ListSearchAnimeWidget()
           ],
         ),

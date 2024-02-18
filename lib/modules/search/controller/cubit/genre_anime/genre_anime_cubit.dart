@@ -17,6 +17,9 @@ class GenreAnimeCubit extends Cubit<GenreAnimeState> {
   GenreAnimeCubit(this._animeRepository)
       : super(const GenreAnimeState.initial());
 
+  List<String> setChoosedGenre = [];
+  List<String> get choosedGenre => setChoosedGenre;
+
   void getGenresAnime() async {
     emit(const GenreAnimeState.loading());
     final result = await _animeRepository.genresAnime();

@@ -37,7 +37,7 @@ class SearchFilterPage extends StatelessWidget {
           padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
           child: ButtonWidget.button(
             'Continue',
-            onTap: () {},
+            onTap: () => debugPrint('clog ${genreAnimeCubit.choosedGenre}'),
             height: 50,
           ),
         ),
