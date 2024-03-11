@@ -32,7 +32,10 @@ class _SearchbarAnimeWidgetState extends State<SearchbarAnimeWidget> {
         autofocus: true,
         hint: 'Search Anime',
         suffixIcon: InkWell(
-            onTap: () => context.pushRoute(const SearchFilterRoute()),
+            onTap: () {
+              context.read<GenreAnimeCubit>().getGenresAnime();
+              context.pushRoute(const SearchFilterRoute());
+            },
             child: Assets.icons.filterIcon.image()),
         onChanged: (value) => searchAnimeCubit.searchAnime(value),
       ),

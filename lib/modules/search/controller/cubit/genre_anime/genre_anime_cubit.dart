@@ -11,8 +11,7 @@ part 'genre_anime_cubit.freezed.dart';
 class GenreAnimeCubit extends Cubit<GenreAnimeState> {
   AnimeRepository _animeRepository;
 
-  factory GenreAnimeCubit.create() =>
-      GenreAnimeCubit(getIt.get())..getGenresAnime();
+  factory GenreAnimeCubit.create() => GenreAnimeCubit(getIt.get());
 
   GenreAnimeCubit(this._animeRepository)
       : super(const GenreAnimeState.initial());
@@ -27,5 +26,10 @@ class GenreAnimeCubit extends Cubit<GenreAnimeState> {
       (l) => emit(GenreAnimeState.error(l.toString())),
       (r) => emit(GenreAnimeState.success(r)),
     );
+  }
+
+  void setFilterGenre(List<String> genres) {
+    emit(GenreAnimeState.genres(genres));
+    setChoosedGenre = genres;
   }
 }

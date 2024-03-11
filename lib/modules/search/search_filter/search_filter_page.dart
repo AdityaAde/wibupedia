@@ -16,29 +16,47 @@ class SearchFilterPage extends StatelessWidget {
     final genreAnimeCubit = getIt<GenreAnimeCubit>();
     return BlocProvider.value(
       value: genreAnimeCubit,
-      child: Scaffold(
-        appBar: AppBar(title: const Text('Choose Your Interest')),
-        body: Padding(
-          padding: const EdgeInsets.only(left: 24, right: 24, bottom: 24),
-          child: BlocBuilder<GenreAnimeCubit, GenreAnimeState>(
-            builder: (context, state) {
-              return state.maybeWhen(
-                orElse: () => const SizedBox(),
-                loading: () => Center(child: LoadingWidget.loadingWidget()),
-                success: (genres) => SingleChildScrollView(
-                  child: FilterChipWidget(genres: genres),
-                ),
-                error: (err) => Center(child: Text(err)),
-              );
-            },
+      child: PopScope(
+        canPop: false,
+        child: Scaffold(
+          appBar: AppBar(
+            title: const Text('Choose Your Interest'),
+            centerTitle: true,
+            leading: const SizedBox(),
           ),
-        ),
-        bottomNavigationBar: Padding(
-          padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
-          child: ButtonWidget.button(
-            'Continue',
-            onTap: () => debugPrint('clog ${genreAnimeCubit.choosedGenre}'),
-            height: 50,
+          body: Padding(
+            padding: const EdgeInsets.only(left: 24, right: 24, bottom: 24),
+            child: BlocConsumer<GenreAnimeCubit, GenreAnimeState>(
+              listener: (context, state) {
+                state.maybeWhen(
+                  orElse: () {},
+                  genres: (_) => Navigator.pop(context),
+                );
+              },
+              builder: (context, state) {
+                return state.maybeWhen(
+                  orElse: () => const SizedBox(),
+                  loading: () => Center(child: LoadingWidget.loadingWidget()),
+                  success: (genres) => SingleChildScrollView(
+                    child: FilterChipWidget(
+                      genres: genres,
+                      genresFilter: genreAnimeCubit.choosedGenre,
+                    ),
+                  ),
+                  error: (err) => Center(child: Text(err)),
+                );
+              },
+            ),
+          ),
+          bottomNavigationBar: Padding(
+            padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
+            child: ButtonWidget.button(
+              'Continue',
+              onTap: () => genreAnimeCubit.setFilterGenre(
+                genreAnimeCubit.choosedGenre,
+              ),
+              height: 50,
+            ),
           ),
         ),
       ),

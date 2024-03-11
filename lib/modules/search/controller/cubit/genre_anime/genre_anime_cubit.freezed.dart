@@ -20,6 +20,7 @@ mixin _$GenreAnimeState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(List<String> genres) genres,
     required TResult Function(List<GenreModels> genres) success,
     required TResult Function(String err) error,
   }) =>
@@ -28,6 +29,7 @@ mixin _$GenreAnimeState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(List<String> genres)? genres,
     TResult? Function(List<GenreModels> genres)? success,
     TResult? Function(String err)? error,
   }) =>
@@ -36,6 +38,7 @@ mixin _$GenreAnimeState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(List<String> genres)? genres,
     TResult Function(List<GenreModels> genres)? success,
     TResult Function(String err)? error,
     required TResult orElse(),
@@ -45,6 +48,7 @@ mixin _$GenreAnimeState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_Genres value) genres,
     required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
   }) =>
@@ -53,6 +57,7 @@ mixin _$GenreAnimeState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_Genres value)? genres,
     TResult? Function(_Success value)? success,
     TResult? Function(_Error value)? error,
   }) =>
@@ -61,6 +66,7 @@ mixin _$GenreAnimeState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Genres value)? genres,
     TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
     required TResult orElse(),
@@ -126,6 +132,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(List<String> genres) genres,
     required TResult Function(List<GenreModels> genres) success,
     required TResult Function(String err) error,
   }) {
@@ -137,6 +144,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(List<String> genres)? genres,
     TResult? Function(List<GenreModels> genres)? success,
     TResult? Function(String err)? error,
   }) {
@@ -148,6 +156,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(List<String> genres)? genres,
     TResult Function(List<GenreModels> genres)? success,
     TResult Function(String err)? error,
     required TResult orElse(),
@@ -163,6 +172,7 @@ class _$InitialImpl implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_Genres value) genres,
     required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
   }) {
@@ -174,6 +184,7 @@ class _$InitialImpl implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_Genres value)? genres,
     TResult? Function(_Success value)? success,
     TResult? Function(_Error value)? error,
   }) {
@@ -185,6 +196,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Genres value)? genres,
     TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
     required TResult orElse(),
@@ -240,6 +252,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(List<String> genres) genres,
     required TResult Function(List<GenreModels> genres) success,
     required TResult Function(String err) error,
   }) {
@@ -251,6 +264,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(List<String> genres)? genres,
     TResult? Function(List<GenreModels> genres)? success,
     TResult? Function(String err)? error,
   }) {
@@ -262,6 +276,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(List<String> genres)? genres,
     TResult Function(List<GenreModels> genres)? success,
     TResult Function(String err)? error,
     required TResult orElse(),
@@ -277,6 +292,7 @@ class _$LoadingImpl implements _Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_Genres value) genres,
     required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
   }) {
@@ -288,6 +304,7 @@ class _$LoadingImpl implements _Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_Genres value)? genres,
     TResult? Function(_Success value)? success,
     TResult? Function(_Error value)? error,
   }) {
@@ -299,6 +316,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Genres value)? genres,
     TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
     required TResult orElse(),
@@ -312,6 +330,163 @@ class _$LoadingImpl implements _Loading {
 
 abstract class _Loading implements GenreAnimeState {
   const factory _Loading() = _$LoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$GenresImplCopyWith<$Res> {
+  factory _$$GenresImplCopyWith(
+          _$GenresImpl value, $Res Function(_$GenresImpl) then) =
+      __$$GenresImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<String> genres});
+}
+
+/// @nodoc
+class __$$GenresImplCopyWithImpl<$Res>
+    extends _$GenreAnimeStateCopyWithImpl<$Res, _$GenresImpl>
+    implements _$$GenresImplCopyWith<$Res> {
+  __$$GenresImplCopyWithImpl(
+      _$GenresImpl _value, $Res Function(_$GenresImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? genres = null,
+  }) {
+    return _then(_$GenresImpl(
+      null == genres
+          ? _value._genres
+          : genres // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GenresImpl implements _Genres {
+  const _$GenresImpl(final List<String> genres) : _genres = genres;
+
+  final List<String> _genres;
+  @override
+  List<String> get genres {
+    if (_genres is EqualUnmodifiableListView) return _genres;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_genres);
+  }
+
+  @override
+  String toString() {
+    return 'GenreAnimeState.genres(genres: $genres)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GenresImpl &&
+            const DeepCollectionEquality().equals(other._genres, _genres));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_genres));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GenresImplCopyWith<_$GenresImpl> get copyWith =>
+      __$$GenresImplCopyWithImpl<_$GenresImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<String> genres) genres,
+    required TResult Function(List<GenreModels> genres) success,
+    required TResult Function(String err) error,
+  }) {
+    return genres(this.genres);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<String> genres)? genres,
+    TResult? Function(List<GenreModels> genres)? success,
+    TResult? Function(String err)? error,
+  }) {
+    return genres?.call(this.genres);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<String> genres)? genres,
+    TResult Function(List<GenreModels> genres)? success,
+    TResult Function(String err)? error,
+    required TResult orElse(),
+  }) {
+    if (genres != null) {
+      return genres(this.genres);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Genres value) genres,
+    required TResult Function(_Success value) success,
+    required TResult Function(_Error value) error,
+  }) {
+    return genres(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Genres value)? genres,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Error value)? error,
+  }) {
+    return genres?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Genres value)? genres,
+    TResult Function(_Success value)? success,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (genres != null) {
+      return genres(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Genres implements GenreAnimeState {
+  const factory _Genres(final List<String> genres) = _$GenresImpl;
+
+  List<String> get genres;
+  @JsonKey(ignore: true)
+  _$$GenresImplCopyWith<_$GenresImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -386,10 +561,11 @@ class _$SuccessImpl implements _Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(List<String> genres) genres,
     required TResult Function(List<GenreModels> genres) success,
     required TResult Function(String err) error,
   }) {
-    return success(genres);
+    return success(this.genres);
   }
 
   @override
@@ -397,10 +573,11 @@ class _$SuccessImpl implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(List<String> genres)? genres,
     TResult? Function(List<GenreModels> genres)? success,
     TResult? Function(String err)? error,
   }) {
-    return success?.call(genres);
+    return success?.call(this.genres);
   }
 
   @override
@@ -408,12 +585,13 @@ class _$SuccessImpl implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(List<String> genres)? genres,
     TResult Function(List<GenreModels> genres)? success,
     TResult Function(String err)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(genres);
+      return success(this.genres);
     }
     return orElse();
   }
@@ -423,6 +601,7 @@ class _$SuccessImpl implements _Success {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_Genres value) genres,
     required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
   }) {
@@ -434,6 +613,7 @@ class _$SuccessImpl implements _Success {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_Genres value)? genres,
     TResult? Function(_Success value)? success,
     TResult? Function(_Error value)? error,
   }) {
@@ -445,6 +625,7 @@ class _$SuccessImpl implements _Success {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Genres value)? genres,
     TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
     required TResult orElse(),
@@ -531,6 +712,7 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(List<String> genres) genres,
     required TResult Function(List<GenreModels> genres) success,
     required TResult Function(String err) error,
   }) {
@@ -542,6 +724,7 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(List<String> genres)? genres,
     TResult? Function(List<GenreModels> genres)? success,
     TResult? Function(String err)? error,
   }) {
@@ -553,6 +736,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(List<String> genres)? genres,
     TResult Function(List<GenreModels> genres)? success,
     TResult Function(String err)? error,
     required TResult orElse(),
@@ -568,6 +752,7 @@ class _$ErrorImpl implements _Error {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_Genres value) genres,
     required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
   }) {
@@ -579,6 +764,7 @@ class _$ErrorImpl implements _Error {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_Genres value)? genres,
     TResult? Function(_Success value)? success,
     TResult? Function(_Error value)? error,
   }) {
@@ -590,6 +776,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Genres value)? genres,
     TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
     required TResult orElse(),

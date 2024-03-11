@@ -1,24 +1,21 @@
 import 'package:choice/choice.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wibupedia/models/models.dart';
-import 'package:wibupedia/modules/modules.dart';
 
 import '../../../../component/theme/theme.dart';
 
-class FilterChipWidget extends StatefulWidget {
-  const FilterChipWidget({super.key, required this.genres});
+class FilterChipWidget extends StatelessWidget {
+  const FilterChipWidget({
+    super.key,
+    required this.genres,
+    required this.genresFilter,
+  });
 
   final List<GenreModels> genres;
+  final List<String> genresFilter;
 
-  @override
-  State<FilterChipWidget> createState() => _FilterChipWidgetState();
-}
-
-class _FilterChipWidgetState extends State<FilterChipWidget> {
   @override
   Widget build(BuildContext context) {
-    final genreAnimeCubit = context.read<GenreAnimeCubit>();
     return Column(
       children: [
         Text(
@@ -29,14 +26,14 @@ class _FilterChipWidgetState extends State<FilterChipWidget> {
         const SizedBox(height: 24),
         InlineChoice<String>.multiple(
           clearable: true,
-          value: genreAnimeCubit.choosedGenre,
+          value: genresFilter,
           onChanged: (value) {
-            genreAnimeCubit.setChoosedGenre.clear();
-            genreAnimeCubit.setChoosedGenre.addAll(value);
+            genresFilter.clear();
+            genresFilter.addAll(value);
           },
-          itemCount: widget.genres.length,
+          itemCount: genres.length,
           itemBuilder: (state, i) {
-            final choice = widget.genres[i].genre;
+            final choice = genres[i].genre;
             return ChoiceChip(
               showCheckmark: false,
               selected: state.selected(choice ?? ''),
