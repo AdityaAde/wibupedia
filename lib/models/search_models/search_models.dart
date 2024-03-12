@@ -9,6 +9,10 @@ part 'search_models.g.dart';
 class SearchAnimeModels with _$SearchAnimeModels {
   const factory SearchAnimeModels({
     List<AnimeModels>? search,
+    String? title,
+    String? thumb,
+    String? link,
+    String? studio,
   }) = _SearchAnimeModels;
 
   factory SearchAnimeModels.fromJson(Map<String, dynamic> json) =>

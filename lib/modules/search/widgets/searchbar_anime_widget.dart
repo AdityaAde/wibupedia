@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wibupedia/component/route/routers.gr.dart';
 
+import '../../../component/route/routers.gr.dart';
 import '../../../gen/assets.gen.dart';
 import '../../../widgets/widgets.dart';
 import '../controller/controller.dart';

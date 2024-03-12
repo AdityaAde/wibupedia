@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
 
 import '../../component/endpoint.dart';
@@ -75,5 +76,32 @@ class AnimeService extends Endpoint {
       genres.add(type);
     }
     return genres;
+  }
+
+  Future<List<SearchAnimeModels>> searchAnimeByGenre(String genre) async {
+    final url = endpointBaseUrlWithVersion(
+        path: '${ServiceUrl.genreAnimeUrl}/$genre/1');
+    final response = await _baseService.dio.get(url);
+    final Map<String, dynamic> data = jsonDecode(response.data);
+    final result = await compute(
+      _decodeJsonSearchAnimebyGenre,
+      data['genreAnime'] as List,
+    );
+    return result;
+  }
+
+  static List<SearchAnimeModels> _decodeJsonSearchAnimebyGenre(
+    List<dynamic>? json,
+  ) {
+    final animes = <SearchAnimeModels>[];
+
+    final List<dynamic> result = json ?? [];
+    for (final item in result) {
+      final Map<String, dynamic> a = item;
+      final type = SearchAnimeModels.fromJson(a);
+      animes.add(type);
+    }
+
+    return animes;
   }
 }
