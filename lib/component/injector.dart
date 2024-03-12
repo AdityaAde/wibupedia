@@ -61,5 +61,6 @@ class Injector {
   void _onBusinnessLogic() {
     getIt.registerLazySingleton(() => AuthenticationCubit.create());
     getIt.registerLazySingleton(() => GenreAnimeCubit.create());
+    getIt.registerLazySingleton(() => SearchAnimeCubit.create());
   }
 }

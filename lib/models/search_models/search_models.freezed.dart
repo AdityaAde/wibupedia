@@ -150,14 +150,15 @@ class __$$SearchAnimeModelsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SearchAnimeModelsImpl implements _SearchAnimeModels {
+class _$SearchAnimeModelsImpl extends _SearchAnimeModels {
   const _$SearchAnimeModelsImpl(
       {final List<AnimeModels>? search,
       this.title,
       this.thumb,
       this.link,
       this.studio})
-      : _search = search;
+      : _search = search,
+        super._();
 
   factory _$SearchAnimeModelsImpl.fromJson(Map<String, dynamic> json) =>
       _$$SearchAnimeModelsImplFromJson(json);
@@ -218,13 +219,14 @@ class _$SearchAnimeModelsImpl implements _SearchAnimeModels {
   }
 }
 
-abstract class _SearchAnimeModels implements SearchAnimeModels {
+abstract class _SearchAnimeModels extends SearchAnimeModels {
   const factory _SearchAnimeModels(
       {final List<AnimeModels>? search,
       final String? title,
       final String? thumb,
       final String? link,
       final String? studio}) = _$SearchAnimeModelsImpl;
+  const _SearchAnimeModels._() : super._();
 
   factory _SearchAnimeModels.fromJson(Map<String, dynamic> json) =
       _$SearchAnimeModelsImpl.fromJson;

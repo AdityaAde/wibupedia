@@ -14,6 +14,7 @@ class SearchFilterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final genreAnimeCubit = getIt<GenreAnimeCubit>();
+    final searchAnimeCubit = getIt<SearchAnimeCubit>();
     return BlocProvider.value(
       value: genreAnimeCubit,
       child: PopScope(
@@ -52,9 +53,14 @@ class SearchFilterPage extends StatelessWidget {
             padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
             child: ButtonWidget.button(
               'Continue',
-              onTap: () => genreAnimeCubit.setFilterGenre(
-                genreAnimeCubit.choosedGenre,
-              ),
+              onTap: () {
+                genreAnimeCubit.setFilterGenre(
+                  genreAnimeCubit.choosedGenre,
+                );
+                searchAnimeCubit.searchAnimeByGenre(
+                  genreAnimeCubit.choosedGenre.join(','),
+                );
+              },
               height: 50,
             ),
           ),

@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../component/component.dart';
 import '../../component/route/routers.gr.dart';
 import '../../component/theme/theme.dart';
 import '../../gen/assets.gen.dart';
@@ -30,7 +31,7 @@ class _BasePageState extends State<BasePage> with WidgetsBindingObserver {
     WidgetsBinding.instance.addObserver(this);
     _ongoingCubit = OngoingCubit.create();
     _completedCubit = CompletedCubit.create();
-    _searchAnimeCubit = SearchAnimeCubit.create();
+    _searchAnimeCubit = getIt.get<SearchAnimeCubit>();
     _bookmakrsCubit = BookmakrsCubit.create();
   }
 

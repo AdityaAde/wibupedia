@@ -21,7 +21,7 @@ mixin _$SearchAnimeState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(SearchAnimeModels anime) success,
-    required TResult Function(List<SearchAnimeModels> anime) animeByGenre,
+    required TResult Function(List<SearchAnimeModels> animes) animeByGenre,
     required TResult Function(String err) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -30,7 +30,7 @@ mixin _$SearchAnimeState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(SearchAnimeModels anime)? success,
-    TResult? Function(List<SearchAnimeModels> anime)? animeByGenre,
+    TResult? Function(List<SearchAnimeModels> animes)? animeByGenre,
     TResult? Function(String err)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -39,7 +39,7 @@ mixin _$SearchAnimeState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(SearchAnimeModels anime)? success,
-    TResult Function(List<SearchAnimeModels> anime)? animeByGenre,
+    TResult Function(List<SearchAnimeModels> animes)? animeByGenre,
     TResult Function(String err)? error,
     required TResult orElse(),
   }) =>
@@ -133,7 +133,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(SearchAnimeModels anime) success,
-    required TResult Function(List<SearchAnimeModels> anime) animeByGenre,
+    required TResult Function(List<SearchAnimeModels> animes) animeByGenre,
     required TResult Function(String err) error,
   }) {
     return initial();
@@ -145,7 +145,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(SearchAnimeModels anime)? success,
-    TResult? Function(List<SearchAnimeModels> anime)? animeByGenre,
+    TResult? Function(List<SearchAnimeModels> animes)? animeByGenre,
     TResult? Function(String err)? error,
   }) {
     return initial?.call();
@@ -157,7 +157,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(SearchAnimeModels anime)? success,
-    TResult Function(List<SearchAnimeModels> anime)? animeByGenre,
+    TResult Function(List<SearchAnimeModels> animes)? animeByGenre,
     TResult Function(String err)? error,
     required TResult orElse(),
   }) {
@@ -253,7 +253,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(SearchAnimeModels anime) success,
-    required TResult Function(List<SearchAnimeModels> anime) animeByGenre,
+    required TResult Function(List<SearchAnimeModels> animes) animeByGenre,
     required TResult Function(String err) error,
   }) {
     return loading();
@@ -265,7 +265,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(SearchAnimeModels anime)? success,
-    TResult? Function(List<SearchAnimeModels> anime)? animeByGenre,
+    TResult? Function(List<SearchAnimeModels> animes)? animeByGenre,
     TResult? Function(String err)? error,
   }) {
     return loading?.call();
@@ -277,7 +277,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(SearchAnimeModels anime)? success,
-    TResult Function(List<SearchAnimeModels> anime)? animeByGenre,
+    TResult Function(List<SearchAnimeModels> animes)? animeByGenre,
     TResult Function(String err)? error,
     required TResult orElse(),
   }) {
@@ -409,7 +409,7 @@ class _$SuccessImpl implements _Success {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(SearchAnimeModels anime) success,
-    required TResult Function(List<SearchAnimeModels> anime) animeByGenre,
+    required TResult Function(List<SearchAnimeModels> animes) animeByGenre,
     required TResult Function(String err) error,
   }) {
     return success(anime);
@@ -421,7 +421,7 @@ class _$SuccessImpl implements _Success {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(SearchAnimeModels anime)? success,
-    TResult? Function(List<SearchAnimeModels> anime)? animeByGenre,
+    TResult? Function(List<SearchAnimeModels> animes)? animeByGenre,
     TResult? Function(String err)? error,
   }) {
     return success?.call(anime);
@@ -433,7 +433,7 @@ class _$SuccessImpl implements _Success {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(SearchAnimeModels anime)? success,
-    TResult Function(List<SearchAnimeModels> anime)? animeByGenre,
+    TResult Function(List<SearchAnimeModels> animes)? animeByGenre,
     TResult Function(String err)? error,
     required TResult orElse(),
   }) {
@@ -499,7 +499,7 @@ abstract class _$$AnimeByGenreImplCopyWith<$Res> {
           _$AnimeByGenreImpl value, $Res Function(_$AnimeByGenreImpl) then) =
       __$$AnimeByGenreImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<SearchAnimeModels> anime});
+  $Res call({List<SearchAnimeModels> animes});
 }
 
 /// @nodoc
@@ -513,12 +513,12 @@ class __$$AnimeByGenreImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? anime = null,
+    Object? animes = null,
   }) {
     return _then(_$AnimeByGenreImpl(
-      null == anime
-          ? _value._anime
-          : anime // ignore: cast_nullable_to_non_nullable
+      null == animes
+          ? _value._animes
+          : animes // ignore: cast_nullable_to_non_nullable
               as List<SearchAnimeModels>,
     ));
   }
@@ -527,20 +527,20 @@ class __$$AnimeByGenreImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$AnimeByGenreImpl implements _AnimeByGenre {
-  const _$AnimeByGenreImpl(final List<SearchAnimeModels> anime)
-      : _anime = anime;
+  const _$AnimeByGenreImpl(final List<SearchAnimeModels> animes)
+      : _animes = animes;
 
-  final List<SearchAnimeModels> _anime;
+  final List<SearchAnimeModels> _animes;
   @override
-  List<SearchAnimeModels> get anime {
-    if (_anime is EqualUnmodifiableListView) return _anime;
+  List<SearchAnimeModels> get animes {
+    if (_animes is EqualUnmodifiableListView) return _animes;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_anime);
+    return EqualUnmodifiableListView(_animes);
   }
 
   @override
   String toString() {
-    return 'SearchAnimeState.animeByGenre(anime: $anime)';
+    return 'SearchAnimeState.animeByGenre(animes: $animes)';
   }
 
   @override
@@ -548,12 +548,12 @@ class _$AnimeByGenreImpl implements _AnimeByGenre {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AnimeByGenreImpl &&
-            const DeepCollectionEquality().equals(other._anime, _anime));
+            const DeepCollectionEquality().equals(other._animes, _animes));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_anime));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_animes));
 
   @JsonKey(ignore: true)
   @override
@@ -567,10 +567,10 @@ class _$AnimeByGenreImpl implements _AnimeByGenre {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(SearchAnimeModels anime) success,
-    required TResult Function(List<SearchAnimeModels> anime) animeByGenre,
+    required TResult Function(List<SearchAnimeModels> animes) animeByGenre,
     required TResult Function(String err) error,
   }) {
-    return animeByGenre(anime);
+    return animeByGenre(animes);
   }
 
   @override
@@ -579,10 +579,10 @@ class _$AnimeByGenreImpl implements _AnimeByGenre {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(SearchAnimeModels anime)? success,
-    TResult? Function(List<SearchAnimeModels> anime)? animeByGenre,
+    TResult? Function(List<SearchAnimeModels> animes)? animeByGenre,
     TResult? Function(String err)? error,
   }) {
-    return animeByGenre?.call(anime);
+    return animeByGenre?.call(animes);
   }
 
   @override
@@ -591,12 +591,12 @@ class _$AnimeByGenreImpl implements _AnimeByGenre {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(SearchAnimeModels anime)? success,
-    TResult Function(List<SearchAnimeModels> anime)? animeByGenre,
+    TResult Function(List<SearchAnimeModels> animes)? animeByGenre,
     TResult Function(String err)? error,
     required TResult orElse(),
   }) {
     if (animeByGenre != null) {
-      return animeByGenre(anime);
+      return animeByGenre(animes);
     }
     return orElse();
   }
@@ -643,10 +643,10 @@ class _$AnimeByGenreImpl implements _AnimeByGenre {
 }
 
 abstract class _AnimeByGenre implements SearchAnimeState {
-  const factory _AnimeByGenre(final List<SearchAnimeModels> anime) =
+  const factory _AnimeByGenre(final List<SearchAnimeModels> animes) =
       _$AnimeByGenreImpl;
 
-  List<SearchAnimeModels> get anime;
+  List<SearchAnimeModels> get animes;
   @JsonKey(ignore: true)
   _$$AnimeByGenreImplCopyWith<_$AnimeByGenreImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -719,7 +719,7 @@ class _$ErrorImpl implements _Error {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(SearchAnimeModels anime) success,
-    required TResult Function(List<SearchAnimeModels> anime) animeByGenre,
+    required TResult Function(List<SearchAnimeModels> animes) animeByGenre,
     required TResult Function(String err) error,
   }) {
     return error(err);
@@ -731,7 +731,7 @@ class _$ErrorImpl implements _Error {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(SearchAnimeModels anime)? success,
-    TResult? Function(List<SearchAnimeModels> anime)? animeByGenre,
+    TResult? Function(List<SearchAnimeModels> animes)? animeByGenre,
     TResult? Function(String err)? error,
   }) {
     return error?.call(err);
@@ -743,7 +743,7 @@ class _$ErrorImpl implements _Error {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(SearchAnimeModels anime)? success,
-    TResult Function(List<SearchAnimeModels> anime)? animeByGenre,
+    TResult Function(List<SearchAnimeModels> animes)? animeByGenre,
     TResult Function(String err)? error,
     required TResult orElse(),
   }) {
