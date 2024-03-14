@@ -18,7 +18,7 @@ class ListAnimeTileWidget extends StatelessWidget {
 
   final String title;
   final bool isLoading;
-  final OngoingModels? ongoingAnime;
+  final List<AnimeModels>? ongoingAnime;
   final CompletedModels? completedAnime;
   final VoidCallback? onTapSeeAll;
 
@@ -66,7 +66,7 @@ class ListAnimeTileWidget extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     itemCount: 5,
                     itemBuilder: (context, index) {
-                      final ongoing = ongoingAnime?.ongoing?[index];
+                      final ongoing = ongoingAnime?[index];
                       final completed = completedAnime?.completed?[index];
                       return InkWell(
                         child: Container(

@@ -31,14 +31,17 @@ class HomePage extends StatelessWidget {
                   success: (anime) => ListAnimeTileWidget(
                     title: 'On Going',
                     ongoingAnime: anime,
-                    onTapSeeAll: () => context.pushRoute(
-                      DetailListAnimeRoute(
-                        title: 'On Going',
-                        isOngoingAnime: true,
-                        ongoingCubit: ongoingCubit,
-                        completedCubit: completedCubit,
-                      ),
-                    ),
+                    onTapSeeAll: () {
+                      ongoingCubit.ongoingAnime.clear();
+                      context.pushRoute(
+                        DetailListAnimeRoute(
+                          title: 'On Going',
+                          isOngoingAnime: true,
+                          ongoingCubit: ongoingCubit,
+                          completedCubit: completedCubit,
+                        ),
+                      );
+                    },
                   ),
                   error: (err) => Center(
                     child: Text('Something went wrong $err'),
