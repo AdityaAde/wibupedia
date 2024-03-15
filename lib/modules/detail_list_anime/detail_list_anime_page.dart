@@ -27,14 +27,14 @@ class DetailListAnimePage extends StatefulWidget {
 }
 
 class _DetailListAnimePageState extends State<DetailListAnimePage> {
-  late final PagingController<int, AnimeModels> _pagingOngoingController;
-  late final ValueNotifier<int> _pageOngoing;
+  late final PagingController<int, AnimeModels> _pagingController;
+  late final ValueNotifier<int> _page;
 
   @override
   void initState() {
     super.initState();
-    _pageOngoing = ValueNotifier<int>(1);
-    _pagingOngoingController = PagingController(firstPageKey: 0);
+    _page = ValueNotifier<int>(1);
+    _pagingController = PagingController(firstPageKey: 1);
   }
 
   @override
@@ -44,14 +44,18 @@ class _DetailListAnimePageState extends State<DetailListAnimePage> {
   }
 
   void onPagingListen() {
-    _pagingOngoingController.addPageRequestListener((pageKey) => widget
-        .ongoingCubit
-        ?.getOngoingAnime(page: _pageOngoing.value.toString()));
+    _pagingController.addPageRequestListener((pageKey) {
+      widget.isOngoingAnime ?? false
+          ? widget.ongoingCubit?.getOngoingAnime(page: _page.value.toString())
+          : widget.completedCubit
+              ?.getCompletedAnime(page: _page.value.toString());
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     final ongoingCubit = widget.ongoingCubit;
+    final completedCubit = widget.completedCubit;
     return MultiBlocProvider(
       providers: [
         BlocProvider.value(value: widget.ongoingCubit!),
@@ -61,29 +65,48 @@ class _DetailListAnimePageState extends State<DetailListAnimePage> {
         appBar: AppBar(
           title: Text(widget.title),
         ),
-        body: BlocListener<OngoingCubit, OngoingState>(
-          listener: (context, state) {
-            state.maybeWhen(
-              orElse: () => null,
-              success: (anime) {
-                _pagingOngoingController.itemList = anime;
-                _pagingOngoingController.nextPageKey =
-                    ongoingCubit!.isFullyLoaded
-                        ? null
-                        : _pageOngoing.value = _pageOngoing.value + 1;
-              },
-              error: (err) => _pagingOngoingController.error = err,
-            );
-          },
-          child: ListAnimeWidget(pagingOngoing: _pagingOngoingController),
-        ),
+        body: widget.isOngoingAnime ?? false
+            ? BlocListener<OngoingCubit, OngoingState>(
+                listener: (context, state) {
+                  state.maybeWhen(
+                    orElse: () => null,
+                    success: (anime) {
+                      _pagingController.itemList = anime;
+                      _pagingController.nextPageKey =
+                          ongoingCubit!.isFullyLoaded
+                              ? null
+                              : _page.value = _page.value + 1;
+                    },
+                    error: (err) => _pagingController.error = err,
+                  );
+                },
+                child: ListAnimeWidget(pagingOngoing: _pagingController),
+              )
+            : BlocListener<CompletedCubit, CompletedState>(
+                listener: (context, state) {
+                  state.maybeWhen(
+                    orElse: () => null,
+                    success: (anime) {
+                      _pagingController.itemList = anime;
+                      _pagingController.nextPageKey =
+                          completedCubit!.isFullyLoaded
+                              ? null
+                              : _page.value = _page.value + 1;
+                    },
+                    error: (err) => _pagingController.error = err,
+                  );
+                },
+                child: ListAnimeWidget(
+                  pagingOngoing: _pagingController,
+                ),
+              ),
       ),
     );
   }
 
   @override
   void dispose() {
-    _pagingOngoingController.dispose();
+    _pagingController.dispose();
     super.dispose();
   }
 }

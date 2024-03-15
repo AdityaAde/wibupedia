@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
                   ),
                   success: (anime) => ListAnimeTileWidget(
                     title: 'On Going',
-                    ongoingAnime: anime,
+                    anime: anime,
                     onTapSeeAll: () {
                       ongoingCubit.ongoingAnime.clear();
                       context.pushRoute(
@@ -60,14 +60,17 @@ class HomePage extends StatelessWidget {
                   ),
                   success: (anime) => ListAnimeTileWidget(
                     title: 'Anime Completed',
-                    completedAnime: anime,
-                    onTapSeeAll: () => context.pushRoute(
-                      DetailListAnimeRoute(
-                        title: 'Anime Completed',
-                        ongoingCubit: ongoingCubit,
-                        completedCubit: completedCubit,
-                      ),
-                    ),
+                    anime: anime,
+                    onTapSeeAll: () {
+                      completedCubit.completedAnime.clear();
+                      context.pushRoute(
+                        DetailListAnimeRoute(
+                          title: 'Anime Completed',
+                          ongoingCubit: ongoingCubit,
+                          completedCubit: completedCubit,
+                        ),
+                      );
+                    },
                   ),
                   error: (err) => Center(
                     child: Text('Something went wrong $err'),

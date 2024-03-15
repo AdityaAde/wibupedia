@@ -11,15 +11,13 @@ class ListAnimeTileWidget extends StatelessWidget {
     super.key,
     required this.title,
     this.isLoading = false,
-    this.ongoingAnime,
-    this.completedAnime,
+    this.anime,
     this.onTapSeeAll,
   });
 
   final String title;
   final bool isLoading;
-  final List<AnimeModels>? ongoingAnime;
-  final CompletedModels? completedAnime;
+  final List<AnimeModels>? anime;
   final VoidCallback? onTapSeeAll;
 
   @override
@@ -66,8 +64,6 @@ class ListAnimeTileWidget extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     itemCount: 5,
                     itemBuilder: (context, index) {
-                      final ongoing = ongoingAnime?[index];
-                      final completed = completedAnime?.completed?[index];
                       return InkWell(
                         child: Container(
                           width: 150,
@@ -75,14 +71,12 @@ class ListAnimeTileWidget extends StatelessWidget {
                             color: AppColor.dark2,
                             borderRadius: BorderRadius.all(Radius.circular(12)),
                           ),
-                          child: ImageCachedWidget(
-                              url: ongoing?.thumb ?? completed?.thumb),
+                          child: ImageCachedWidget(url: anime?[index].thumb),
                         ),
                         onTap: () => context.pushRoute(
                           DetailAnimeRoute(
-                            titleAnime: ongoing?.endpointAnime ??
-                                completed?.endpointAnime,
-                            animeUrl: ongoing?.endpoint ?? completed?.endpoint,
+                            titleAnime: anime?[index].endpointAnime,
+                            animeUrl: anime?[index].endpoint,
                           ),
                         ),
                       );
