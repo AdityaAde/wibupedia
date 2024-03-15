@@ -31,6 +31,7 @@ dependencies:
   auto_route: ^6.4.0
   bloc: ^8.1.1
   cached_network_image: ^3.3.1
+  choice: ^2.3.0
   cloud_firestore: ^4.13.2
   cupertino_icons: ^1.0.2
   curl_logger_dio_interceptor: ^1.0.0
@@ -50,6 +51,7 @@ dependencies:
   google_sign_in: ^6.1.6
   hive: ^2.2.3
   hive_flutter: ^1.1.0
+  infinite_scroll_pagination: ^4.0.0
   injectable: ^2.1.2
   intl: ^0.18.0
   json_annotation: ^4.5.0
@@ -61,7 +63,6 @@ dependencies:
   timeago: ^3.2.2
   twitter_login: ^4.0.1
   url_launcher: ^6.1.11
-  choice: ^2.3.0
 
 dev_dependencies:
   auto_route_generator: ^6.2.0

@@ -1,36 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:wibupedia/models/models.dart';
 
+import '../../../widgets/widgets.dart';
 import 'anime_tile_item_widget.dart';
 
 class ListAnimeWidget extends StatelessWidget {
   const ListAnimeWidget({
     super.key,
-    this.ongoingAnime,
     this.completedAnime,
+    this.pagingOngoing,
   });
 
-  final OngoingModels? ongoingAnime;
   final CompletedModels? completedAnime;
+  final PagingController<int, AnimeModels>? pagingOngoing;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 16, right: 16, top: 16),
-      child: GridView.builder(
+      child: PagedGridView<int, AnimeModels>(
+        pagingController: pagingOngoing!,
+        builderDelegate: PagedChildBuilderDelegate(
+          itemBuilder: (context, item, index) => AnimeTileItem(anime: item),
+          newPageProgressIndicatorBuilder: (context) =>
+              LoadingWidget.loadingWidget(),
+          firstPageProgressIndicatorBuilder: (context) =>
+              LoadingWidget.loadingWidget(),
+        ),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 12.0,
           mainAxisSpacing: 12.0,
         ),
-        itemCount:
-            ongoingAnime?.ongoing?.length ?? completedAnime?.completed?.length,
-        itemBuilder: (context, index) {
-          return AnimeTileItem(
-            anime: ongoingAnime?.ongoing?[index] ??
-                completedAnime?.completed?[index],
-          );
-        },
       ),
     );
   }

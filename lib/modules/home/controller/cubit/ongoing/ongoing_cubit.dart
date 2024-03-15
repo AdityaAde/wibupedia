@@ -10,6 +10,12 @@ part 'ongoing_state.dart';
 
 class OngoingCubit extends Cubit<OngoingState> {
   AnimeRepository _animeRepository;
+  final _ongoingAnime = <AnimeModels>[];
+  final int _limit = 25;
+  bool _isFullyLoaded = false;
+
+  bool get isFullyLoaded => _isFullyLoaded;
+  List<AnimeModels> get ongoingAnime => _ongoingAnime;
 
   factory OngoingCubit.create() =>
       OngoingCubit(getIt.get())..getOngoingAnime(page: '1');
@@ -21,7 +27,12 @@ class OngoingCubit extends Cubit<OngoingState> {
     final result = await _animeRepository.ongoingAnime(page: page);
     result.fold(
       (l) => emit(OngoingState.error(l.toString())),
-      (r) => emit(OngoingState.success(r)),
+      (r) {
+        _isFullyLoaded =
+            (r.ongoing!.length % _limit) != 0 || r.ongoing!.isEmpty;
+        _ongoingAnime.addAll(r.ongoing ?? []);
+        emit(OngoingState.success(_ongoingAnime));
+      },
     );
   }
 }

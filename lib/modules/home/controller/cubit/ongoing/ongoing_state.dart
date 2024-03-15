@@ -4,6 +4,6 @@ part of 'ongoing_cubit.dart';
 class OngoingState with _$OngoingState {
   const factory OngoingState.initial() = _Initial;
   const factory OngoingState.loading() = _Loading;
-  const factory OngoingState.success(OngoingModels anime) = _Success;
+  const factory OngoingState.success(List<AnimeModels> anime) = _Success;
   const factory OngoingState.error(String err) = _Error;
 }
