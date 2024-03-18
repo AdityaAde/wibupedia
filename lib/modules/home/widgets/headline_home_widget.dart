@@ -17,7 +17,7 @@ class HeadlineHomeWidget extends StatelessWidget {
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: NetworkImage(
-              'https://otakudesu.media/wp-content/uploads/2023/05/Kimetsu-no-Yaiba-Katanakaji-no-Sato-hen-Sub-Indo.jpg'),
+              'https://i0.wp.com/www.myepicnet.com/wp-content/uploads/2023/03/image_2023-03-01_122500172.png?fit=1280%2C720&ssl=1'),
           fit: BoxFit.cover,
         ),
       ),
