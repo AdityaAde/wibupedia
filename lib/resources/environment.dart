@@ -2,7 +2,6 @@ class Environment {
   Environment({
     required this.name,
     required this.baseUrl,
-    required this.authBaseUrl,
     required this.connectionTimeout,
     required this.receiveTimeout,
   });
@@ -11,7 +10,6 @@ class Environment {
   final String baseUrl;
   final int connectionTimeout;
   final int receiveTimeout;
-  final String authBaseUrl;
 
   static late final Environment env;
 
@@ -19,7 +17,6 @@ class Environment {
     env = Environment(
       name: 'development',
       baseUrl: '',
-      authBaseUrl: '',
       connectionTimeout: 60000,
       receiveTimeout: 60000,
     );
@@ -30,7 +27,6 @@ class Environment {
     env = Environment(
       name: 'production',
       baseUrl: 'https://otakudesu-anime-api.vercel.app/api/',
-      authBaseUrl: '',
       connectionTimeout: 60000,
       receiveTimeout: 60000,
     );
