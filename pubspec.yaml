@@ -63,6 +63,9 @@ dependencies:
   timeago: ^3.2.2
   twitter_login: ^4.0.1
   url_launcher: ^6.1.11
+  flutter_local_notifications: ^17.0.1
+  firebase_messaging: ^14.8.1
+  firebase_analytics: ^10.10.1
 
 dev_dependencies:
   auto_route_generator: ^6.2.0
