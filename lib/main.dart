@@ -15,7 +15,7 @@ void runMainApp() async {
       WidgetsFlutterBinding.ensureInitialized();
       await Firebase.initializeApp(
           options: DefaultFirebaseOptions.currentPlatform);
-      await FirebaseMessagingApi().setupFlutterNotifications();
+      await FirebaseMessagingApi(getIt.get()).setupFlutterNotifications();
       await Hive.initFlutter();
       await Injector.create();
 

@@ -5,8 +5,15 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
+import '../../component/injector.dart';
+import '../../component/keys.dart';
+import 'base_service.dart';
+
 class FirebaseMessagingApi {
-  final FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance;
+  final BaseService _baseService;
+  FirebaseMessagingApi(this._baseService);
+
+  factory FirebaseMessagingApi.create() => FirebaseMessagingApi(getIt.get());
 
   /// Create a [AndroidNotificationChannel] for heads up notifications
   AndroidNotificationChannel channel = const AndroidNotificationChannel(
@@ -70,11 +77,19 @@ class FirebaseMessagingApi {
       badge: true,
       sound: true,
     );
-
-    final fcmToken = await _firebaseMessaging.getToken();
-    log("Fcm Token $fcmToken");
+    final token = await FirebaseMessaging.instance.getToken();
+    log('Fcm Token $token');
 
     FirebaseMessaging.onMessage.listen(showFlutterNotification);
     isFlutterLocalNotificationsInitialized = true;
+  }
+
+  Future<bool> pushNotification(String title, String body) async {
+    final response = await _baseService.dio.post(ServiceUrl.fcmUrl);
+    if (response.statusCode == 200) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
